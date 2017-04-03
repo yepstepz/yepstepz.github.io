@@ -1,0 +1,33 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: textbook, sans-serif;
+}
+.clearfix{
+	&:after{
+		content: '';
+		display: table;
+		width: 100%;
+	}
+}
+.top{
+	background-color: #e61400;
+	padding: 22px 47px 22px 47px;
+}
+.logo{
+	float: left;
+	&__img{
+		display: inline-block;
+		width: 60px;
+		height: 26px;
+	}
+}
+.title{
+	float: right;
+	&__text{
+		display: inline-block;
+		font: 15px/80% Arial,Helvetica,sans-serif;
+		color: white;
+		line-height: 26px;
+	}
+}
