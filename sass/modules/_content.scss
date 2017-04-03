@@ -23,15 +23,37 @@
 			list-style-type: none;
 		}
 	}
+	&__items{
+		position: relative;
+	}
 	&__items__date{
-		float: 	left;
+		position: absolute;
 		font-weight: bold;	
 		font-size: 40px;
 		width: 50px;	
-		text-align: left;	
-
+		text-align: center;	
+		top:50%;
+		margin-top: -33px;
+		left: 30px;
+		span{
+			display: block;
+			font-size: 18px;
+			text-align: center;
+		}
 	}
 	&__item{
-		padding-left: 65px;
+		margin-bottom: 20px;
+		padding: 20px 0 20px 100px;
+		border: 1px solid #ddd;
+		border-left: 4px solid #fc0;
 	}
+	&__item__name{
+		font-size: 20px;
+		font-weight: bold;
+
+	}
+	&__item__lector{
+		margin-bottom: 5px;
+	}
+
 }

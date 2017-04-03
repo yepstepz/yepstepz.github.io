@@ -1,7 +1,8 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: textbook, sans-serif; }
+  font-family: textbook, sans-serif;
+  color: #363636; }
 
 .clearfix:after {
   content: '';
@@ -49,12 +50,32 @@
   .curs__list li {
     list-style-type: none; }
 
+.curs__items {
+  position: relative; }
+
 .curs__items__date {
-  float: left;
+  position: absolute;
   font-weight: bold;
   font-size: 40px;
   width: 50px;
-  text-align: left; }
+  text-align: center;
+  top: 50%;
+  margin-top: -33px;
+  left: 30px; }
+  .curs__items__date span {
+    display: block;
+    font-size: 18px;
+    text-align: center; }
 
 .curs__item {
-  padding-left: 65px; }
+  margin-bottom: 20px;
+  padding: 20px 0 20px 100px;
+  border: 1px solid #ddd;
+  border-left: 4px solid #fc0; }
+
+.curs__item__name {
+  font-size: 20px;
+  font-weight: bold; }
+
+.curs__item__lector {
+  margin-bottom: 5px; }
