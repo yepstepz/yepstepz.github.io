@@ -2,6 +2,8 @@
 	display: block;	
 	width: 900px;	
 	margin: 0 auto;	
+	color: #363636;
+	min-height: 100%;
 	&__title{
 	    font-size: 48px;
 	    width: 80%;
@@ -28,7 +30,7 @@
 			list-style-type: none;
 		}
 	}
-	&__items__date{
+	&__item__date{
 		position: absolute;
 		font-weight: bold;	
 		font-size: 40px;
@@ -43,12 +45,10 @@
 			text-align: center;
 		}
 	}
-	&__items{
+	&__item{
 		position: relative;
 		margin-bottom: 20px;
-		padding: 20px 0 20px 100px;
-		border: 1px solid #ddd;
-		border-left: 4px solid #fc0;
+		background: rgba(0,0,0,0.03);
 	}
 	&__item__name{
 		font-size: 20px;
@@ -56,7 +56,69 @@
 
 	}
 	&__item__lector{
-		margin-bottom: 5px;
+		@include inline-block-pos(middle);
+		font-size: 14px;
+		color: #666;
+		border-bottom: 1px dotted #666;
+		padding: 2px 0;
+	}
+	&__lection{
+		padding: 10px 0px 10px 100px;
+		border-left: 4px solid #fc0;
+		&:nth-child(1){
+			padding-top: 20px;
+		}
+		&:nth-last-child(2){
+			padding-bottom: 20px;
+		}
+	}
+	&__lection__address{
+		@include inline-block-pos(middle);
+		font-size: 13px;
+		line-height: 21px;
+		&:before{
+			content: '';
+			width: 14px;
+			height: 20px;
+			@include inline-block-pos(middle);
+			background: url(/img/place.svg) no-repeat;
+			opacity: 0.5;
+			margin: 0 5px 0 10px;
+		}
 	}
 
+}
+.tags{
+	margin: 5px 0;
+}
+.tag{
+	font-size: 11px;
+	vertical-align: middle;
+	padding: 5px 10px;
+	border-radius: 10px;
+	@include inline-block-pos(middle);
+	&--shri{
+		background: rgba(230, 20, 0, 0.5);
+	}
+	&--shmd{
+		background: rgba(254, 225, 51, 0.5);
+	}
+	&--shmr{
+		background: rgba(160, 93, 175, 0.5);
+	}
+	&--all{
+		background: rgba(0, 131, 202, 0.5)
+	}
+	&--oct{
+		background: rgba(160, 93, 175, 0.5);
+	}
+	&--nov{
+		background: rgba(254, 225, 51, 0.5);
+	}
+	&--dec{
+		background: rgba(230, 20, 0, 0.5);
+	}
+	&--apr{
+		background: rgba(0, 131, 202, 0.5)
+	}
 }

@@ -1,0 +1,65 @@
+.curs__lection,
+.curs__section,
+.curs__lection + .curs__item__date{
+	display: none;
+}
+
+#shri_on:checked ~ .curs .curs__lection[data-tag="shri"]{
+	display: block;
+	& ~ .curs__item__date{
+		display: block;
+	}
+}
+#shmd_on:checked ~ .curs .curs__lection[data-tag="shmd"]{
+	display: block;
+	& ~ .curs__item__date{
+		display: block;
+	}
+}
+#shmr_on:checked ~ .curs .curs__lection[data-tag="shmr"]{
+	display: block;
+	& ~ .curs__item__date{
+		display: block;
+	}
+}
+#all_on:checked ~ .curs .curs__lection[data-tag="all"]{
+	display: block;
+	& ~ .curs__item__date{
+		display: block;
+	}
+}
+#october_on:checked ~ .curs .curs__section[data-month="october"]{
+	display: block;
+}
+#november_on:checked ~ .curs .curs__section[data-month="november"]{
+	display: block;
+}
+#december_on:checked ~ .curs .curs__section[data-month="december"]{
+	display: block;
+}
+#april_on:checked ~ .curs .curs__section[data-month="april"]{
+	display: block;
+}
+.sort{
+	display: block;
+	line-height: 1.2;
+	font-size: 18px;
+	margin: 15px 0 5px;
+	&--title{
+		font-size: 22px;
+	
+	}
+}
+input[type="checkbox"]{
+	display: none;
+}
+label{
+	cursor: pointer;
+	opacity:0.5;
+	&:hover{
+		opacity: 0.8;
+	}
+}
+input[type="checkbox"]:checked + label{
+	opacity: 1;
+}
