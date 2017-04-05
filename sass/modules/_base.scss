@@ -1,3 +1,4 @@
+@import '_colors';
 @mixin inline-block-pos ($pos: top){
 	display: inline-block;
 	vertical-align: $pos;

@@ -117,23 +117,16 @@
   vertical-align: middle;
   padding: 5px 10px;
   border-radius: 10px;
+  margin: 0px 5px 10px 0px;
   display: inline-block;
   vertical-align: middle; }
-  .tag--shri {
+  .tag--red {
     background: rgba(230, 20, 0, 0.5); }
-  .tag--shmd {
+  .tag--yellow {
     background: rgba(254, 225, 51, 0.5); }
-  .tag--shmr {
+  .tag--violet {
     background: rgba(160, 93, 175, 0.5); }
-  .tag--all {
-    background: rgba(0, 131, 202, 0.5); }
-  .tag--oct {
-    background: rgba(160, 93, 175, 0.5); }
-  .tag--nov {
-    background: rgba(254, 225, 51, 0.5); }
-  .tag--dec {
-    background: rgba(230, 20, 0, 0.5); }
-  .tag--apr {
+  .tag--blue {
     background: rgba(0, 131, 202, 0.5); }
 
 .bottom {

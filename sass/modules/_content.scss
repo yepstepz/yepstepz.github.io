@@ -96,29 +96,18 @@
 	vertical-align: middle;
 	padding: 5px 10px;
 	border-radius: 10px;
+	margin: 0px 5px 10px 0px;	
 	@include inline-block-pos(middle);
-	&--shri{
-		background: rgba(230, 20, 0, 0.5);
+	&--red{
+		background: $l_red;
 	}
-	&--shmd{
-		background: rgba(254, 225, 51, 0.5);
+	&--yellow{
+		background: $l_yellow;
 	}
-	&--shmr{
-		background: rgba(160, 93, 175, 0.5);
+	&--violet{
+		background: $l_violet;
 	}
-	&--all{
-		background: rgba(0, 131, 202, 0.5)
-	}
-	&--oct{
-		background: rgba(160, 93, 175, 0.5);
-	}
-	&--nov{
-		background: rgba(254, 225, 51, 0.5);
-	}
-	&--dec{
-		background: rgba(230, 20, 0, 0.5);
-	}
-	&--apr{
-		background: rgba(0, 131, 202, 0.5)
+	&--blue{
+		background: $l_blue;
 	}
 }
