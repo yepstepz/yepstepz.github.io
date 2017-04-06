@@ -73,7 +73,7 @@ input[type="checkbox"]:checked + label{
 		}
 	}
 }
-.sort-date__submit{
+.sort-date__button{
 		position: relative;	
 		input[type="submit"]{
 			height: 30px;
@@ -81,6 +81,7 @@ input[type="checkbox"]:checked + label{
 			position: relative;	
 			border: 2px solid #ffdb4d;
 			width: 70px;
+			outline: 0;
 		}
 		&:before {
 		    position: absolute;
@@ -96,3 +97,12 @@ input[type="checkbox"]:checked + label{
 		    border-width: 15px 0 15px 7px;
 		}
 	}
+#getDate{
+	padding: 10px;
+	&.error{
+		background: rgba(255, 0, 0, 0.15);
+		.errorForm{
+		 float: right;
+		}
+	}
+}

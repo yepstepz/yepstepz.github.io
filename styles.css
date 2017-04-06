@@ -137,6 +137,10 @@ html {
   .tag--blue {
     background: rgba(0, 131, 202, 0.5); }
 
+.sort-date.error {
+  padding: 10px;
+  background: rgba(255, 0, 0, 0.2); }
+
 .bottom {
   background: #f6f5f3;
   border-top: 1px #dddcda solid;
@@ -237,15 +241,16 @@ input[type="checkbox"]:checked + label {
       border: 2px solid #ffdb4d;
       padding: 2px 0; }
 
-.sort-date__submit {
+.sort-date__button {
   position: relative; }
-  .sort-date__submit input[type="submit"] {
+  .sort-date__button input[type="submit"] {
     height: 30px;
     background-color: #ffdb4d;
     position: relative;
     border: 2px solid #ffdb4d;
-    width: 70px; }
-  .sort-date__submit:before {
+    width: 70px;
+    outline: 0; }
+  .sort-date__button:before {
     position: absolute;
     width: 0;
     height: 0;
@@ -257,6 +262,13 @@ input[type="checkbox"]:checked + label {
     top: 0px;
     right: -7px;
     border-width: 15px 0 15px 7px; }
+
+#getDate {
+  padding: 10px; }
+  #getDate.error {
+    background: rgba(255, 0, 0, 0.15); }
+    #getDate.error .errorForm {
+      float: right; }
 
 @media (max-width: 900px) {
   .tag {

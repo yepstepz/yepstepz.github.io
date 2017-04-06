@@ -94,9 +94,9 @@ function makeLabels(names){
     }
     return labels;    
 }
-function makeText( text ){
+function makeText( text, name ){
     var span = document.createElement('span');
-    span.className = "attention-text";
+    span.className = name;
     span.innerHTML = text;
     return span;
 }
@@ -140,6 +140,65 @@ function hideShedule( typeOfCheckbox, checkbox ){
         }
     });    
 }
+function makeDate( day ){
+    var separateDate = day.split('-');
+    var date = new Date(separateDate[0], separateDate[1], separateDate[2]);
+    return date;
+}
+function getDate( date ){
+    var day = new Date(date[0], date[1] - 1, date[2]);
+    return day;
+}
+function compareTwoDates(date1, date2){
+    if ( +date1 < +date2 || +date1 == +date2 ) {
+        return searchDates( date1, date2 );
+    }
+        return false;
+}
+function getIntervals( date1, date2 ){
+    var month = date2.getMonth() - date1.getMonth();
+    month = month > 0 ? month : (-1) * month;
+    var day = date2.getDate() - date1.getDate();
+    day = day > 0 ? day : (-1) * day;
+    return { month, day };  
+}
+function searchDates( date1, date2 ){
+    var intervals = getIntervals( date1, date2 );
+    var monthes = [];
+    var selectedMonthes = [];
+    for (var i = 0; i < cursSection.length; i++) {
+         if ( !(cursSection[i].dataset.year == date1.getFullYear() ) ||  !(cursSection[i].dataset.year == date1.getFullYear()) ){
+            cursSection[i].style.display = "none"
+         }
+         monthes[i] = cursSection[i].dataset.month - 1; //или в штмл переделать.
+    }
+    var newDay = date1;
+    selectedMonthes[0] = newDay.getMonth();
+    for (var i = 1; i <= intervals.month; i++) {
+        newDay.setMonth( newDay.getMonth() + 1 );
+        selectedMonthes[i] = newDay.getMonth();
+    }
+    for (var i = 0; i < monthes.length; i++) {
+        //TODO: двойной цикл
+    }
+
+
+
+    return true;
+}
+function errorForm( text ){
+        form.classList.add('error');
+        var message = document.querySelector('.errorForm');
+        if (!message){
+            form.insertBefore( makeText( text, "errorForm" ) , null);
+        }
+        var hide = setTimeout( function () {
+            var message = document.querySelector('.errorForm');
+            form.classList.remove('error');
+            form.removeChild( message );
+            
+        }, 2000);   
+}
 var lectures = document.getElementsByClassName('curs__lection');
 var names = [];
 for (var i = 0; i < lectures.length; i++) {
@@ -160,7 +219,6 @@ var checkbox = document.querySelectorAll("[type='checkbox']");
 checkbox.forEach(function(element){
     element.onchange = function (el) {
         cursItem = curs.querySelectorAll('.curs__item');
-        cursSection = curs.querySelectorAll('.curs__section');
         if ( ~el.target.id.indexOf('author') ){
                 var index = el.target.id.match(/\d+/)[0];
                 filterLector( index, names );
@@ -183,7 +241,7 @@ checkbox.forEach(function(element){
         if (  curs.offsetHeight < 50 ) {
             var text = 'Ничего не найдено! Выберите другие параметры поиска или нажмите "Показать все"';
             if ( !message ) {
-                curs.insertBefore( makeText( text ), curs[0] );
+                curs.insertBefore( makeText( text, "attention-text" ), curs[0] );
             }           
         } else {
             if ( message ) {
@@ -194,6 +252,7 @@ checkbox.forEach(function(element){
     }
 });
 var curs = document.querySelector('.curs');
+var cursSection = curs.querySelectorAll('.curs__section');
 var show = document.querySelectorAll(".show-all");
 var hide = document.querySelectorAll(".hide-all");
 show.forEach( function( el ){
@@ -215,23 +274,16 @@ hide.forEach( function( el ){
 *Фильтр по датам
 *
 */
-var date = {};
-var year = {};
-var month = {};
-var day = {};
-var cursSection = document.querySelectorAll('.curs__section');
-        // var cursItem = cursSection[i].querySelectorAll('.curs__item');
-        // var monthName = cursSection[i].getAttribute('data-month');
-        // var yearName = cursSection[i].getAttribute('data-year');
-cursSection.forEach(function(element){
-     var monthName = element.getAttribute('data-month');  
-     var cursItem = element.querySelectorAll('.curs__item');
-     for (var i = 0; i < cursItem.length; i++) {
-        console.log(cursItem.length);
-            var dayName = cursItem[i].getAttribute("data-day");
-            var day = {};
-            day[i] = dayName;
-            month[monthName] = day;
-     }
-     console.log(cursItem);
-});
+var form = document.forms["getDate"];
+document.querySelector('.sort-date__submit').onclick = function( el ) {
+    el.preventDefault();
+    if ( form.elements.date_first.value != '' && form.elements.date_last.value != '' ) {
+        var date1 = makeDate( form.elements.date_first.value );
+        var date2 = makeDate( form.elements.date_last.value );
+        if ( !compareTwoDates(date1, date2) ) {
+            errorForm('Первая дата не может быть больше второй!');
+        } 
+    } else {
+        errorForm('Заполните поля!');
+    }
+}
