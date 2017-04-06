@@ -1,0 +1,26 @@
+@media (max-width: 900px) {
+	.tag{
+		font-size: 1rem;
+	}
+	.sort{
+		font-size: 1.8rem;
+	}
+	.content{
+		width: 	90%;
+
+	}
+}
+@media (max-width: 650px) {
+	.curs__item__date{
+		top: 16px;
+		margin-top: 0;		
+	}
+}
+@media (max-width: 370px) {
+	.logo,
+	.title,
+	.leave-feedback,
+	.copyright{
+		float: none;	
+	}
+}

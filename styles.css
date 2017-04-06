@@ -3,6 +3,9 @@
   padding: 0;
   font-family: textbook, sans-serif; }
 
+html {
+  font-size: 14px; }
+
 .clearfix:after {
   content: '';
   display: table;
@@ -32,7 +35,8 @@
   width: 900px;
   margin: 0 auto;
   color: #363636;
-  min-height: 100%; }
+  min-height: 100%;
+  font-size: 14px; }
   .content__title {
     font-size: 48px;
     width: 80%;
@@ -218,3 +222,23 @@ input[type="checkbox"]:checked + label {
   .hide-all:hover {
     border-bottom: 0;
     padding-bottom: 3px; }
+
+@media (max-width: 900px) {
+  .tag {
+    font-size: 1rem; }
+  .sort {
+    font-size: 1.8rem; }
+  .content {
+    width: 90%; } }
+
+@media (max-width: 650px) {
+  .curs__item__date {
+    top: 16px;
+    margin-top: 0; } }
+
+@media (max-width: 370px) {
+  .logo,
+  .title,
+  .leave-feedback,
+  .copyright {
+    float: none; } }
