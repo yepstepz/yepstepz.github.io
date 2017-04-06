@@ -19,21 +19,27 @@
       </header>
       <main>
          <div class="content">
-            <div class="sort sort--title">Фильтр:</div> 
+            <div class="sort sort--title">Фильтр: </div> 
+            <div class="sort">Дата</div>
+            <div class="sort-date">
+            	<p class="sort-date__input">от <input type="date" min="2016-10-01" max="2017-05-01" /></p>
+            	<p class="sort-date__input">до <input type="date" min="2016-10-01" max="2017-05-01" /></p>
+            	<p class="sort-date__input sort-date__submit"><input type="submit" value="Искать" /></p>
+            </div>
             <div class="sort">Курсы <span class="show-all">Показать всё</span><span class="hide-all">Скрыть всё</span></div>
             <input id="curs_shri" type="checkbox" checked="checked"/><label class="tag tag--red" for="curs_shri">Школа Разработки Интерфейсов</label> 
             <input id="curs_shmr" type="checkbox" checked="checked"/><label class="tag tag--yellow" for="curs_shmr">Школа Мобильной Разработки</label> 
             <input id="curs_shmd" type="checkbox" checked="checked"/><label class="tag tag--violet" for="curs_shmd">Школа мобильного дизайна</label> 
             <input id="curs_all" type="checkbox" checked="checked"/><label class="tag tag--blue" for="curs_all">Общие</label> 
             <div class="sort">Месяц <span class="show-all">Показать всё</span><span class="hide-all">Скрыть всё</span></div>
-            <input id="month_october" type="checkbox" checked="checked"/><label class="tag tag--yellow" for="month_october">Октябрь</label> 
-            <input id="month_november" type="checkbox" checked="checked"/><label class="tag tag--violet" for="month_november">Ноябрь</label> 
-            <input id="month_december" type="checkbox" checked="checked"/><label class="tag tag--blue" for="month_december">Декабрь</label>
-            <input id="month_april" type="checkbox" checked="checked"/><label class="tag tag--red" for="month_april">Апрель</label> 
+            <input id="month_10" type="checkbox" checked="checked"/><label class="tag tag--yellow" for="month_10">Октябрь</label> 
+            <input id="month_11" type="checkbox" checked="checked"/><label class="tag tag--violet" for="month_11">Ноябрь</label> 
+            <input id="month_12" type="checkbox" checked="checked"/><label class="tag tag--blue" for="month_12">Декабрь</label>
+            <input id="month_04" type="checkbox" checked="checked"/><label class="tag tag--red" for="month_04">Апрель</label> 
             <div class="sort">Лектор <span class="show-all">Показать всё</span><span class="hide-all">Скрыть всё</span></div>
 
             <div class="curs">
-               <div class="curs__section" data-month="october">
+               <div class="curs__section" data-year="2016" data-month="10" >
                   <span class="curs__month">Октябрь</span>
                   <ul class="curs__list">
                      <li class="curs__item" data-day="18">
@@ -116,7 +122,7 @@
                      </li>
                   </ul>
                </div>
-               <div class="curs__section" data-month="november">
+               <div class="curs__section" data-year="2016" data-month="11">
                   <span class="curs__month">Ноябрь</span>
                   <ul class="curs__list">
                      <li class="curs__item" data-day="1">
@@ -308,7 +314,7 @@
                      </li>
                   </ul>
                </div>
-               <div class="curs__section" data-month="december">
+               <div class="curs__section" data-year="2016" data-month="12">
                   <span class="curs__month">Декабрь</span>
                   <ul class="curs__list">
                      <li class="curs__item" data-day="1">
@@ -373,7 +379,7 @@
                      </li>
                   </ul>
                </div>
-               <div class="curs__section" data-month="april">
+               <div class="curs__section" data-year="2017" data-month="04">
                   <span class="curs__month">Апрель</span>
                   <ul class="curs__list">
                      <li class="curs__item" data-day="1">

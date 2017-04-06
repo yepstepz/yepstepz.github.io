@@ -210,3 +210,28 @@ hide.forEach( function( el ){
     }
 
 });
+/*
+*
+*Фильтр по датам
+*
+*/
+var date = {};
+var year = {};
+var month = {};
+var day = {};
+var cursSection = document.querySelectorAll('.curs__section');
+        // var cursItem = cursSection[i].querySelectorAll('.curs__item');
+        // var monthName = cursSection[i].getAttribute('data-month');
+        // var yearName = cursSection[i].getAttribute('data-year');
+cursSection.forEach(function(element){
+     var monthName = element.getAttribute('data-month');  
+     var cursItem = element.querySelectorAll('.curs__item');
+     for (var i = 0; i < cursItem.length; i++) {
+        console.log(cursItem.length);
+            var dayName = cursItem[i].getAttribute("data-day");
+            var day = {};
+            day[i] = dayName;
+            month[monthName] = day;
+     }
+     console.log(cursItem);
+});

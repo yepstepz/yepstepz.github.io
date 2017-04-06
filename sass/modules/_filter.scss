@@ -15,16 +15,16 @@
 #curs_all:checked ~ .curs .curs__lection[data-tag="all"]{
 	display: block;
 }
-#month_october:checked ~ .curs .curs__section[data-month="october"]{
+#month_10:checked ~ .curs .curs__section[data-month="10"]{
 	display: block;
 }
-#month_november:checked ~ .curs .curs__section[data-month="november"]{
+#month_11:checked ~ .curs .curs__section[data-month="11"]{
 	display: block;
 }
-#month_december:checked ~ .curs .curs__section[data-month="december"]{
+#month_12:checked ~ .curs .curs__section[data-month="12"]{
 	display: block;
 }
-#month_april:checked ~ .curs .curs__section[data-month="april"]{
+#month_04:checked ~ .curs .curs__section[data-month="04"]{
 	display: block;
 }
 .sort{
@@ -59,3 +59,40 @@ input[type="checkbox"]:checked + label{
 	@include link;
 	padding: 0;
 }
+.sort-date{
+	vertical-align: middle;	
+	line-height: 30px;	
+	&__input{
+		@include inline-block-pos;
+		input[type="date"] {
+			height: 30px;	
+			line-height: 30px;	
+			@include inline-block-pos;
+			border: 2px solid #ffdb4d;
+			padding: 2px 0;
+		}
+	}
+}
+.sort-date__submit{
+		position: relative;	
+		input[type="submit"]{
+			height: 30px;
+			background-color: #ffdb4d;
+			position: relative;	
+			border: 2px solid #ffdb4d;
+			width: 70px;
+		}
+		&:before {
+		    position: absolute;
+		    width: 0;
+		    height: 0;
+		    content: '';
+		    border-style: solid;
+		    border-color: rgba(255,219,76,0);
+		    border-left-color: #ffdb4d;
+		    -o-transform: rotate(360deg);
+		    top: 0px;
+		    right: -7px;
+		    border-width: 15px 0 15px 7px;
+		}
+	}
