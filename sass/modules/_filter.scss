@@ -3,28 +3,28 @@
 	display: none;
 }
 
-#shri_on:checked ~ .curs .curs__lection[data-tag="shri"]{
+#curs_shri:checked ~ .curs .curs__lection[data-tag="shri"]{
 	display: block;
 }
-#shmd_on:checked ~ .curs .curs__lection[data-tag="shmd"]{
+#curs_shmd:checked ~ .curs .curs__lection[data-tag="shmd"]{
 	display: block;
 }
-#shmr_on:checked ~ .curs .curs__lection[data-tag="shmr"]{
+#curs_shmr:checked ~ .curs .curs__lection[data-tag="shmr"]{
 	display: block;
 }
-#all_on:checked ~ .curs .curs__lection[data-tag="all"]{
+#curs_all:checked ~ .curs .curs__lection[data-tag="all"]{
 	display: block;
 }
-#october_on:checked ~ .curs .curs__section[data-month="october"]{
+#month_october:checked ~ .curs .curs__section[data-month="october"]{
 	display: block;
 }
-#november_on:checked ~ .curs .curs__section[data-month="november"]{
+#month_november:checked ~ .curs .curs__section[data-month="november"]{
 	display: block;
 }
-#december_on:checked ~ .curs .curs__section[data-month="december"]{
+#month_december:checked ~ .curs .curs__section[data-month="december"]{
 	display: block;
 }
-#april_on:checked ~ .curs .curs__section[data-month="april"]{
+#month_april:checked ~ .curs .curs__section[data-month="april"]{
 	display: block;
 }
 .sort{
@@ -52,4 +52,10 @@ input[type="checkbox"]:checked + label{
 }
 .disable{
 	display: none;
+}
+.show-all,
+.hide-all{
+	margin-left: 20px;	
+	@include link;
+	padding: 0;
 }

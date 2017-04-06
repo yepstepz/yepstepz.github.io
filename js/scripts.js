@@ -74,7 +74,6 @@ function makeCheckboxes(names){
         checkbox.setAttribute('checked','checked');
         checkbox.onclick = function(){
             a = checkbox.id.match(/\d+/)[0];
-            console.log()
         };
         checkboxes[i] = checkbox;
         i+=1;
@@ -95,12 +94,51 @@ function makeLabels(names){
     }
     return labels;    
 }
+function makeText( text ){
+    var span = document.createElement('span');
+    span.className = "attention-text";
+    span.innerHTML = text;
+    return span;
+}
 function getColor(){
     var r=Math.floor(Math.random() * (256));
     var g=Math.floor(Math.random() * (256));
     var b=Math.floor(Math.random() * (256));
     var rgba = "rgba("+r+', '+g+', '+b+", 0.5)";
     return rgba;
+}
+function filterLector ( index, names ) {
+    var nameOfLector = Object.keys(names);
+    var lections = document.querySelectorAll('[data-author="'+ nameOfLector[index] +'"]');
+    for (var i = 0; i < lections.length; i++) {
+
+           if ( lections[i].style.display == 'none' ) {
+                lections[i].style.display = '';
+           } else {
+                lections[i].style.display = 'none';
+           }
+
+    }    
+
+}
+function showShedule( typeOfCheckbox, checkbox ){
+    checkbox.forEach(function(element){
+        if( ~element.id.indexOf( typeOfCheckbox ) ){
+            if ( element.checked == "" ) {
+                element.click();
+            }
+        }
+    });
+
+}
+function hideShedule( typeOfCheckbox, checkbox ){
+    checkbox.forEach(function(element){
+        if( ~element.id.indexOf( typeOfCheckbox ) ){
+            if ( element.checked != "" ) {
+                element.click();
+            }
+        }
+    });    
 }
 var lectures = document.getElementsByClassName('curs__lection');
 var names = [];
@@ -109,19 +147,66 @@ for (var i = 0; i < lectures.length; i++) {
 }
 names = getUnique(names);
 makeTags(names);
+
 var checkbox = document.querySelectorAll("[type='checkbox']");
+/*
+*
+* Вешаем на чекбоксы event listeners. 
+* Если в секции курсов не осталось элементов, 
+* секция скрывается. Заодно фильтруем лекторов.
+* TODO: Поиск по лекторам
+* 
+*/
 checkbox.forEach(function(element){
-    element.onchange = function () {
-        cursItem = checkbox.getElementsByClassName('curs__item');
-        console.log(cursItem);
-        for (var i = 0; i < cursItem.length; i++) {
-
-            if ( cursItem[i].offsetHeight < 1){
-                cursItem[i].classList.add("disable");
-            }else{
-                cursItem[i].classList.remove("disable");
-            }
-
+    element.onchange = function (el) {
+        cursItem = curs.querySelectorAll('.curs__item');
+        cursSection = curs.querySelectorAll('.curs__section');
+        if ( ~el.target.id.indexOf('author') ){
+                var index = el.target.id.match(/\d+/)[0];
+                filterLector( index, names );
         }
+        for (var i = 0; i < cursItem.length; i++) {
+            if ( cursItem[i].offsetHeight < 1){
+                cursItem[i].querySelector('.curs__item__date').classList.add("disable");
+            } else {
+                cursItem[i].querySelector('.curs__item__date').classList.remove("disable");
+            }
+        }
+        for (var i = 0; i < cursSection.length; i++) {
+            if ( cursSection[i].offsetHeight < 50){
+                cursSection[i].querySelector('.curs__month').classList.add("disable");
+            } else {
+                cursSection[i].querySelector('.curs__month').classList.remove("disable");
+            }
+        }
+        var message = curs.querySelector('.attention-text');
+        if (  curs.offsetHeight < 50 ) {
+            var text = 'Ничего не найдено! Выберите другие параметры поиска или нажмите "Показать все"';
+            if ( !message ) {
+                curs.insertBefore( makeText( text ), curs[0] );
+            }           
+        } else {
+            if ( message ) {
+                    curs.removeChild( message );
+            }
+        }
+
     }
+});
+var curs = document.querySelector('.curs');
+var show = document.querySelectorAll(".show-all");
+var hide = document.querySelectorAll(".hide-all");
+show.forEach( function( el ){
+    el.onclick = function(event){
+        var typeOfCheckbox = event.target.parentNode.nextElementSibling.id.substring(0, 3);
+        showShedule( typeOfCheckbox, checkbox );
+    }
+
+});
+hide.forEach( function( el ){
+    el.onclick = function(event){
+        var typeOfCheckbox = event.target.parentNode.nextElementSibling.id.substring(0, 3);
+        hideShedule( typeOfCheckbox, checkbox );
+    }
+
 });

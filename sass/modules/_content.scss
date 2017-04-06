@@ -1,3 +1,14 @@
+@mixin link {
+	font-size: 14px;
+	color: #666;
+	border-bottom: 1px dotted #666;
+	padding: 2px 0;
+	cursor: pointer;	
+	&:hover{
+		border-bottom: 0;	
+		padding-bottom: 3px;	
+	}
+}
 .content{
 	display: block;	
 	width: 900px;	
@@ -57,10 +68,8 @@
 	}
 	&__item__lector{
 		@include inline-block-pos(middle);
-		font-size: 14px;
-		color: #666;
-		border-bottom: 1px dotted #666;
-		padding: 2px 0;
+		@include link;
+
 	}
 	&__lection{
 		padding: 10px 0px 10px 100px;
