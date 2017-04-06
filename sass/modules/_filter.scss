@@ -1,32 +1,19 @@
 .curs__lection,
-.curs__section,
-.curs__lection + .curs__item__date{
+.curs__section{
 	display: none;
 }
 
 #shri_on:checked ~ .curs .curs__lection[data-tag="shri"]{
 	display: block;
-	& ~ .curs__item__date{
-		display: block;
-	}
 }
 #shmd_on:checked ~ .curs .curs__lection[data-tag="shmd"]{
 	display: block;
-	& ~ .curs__item__date{
-		display: block;
-	}
 }
 #shmr_on:checked ~ .curs .curs__lection[data-tag="shmr"]{
 	display: block;
-	& ~ .curs__item__date{
-		display: block;
-	}
 }
 #all_on:checked ~ .curs .curs__lection[data-tag="all"]{
 	display: block;
-	& ~ .curs__item__date{
-		display: block;
-	}
 }
 #october_on:checked ~ .curs .curs__section[data-month="october"]{
 	display: block;
@@ -62,4 +49,7 @@ label{
 }
 input[type="checkbox"]:checked + label{
 	opacity: 1;
+}
+.disable{
+	display: none;
 }

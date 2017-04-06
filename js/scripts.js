@@ -23,20 +23,6 @@ ymaps.ready(function () {
 
     myMap.geoObjects.add(myPlacemark);
 });
-    /* Для ИЕ8 этот дуратский скрипт */
-    if (document.attachEvent && window.Element && window.Element.prototype.querySelectorAll) {
-        window.attachEvent('onload', function() {
-            function test(e) {
-                if(e.nodeName === "INPUT" && e.type === "checkbox") {
-                    e.className=e.className.replace(/(?:(?:^|\s)checked(\s|$)|$)/i, e.checked?' checked$1':'$1');
-                }
-            }
-            document.attachEvent('onclick', function(){test(window.event.srcElement||{})});
-            for(var i = 0, e = document.querySelectorAll('input[type="checkbox"]'); i < e.length; i++) {
-                test(e[i]);
-            }
-        });
-    }
 function getUnique(allNames) {
   var unique = {};
   for (var i = 0; i < allNames.length; i++) {
@@ -69,7 +55,7 @@ function separateAuthor(allPersons){
     return dividedPersons;
 }
 function makeTags(names){
-    var i  = 1;
+    var i  = 0;
     var parentElement = document.getElementsByClassName('content');
     var curs = document.querySelector('.curs');
     for ( name in names ) {
@@ -79,20 +65,24 @@ function makeTags(names){
     }
 }
 function makeCheckboxes(names){
-    var i  = 1;
+    var i  = 0;
     var checkboxes = [];
     for ( name in names ) {
         var checkbox = document.createElement('input');
         checkbox.type = "checkbox";
-        checkbox.id = "author"+i;
+        checkbox.id = "author" + i;
         checkbox.setAttribute('checked','checked');
+        checkbox.onclick = function(){
+            a = checkbox.id.match(/\d+/)[0];
+            console.log()
+        };
         checkboxes[i] = checkbox;
         i+=1;
     }
     return checkboxes;  
 }
 function makeLabels(names){
-    var i  = 1;
+    var i  = 0;
     var labels = [];
     for ( name in names ) {
         var label = document.createElement('label');
@@ -106,7 +96,6 @@ function makeLabels(names){
     return labels;    
 }
 function getColor(){
-
     var r=Math.floor(Math.random() * (256));
     var g=Math.floor(Math.random() * (256));
     var b=Math.floor(Math.random() * (256));
@@ -120,3 +109,19 @@ for (var i = 0; i < lectures.length; i++) {
 }
 names = getUnique(names);
 makeTags(names);
+var checkbox = document.querySelectorAll("[type='checkbox']");
+checkbox.forEach(function(element){
+    element.onchange = function () {
+        cursItem = checkbox.getElementsByClassName('curs__item');
+        console.log(cursItem);
+        for (var i = 0; i < cursItem.length; i++) {
+
+            if ( cursItem[i].offsetHeight < 1){
+                cursItem[i].classList.add("disable");
+            }else{
+                cursItem[i].classList.remove("disable");
+            }
+
+        }
+    }
+});
