@@ -19,12 +19,12 @@
       </header>
       <main>
          <div class="content">
-            <div class="sort sort--title">Фильтр: </div> 
-            <div class="sort">Дата</div>
+            <div class="sort sort--title">Фильтр:</div> 
+            <div class="sort">Дата <span class="show-date">Очистить дату</span></div>
             <div class="sort-date">
             <form id="getDate" action="" method="post">
-            	<p class="sort-date__input">от <input type="date" min="2016-10-01" name="date_first" max="2017-05-01" required /></p>
-            	<p class="sort-date__input">до <input type="date" min="2016-10-01" name="date_last" max="2017-05-01"  required /></p>
+            	<p class="sort-date__input">от <input type="date" name="date_first" required /></p>
+            	<p class="sort-date__input">до <input type="date" name="date_last" required /></p>
             	<p class="sort-date__input sort-date__button"><input class="sort-date__submit" type="submit" value="Искать" /></p>
             </form>
             </div>

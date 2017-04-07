@@ -54,6 +54,11 @@ function separateAuthor(allPersons){
     }
     return dividedPersons;
 }
+/*
+*
+*
+*
+*/
 function makeTags(names){
     var i  = 0;
     var parentElement = document.getElementsByClassName('content');
@@ -140,14 +145,17 @@ function hideShedule( typeOfCheckbox, checkbox ){
         }
     });    
 }
-function makeDate( day ){
+function splitDate( day ){
     var separateDate = day.split('-');
-    var date = new Date(separateDate[0], separateDate[1], separateDate[2]);
+    var date = new Date(separateDate[0], separateDate[1] - 1, separateDate[2]);
     return date;
 }
-function getDate( date ){
-    var day = new Date(date[0], date[1] - 1, date[2]);
-    return day;
+function makeDate( section, item ) {
+    var year = section.dataset.year;
+    var month = section.dataset.month - 1;
+    var day = item.dataset.day;
+    var date = new Date( year, month, day);
+    return date;
 }
 function compareTwoDates(date1, date2){
     if ( +date1 < +date2 || +date1 == +date2 ) {
@@ -155,35 +163,17 @@ function compareTwoDates(date1, date2){
     }
         return false;
 }
-function getIntervals( date1, date2 ){
-    var month = date2.getMonth() - date1.getMonth();
-    month = month > 0 ? month : (-1) * month;
-    var day = date2.getDate() - date1.getDate();
-    day = day > 0 ? day : (-1) * day;
-    return { month, day };  
-}
 function searchDates( date1, date2 ){
-    var intervals = getIntervals( date1, date2 );
-    var monthes = [];
-    var selectedMonthes = [];
     for (var i = 0; i < cursSection.length; i++) {
-         if ( !(cursSection[i].dataset.year == date1.getFullYear() ) ||  !(cursSection[i].dataset.year == date1.getFullYear()) ){
-            cursSection[i].style.display = "none"
-         }
-         monthes[i] = cursSection[i].dataset.month - 1; //или в штмл переделать.
+          var items = cursSection[i].querySelectorAll('.curs__item');
+          for (var j = 0; j < items.length; j++) {
+            items[j].style.display = 'none'
+            if ( +makeDate( cursSection[i], items[j] ) >= +date1 && +makeDate( cursSection[i], items[j] ) <= +date2 ){
+               items[j].style.display = '';
+            }
+          }         
     }
-    var newDay = date1;
-    selectedMonthes[0] = newDay.getMonth();
-    for (var i = 1; i <= intervals.month; i++) {
-        newDay.setMonth( newDay.getMonth() + 1 );
-        selectedMonthes[i] = newDay.getMonth();
-    }
-    for (var i = 0; i < monthes.length; i++) {
-        //TODO: двойной цикл
-    }
-
-
-
+    checkVisibility();
     return true;
 }
 function errorForm( text ){
@@ -199,6 +189,40 @@ function errorForm( text ){
             
         }, 2000);   
 }
+function checkVisibility() {
+    for (var i = 0; i < cursItem.length; i++) {
+        if ( cursItem[i].offsetHeight < 1){
+            cursItem[i].querySelector('.curs__item__date').classList.add("disable");
+        } else {
+            cursItem[i].querySelector('.curs__item__date').classList.remove("disable");
+        }
+    }
+    for (var i = 0; i < cursSection.length; i++) {
+        if ( cursSection[i].offsetHeight < 50){
+            cursSection[i].querySelector('.curs__month').classList.add("disable");
+        } else {
+            cursSection[i].querySelector('.curs__month').classList.remove("disable");
+        }
+    }
+    var message = curs.querySelector('.attention-text');
+    if (  curs.offsetHeight < 50 ) {
+        var text = 'Ничего не найдено! Выберите другие параметры поиска или нажмите "Показать все"';
+        if ( !message ) {
+            curs.insertBefore( makeText( text, "attention-text" ), curs[0] );
+        }           
+    } else {
+        if ( message ) {
+                curs.removeChild( message );
+        }
+    }
+    return true;  
+}
+function checkOldLections(){
+    console.log(makeDate( cursSection[ cursSection.length - 1 ], cursItem[ cursItem.length - 1 ] ));
+
+    return true;
+
+}
 var lectures = document.getElementsByClassName('curs__lection');
 var names = [];
 for (var i = 0; i < lectures.length; i++) {
@@ -211,48 +235,23 @@ var checkbox = document.querySelectorAll("[type='checkbox']");
 /*
 *
 * Вешаем на чекбоксы event listeners. 
-* Если в секции курсов не осталось элементов, 
-* секция скрывается. Заодно фильтруем лекторов.
+* Фильтруем лекторов.
 * TODO: Поиск по лекторам
 * 
 */
 checkbox.forEach(function(element){
     element.onchange = function (el) {
-        cursItem = curs.querySelectorAll('.curs__item');
         if ( ~el.target.id.indexOf('author') ){
                 var index = el.target.id.match(/\d+/)[0];
                 filterLector( index, names );
         }
-        for (var i = 0; i < cursItem.length; i++) {
-            if ( cursItem[i].offsetHeight < 1){
-                cursItem[i].querySelector('.curs__item__date').classList.add("disable");
-            } else {
-                cursItem[i].querySelector('.curs__item__date').classList.remove("disable");
-            }
-        }
-        for (var i = 0; i < cursSection.length; i++) {
-            if ( cursSection[i].offsetHeight < 50){
-                cursSection[i].querySelector('.curs__month').classList.add("disable");
-            } else {
-                cursSection[i].querySelector('.curs__month').classList.remove("disable");
-            }
-        }
-        var message = curs.querySelector('.attention-text');
-        if (  curs.offsetHeight < 50 ) {
-            var text = 'Ничего не найдено! Выберите другие параметры поиска или нажмите "Показать все"';
-            if ( !message ) {
-                curs.insertBefore( makeText( text, "attention-text" ), curs[0] );
-            }           
-        } else {
-            if ( message ) {
-                    curs.removeChild( message );
-            }
-        }
+        checkVisibility();
 
     }
 });
 var curs = document.querySelector('.curs');
 var cursSection = curs.querySelectorAll('.curs__section');
+var cursItem = curs.querySelectorAll('.curs__item');
 var show = document.querySelectorAll(".show-all");
 var hide = document.querySelectorAll(".hide-all");
 show.forEach( function( el ){
@@ -278,8 +277,8 @@ var form = document.forms["getDate"];
 document.querySelector('.sort-date__submit').onclick = function( el ) {
     el.preventDefault();
     if ( form.elements.date_first.value != '' && form.elements.date_last.value != '' ) {
-        var date1 = makeDate( form.elements.date_first.value );
-        var date2 = makeDate( form.elements.date_last.value );
+        var date1 = splitDate( form.elements.date_first.value );
+        var date2 = splitDate( form.elements.date_last.value );
         if ( !compareTwoDates(date1, date2) ) {
             errorForm('Первая дата не может быть больше второй!');
         } 
@@ -287,3 +286,12 @@ document.querySelector('.sort-date__submit').onclick = function( el ) {
         errorForm('Заполните поля!');
     }
 }
+document.querySelector('.show-date').onclick = function(){
+    for (var i = 0; i < cursItem.length; i++) {
+        cursItem[i].style.display = "block";
+    }
+    document.forms.getDate.elements.date_first.value = ''
+    document.forms.getDate.elements.date_last.value = ''
+    checkVisibility();
+};
+console.log(checkOldLections());
