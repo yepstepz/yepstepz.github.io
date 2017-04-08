@@ -82,6 +82,7 @@ input[type="checkbox"]:checked + label{
 			border: 2px solid #ffdb4d;
 			width: 70px;
 			outline: 0;
+			cursor: pointer;
 		}
 		&:before {
 		    position: absolute;
@@ -100,7 +101,7 @@ input[type="checkbox"]:checked + label{
 #getDate{
 	padding: 10px;
 	&.error{
-		background: rgba(255, 0, 0, 0.15);
+		background: rgba(255, 0, 0, 0.1);
 		.errorForm{
 		 float: right;
 		}

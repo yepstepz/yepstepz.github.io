@@ -65,7 +65,7 @@ function makeTags(names){
     var curs = document.querySelector('.curs');
     for ( name in names ) {
         parentElement[0].insertBefore( makeCheckboxes(names)[i], curs );
-        parentElement[0].insertBefore( makeLabels(names)[i], curs );
+        parentElement[0].insertBefore( makeLabels( Object.keys(names)[i], i ), curs );
         i+=1;
     }
 }
@@ -85,20 +85,18 @@ function makeCheckboxes(names){
     }
     return checkboxes;  
 }
-function makeLabels(names){
-    var i  = 0;
-    var labels = [];
-    for ( name in names ) {
+// собрать в одну функцию, придумать, как
+function makeLabels( name, i ){
         var label = document.createElement('label');
         label.className = "tag author"+i;
         label.innerHTML = name;
         label.setAttribute('for',"author"+i);
         label.style.backgroundColor = getColor();
-        labels[i] = label;
-        i+=1;
-    }
-    return labels;    
+        return label;    
 }
+// makeElement(  ){
+
+// }
 function makeText( text, name ){
     var span = document.createElement('span');
     span.className = name;
@@ -218,9 +216,24 @@ function checkVisibility() {
     return true;  
 }
 function checkOldLections(){
-    console.log(makeDate( cursSection[ cursSection.length - 1 ], cursItem[ cursItem.length - 1 ] ));
-
+    for (var i = cursSection.length - 1; i >= 0; i--) {
+        var item = cursSection[i].querySelectorAll('.curs__item');
+        for (var j = item.length - 1; j >= 0; j--) {
+            var scheduleDate = makeDate( cursSection[ i ], item[ j ] );
+            var currentDate = new Date();
+            if ( +scheduleDate < +currentDate ) {
+                item[j].classList.add('old-lection');
+                addInfoToOldLection( item[j] );
+            }
+        }
+    }
     return true;
+
+}
+function addInfoToOldLection( old ){
+
+    var oldLection = old;
+    //oldLection.querySelector('.curs__item__name').insertBefore();
 
 }
 var lectures = document.getElementsByClassName('curs__lection');
@@ -294,4 +307,4 @@ document.querySelector('.show-date').onclick = function(){
     document.forms.getDate.elements.date_last.value = ''
     checkVisibility();
 };
-console.log(checkOldLections());
+checkOldLections();

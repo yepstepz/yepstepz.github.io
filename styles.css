@@ -249,7 +249,8 @@ input[type="checkbox"]:checked + label {
     position: relative;
     border: 2px solid #ffdb4d;
     width: 70px;
-    outline: 0; }
+    outline: 0;
+    cursor: pointer; }
   .sort-date__button:before {
     position: absolute;
     width: 0;
@@ -266,7 +267,7 @@ input[type="checkbox"]:checked + label {
 #getDate {
   padding: 10px; }
   #getDate.error {
-    background: rgba(255, 0, 0, 0.15); }
+    background: rgba(255, 0, 0, 0.1); }
     #getDate.error .errorForm {
       float: right; }
 
