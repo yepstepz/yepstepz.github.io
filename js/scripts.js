@@ -217,10 +217,10 @@ function checkOldLections(){
                 item[j].querySelectorAll('.curs__lection').forEach(function(el){
                     el.classList.add('old-lection');
                 });
-                addInfoToOldLection();
             }
         }
     }
+    addInfoToOldLection();
     return true;
 
 }
@@ -265,11 +265,23 @@ function addmodalInfo( info ){
 * запрос json'a.
 *
 */
-function addInfoToOldLection( old ){
-
-    var oldLection = old;
-    //oldLection.querySelector('.curs__item__name').insertBefore();
-
+function addInfoToOldLection(){
+    var shri = sortSchools("shri");
+    var shmd = sortSchools("shmd");
+    var shmr = sortSchools("shmr");
+    console.log(shri, shmd, shmr);
+    return true;
+}
+function sortSchools( schools ){
+    var school = [];
+    var count = 0;     
+    for (var i = 0; i < lections.length; i++) {
+        if ( lections[i].dataset.tag == schools ) {
+            school[count] = lections[i];
+            count = count + 1;
+        }
+    }
+    return school;
 }
 function removemodal(){
     var modal = document.body.querySelector('.modalWindow');
@@ -278,10 +290,10 @@ function removemodal(){
     document.body.removeChild( shadow );
     return true;
 }
-var lectures = document.getElementsByClassName('curs__lection');
+var lections = document.getElementsByClassName('curs__lection');
 var names = [];
-for (var i = 0; i < lectures.length; i++) {
-    names[i] = lectures[i].getAttribute('data-author');
+for (var i = 0; i < lections.length; i++) {
+    names[i] = lections[i].getAttribute('data-author');
 }
 names = getUnique(names);
 makeTags(names);
