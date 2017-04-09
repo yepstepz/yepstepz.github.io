@@ -65,6 +65,7 @@
 	&__item__name{
 		font-size: 20px;
 		font-weight: bold;
+		display: block;
 
 	}
 	&__item__lector{
@@ -124,4 +125,36 @@
 .sort-date.error{
     padding: 10px;
     background: rgba(255,0,0,0.2);
+}
+.modalWindow{
+    width: 300px;
+    background: white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -150px;
+    margin-top: -100px;
+    padding: 20px;
+    p{
+    	margin-bottom: 15px;
+    }
+
+}
+.modal-shadow{
+	width: 100%;
+	position: fixed;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: rgba(0, 0, 0, 0.5);
+}
+.close{
+    top: 0;
+    right: 0;
+    position: absolute;
+    font-size: 24px;
+    text-align: center;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
 }

@@ -64,39 +64,31 @@ function makeTags(names){
     var parentElement = document.getElementsByClassName('content');
     var curs = document.querySelector('.curs');
     for ( name in names ) {
-        parentElement[0].insertBefore( makeCheckboxes(names)[i], curs );
-        parentElement[0].insertBefore( makeLabels( Object.keys(names)[i], i ), curs );
+        var labels = { element: "label", innerHTML: name };
+        var labelsAttr = { class: "tag author"+i, for: "author"+i, style: "background:"+getColor() };
+        var checkbox = { element: "input" };
+        var checkboxAttr = { type: "checkbox", id: "author" + i, checked: "checked"};
+        parentElement[0].insertBefore( makeElement( checkbox, checkboxAttr ), curs );
+        parentElement[0].insertBefore( makeElement( labels, labelsAttr ), curs );
         i+=1;
     }
 }
-function makeCheckboxes(names){
-    var i  = 0;
-    var checkboxes = [];
-    for ( name in names ) {
-        var checkbox = document.createElement('input');
-        checkbox.type = "checkbox";
-        checkbox.id = "author" + i;
-        checkbox.setAttribute('checked','checked');
-        checkbox.onclick = function(){
-            a = checkbox.id.match(/\d+/)[0];
-        };
-        checkboxes[i] = checkbox;
-        i+=1;
-    }
-    return checkboxes;  
+function makeElement( DOMelement, DOMAttr ){
+        var element = document.createElement(DOMelement.element);
+        if (DOMelement.innerHTML) {
+            element.innerHTML = DOMelement.innerHTML;
+        }       
+        for ( attribute in DOMAttr ) {
+            element.setAttribute(attribute, DOMAttr[attribute]);
+        }
+        return element;    
 }
-// собрать в одну функцию, придумать, как
-function makeLabels( name, i ){
-        var label = document.createElement('label');
-        label.className = "tag author"+i;
-        label.innerHTML = name;
-        label.setAttribute('for',"author"+i);
-        label.style.backgroundColor = getColor();
-        return label;    
+function makemodal( info ){
+        var modal = { element: "div" };
+        var modalAttr = { class: "modalWindow"}; 
+        modal = makeElement( modal, modalAttr );
+        return modal;
 }
-// makeElement(  ){
-
-// }
 function makeText( text, name ){
     var span = document.createElement('span');
     span.className = name;
@@ -222,19 +214,69 @@ function checkOldLections(){
             var scheduleDate = makeDate( cursSection[ i ], item[ j ] );
             var currentDate = new Date();
             if ( +scheduleDate < +currentDate ) {
-                item[j].classList.add('old-lection');
-                addInfoToOldLection( item[j] );
+                item[j].querySelectorAll('.curs__lection').forEach(function(el){
+                    el.classList.add('old-lection');
+                });
+                addInfoToOldLection();
             }
         }
     }
     return true;
 
 }
+function loadInfo() {
+  var xhr = new XMLHttpRequest();
+
+  xhr.open('GET', 'info.json', false);
+  xhr.send();
+
+  if (xhr.status != 200) {
+    // обработать ошибку
+    alert('Ошибка ' + xhr.status + ': ' + xhr.statusText);
+  } else {
+    // вывести результат
+    return xhr.responseText;
+  }
+}
+function getLectorLinks( lector ){
+    list = JSON.parse( loadInfo() );
+    var link = list.lectors[lector];
+    return { link, lector};
+}
+function addmodalInfo( info ){
+    lectorInfo = info;
+    var i  = 0;
+    var name = lectorInfo.lector.split(', ');
+    var inner = "<p>Эту лекцию курирует</p><p>";
+    for ( link in lectorInfo.link){
+           if ( i > 0) {
+                inner = inner + ' и ';
+           }
+           inner = inner + "<a href='"+ lectorInfo.link[link] +"'>" + 
+           name[i] + "</a>";
+           i +=1;
+    }
+    inner = inner + "</p>";
+    return inner;
+}
+/*
+*
+* Можно реализовать добавление динамической ссылки через
+* запрос json'a.
+*
+*/
 function addInfoToOldLection( old ){
 
     var oldLection = old;
     //oldLection.querySelector('.curs__item__name').insertBefore();
 
+}
+function removemodal(){
+    var modal = document.body.querySelector('.modalWindow');
+    var shadow = document.body.querySelector('.modal-shadow');
+    document.body.removeChild( modal );
+    document.body.removeChild( shadow );
+    return true;
 }
 var lectures = document.getElementsByClassName('curs__lection');
 var names = [];
@@ -267,6 +309,7 @@ var cursSection = curs.querySelectorAll('.curs__section');
 var cursItem = curs.querySelectorAll('.curs__item');
 var show = document.querySelectorAll(".show-all");
 var hide = document.querySelectorAll(".hide-all");
+var lectors = document.querySelectorAll(".curs__item__lector");
 show.forEach( function( el ){
     el.onclick = function(event){
         var typeOfCheckbox = event.target.parentNode.nextElementSibling.id.substring(0, 3);
@@ -280,6 +323,31 @@ hide.forEach( function( el ){
         hideShedule( typeOfCheckbox, checkbox );
     }
 
+});
+/*
+*
+* Вешаем на лекторов модальные окна.
+* Достаем из json информацию о них.
+* Добавляем возможность закрыть окно.
+* 
+*/
+lectors.forEach( function( el ){
+    el.onclick = function(event){
+        var shadow = { element: "div" };
+        var shadowAttr = { class: "modal-shadow"};
+        var shadow = document.body.insertBefore( makeElement( shadow, shadowAttr ), document.body[0] );
+        var modal = document.body.insertBefore( makemodal( lectors ), document.body[0] );   
+        document.querySelector(".modalWindow").innerHTML = addmodalInfo( getLectorLinks( el.parentNode.dataset.author ) );
+        var close = { element: "span", innerHTML: "×" };
+        var closeAttr = { class: "close"}; 
+        document.querySelector(".modalWindow").insertBefore( makeElement( close, closeAttr ), modal[0] );
+        document.querySelector(".close").onclick = function(){
+            removemodal();
+        } 
+        shadow.onclick = function(){
+            removemodal();
+        }
+    }
 });
 /*
 *

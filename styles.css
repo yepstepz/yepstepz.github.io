@@ -80,7 +80,8 @@ html {
 
 .curs__item__name {
   font-size: 20px;
-  font-weight: bold; }
+  font-weight: bold;
+  display: block; }
 
 .curs__item__lector {
   display: inline-block;
@@ -140,6 +141,36 @@ html {
 .sort-date.error {
   padding: 10px;
   background: rgba(255, 0, 0, 0.2); }
+
+.modalWindow {
+  width: 300px;
+  background: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -150px;
+  margin-top: -100px;
+  padding: 20px; }
+  .modalWindow p {
+    margin-bottom: 15px; }
+
+.modal-shadow {
+  width: 100%;
+  position: fixed;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5); }
+
+.close {
+  top: 0;
+  right: 0;
+  position: absolute;
+  font-size: 24px;
+  text-align: center;
+  width: 24px;
+  height: 24px;
+  cursor: pointer; }
 
 .bottom {
   background: #f6f5f3;
@@ -270,6 +301,17 @@ input[type="checkbox"]:checked + label {
     background: rgba(255, 0, 0, 0.1); }
     #getDate.error .errorForm {
       float: right; }
+
+.old-lection .curs__item__name:after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 23px;
+  background: url("../img/youtube.png");
+  background-size: cover;
+  margin-left: 10px; }
 
 @media (max-width: 900px) {
   .tag {
