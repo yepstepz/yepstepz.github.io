@@ -96,8 +96,16 @@ html {
     padding-bottom: 3px; }
 
 .curs__lection {
+  text-decoration: none;
+  outline: 0;
+  color: black;
   padding: 10px 0px 10px 100px;
   border-left: 4px solid #fc0; }
+  .curs__lection:hover {
+    text-decoration: none; }
+  .curs__lection:visited {
+    text-decoration: none;
+    outline: 0; }
   .curs__lection:nth-child(1) {
     padding-top: 20px; }
   .curs__lection:nth-last-child(2) {
@@ -129,13 +137,13 @@ html {
   margin: 0px 5px 10px 0px;
   display: inline-block;
   vertical-align: middle; }
-  .tag--red {
+  .tag--red, .tag.school_shri, .tag.month_10 {
     background: rgba(230, 20, 0, 0.5); }
-  .tag--yellow {
+  .tag--yellow, .tag.school_shmr, .tag.month_11 {
     background: rgba(254, 225, 51, 0.5); }
-  .tag--violet {
+  .tag--violet, .tag.school_shmd, .tag.month_12 {
     background: rgba(160, 93, 175, 0.5); }
-  .tag--blue {
+  .tag--blue, .tag.school_all, .tag.month_04 {
     background: rgba(0, 131, 202, 0.5); }
 
 .sort-date.error {
@@ -245,7 +253,10 @@ input[type="checkbox"]:checked + label {
   display: none; }
 
 .show-all,
-.hide-all {
+.hide-all,
+.toggle-old,
+.more-filter,
+.show-date {
   margin-left: 20px;
   font-size: 14px;
   color: #666;
@@ -254,7 +265,10 @@ input[type="checkbox"]:checked + label {
   cursor: pointer;
   padding: 0; }
   .show-all:hover,
-  .hide-all:hover {
+  .hide-all:hover,
+  .toggle-old:hover,
+  .more-filter:hover,
+  .show-date:hover {
     border-bottom: 0;
     padding-bottom: 3px; }
 
@@ -302,16 +316,20 @@ input[type="checkbox"]:checked + label {
     #getDate.error .errorForm {
       float: right; }
 
-.old-lection .curs__item__name:after {
-  content: '';
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  vertical-align: middle;
-  line-height: 23px;
-  background: url("../img/youtube.png");
-  background-size: cover;
-  margin-left: 10px; }
+.old-lection {
+  opacity: 0.5; }
+  .old-lection:hover {
+    opacity: 1; }
+  .old-lection .curs__item__name:after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 23px;
+    background: url("../img/youtube.png");
+    background-size: cover;
+    margin-left: 10px; }
 
 @media (max-width: 900px) {
   .tag {

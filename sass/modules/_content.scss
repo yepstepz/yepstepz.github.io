@@ -74,6 +74,7 @@
 
 	}
 	&__lection{
+		@include null_link;
 		padding: 10px 0px 10px 100px;
 		border-left: 4px solid #fc0;
 		&:nth-child(1){
@@ -109,16 +110,24 @@
 	border-radius: 10px;
 	margin: 0px 5px 10px 0px;	
 	@include inline-block-pos(middle);
-	&--red{
+	&--red,
+	&.school_shri,
+	&.month_10{
 		background: $l_red;
 	}
-	&--yellow{
+	&--yellow,
+	&.school_shmr,
+	&.month_11{
 		background: $l_yellow;
 	}
-	&--violet{
+	&--violet,
+	&.school_shmd,
+	&.month_12{
 		background: $l_violet;
 	}
-	&--blue{
+	&--blue,
+	&.school_all,
+	&.month_04{
 		background: $l_blue;
 	}
 }

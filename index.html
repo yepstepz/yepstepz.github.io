@@ -19,7 +19,9 @@
       </header>
       <main>
          <div class="content">
-            <div class="sort sort--title">Фильтр:</div> 
+            <div class="school"></div>
+            <div class="month"></div>
+            <div class="sort sort--title">Фильтр <span class="toggle-old off">Скрыть прошедшие лекции</span><span class="more-filter">Расширенный фильтр</span></div> 
             <div class="sort">Дата <span class="show-date">Очистить дату</span></div>
             <div class="sort-date">
             <form id="getDate" action="" method="post">
@@ -45,82 +47,84 @@
                   <span class="curs__month">Октябрь</span>
                   <ul class="curs__list">
                      <li class="curs__item" data-day="18">
-                        <div class="curs__lection" data-tag="shmd" data-author="Антон Тен">
-                           <a class="curs__item__name">Лекция 1. Идея, исследование, концепт (Часть 1)</a>
-                           <a class="curs__item__lector">Антон Тен</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        <a class="curs__lection" data-tag="shmd" data-author="Антон Тен">
+                           <div class="curs__item__name">Лекция 1. Идея, исследование, концепт (Часть 1)</div>
+                           <div class="curs__item__lector">Антон Тен</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags"><span class="tag tag--violet">Школа Мобильного Дизайна</span></div>
-                        </div>
-                        <div class="curs__lection" data-tag="shmd" data-author="Антон Тен">
-                           <a class="curs__item__name">Лекция 2. Идея, исследование, концепт (Часть 2)</a>
-                           <a class="curs__item__lector">Антон Тен</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        </a>
+                        <a class="curs__lection" data-tag="shmd" data-author="Антон Тен">
+                           <div class="curs__item__name">Лекция 2. Идея, исследование, концепт (Часть 2)</div>
+                           <div class="curs__item__lector">Антон Тен</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags"><span class="tag tag--violet">Школа Мобильного Дизайна</span></div>
-                        </div>
-                        <div class="curs__lection" data-tag="all" data-author="Илья Сергеев">
-                           <a class="curs__item__name">Общая лекция. Знакомство</a>
-                           <a class="curs__item__lector">Илья Сергеев</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
-                           <div class="tags"><span class="tag tag--yellow">Школа Мобильной Разработки</span>
+                        </a>
+                        <a class="curs__lection" data-tag="all" data-author="Илья Сергеев">
+                           <div class="curs__item__name">Общая лекция. Знакомство</div>
+                           <div class="curs__item__lector">Илья Сергеев</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
+                           <div class="tags">
+                              <span class="tag tag--blue">Общие</span>
+                              <span class="tag tag--yellow">Школа Мобильной Разработки</span>
                               <span class="tag tag--violet">Школа Мобильного Дизайна</span>
                               <span class="tag tag--red">Школа Разработки интерфейсов</span>
                            </div>
-                        </div> 
+                        </a> 
                         <div class="curs__item__date">18 <span>окт</span></div>
                      </li>
                      <li class="curs__item" data-day="19">
-                        <div class="curs__lection" data-tag="shmr" data-author="Эдуард Мацуков">
-                           <a class="curs__item__name">Лекция 1. Java Blitz (Часть 1)</a>
-                           <a class="curs__item__lector">Эдуард Мацуков</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        <a class="curs__lection" data-tag="shmr" data-author="Эдуард Мацуков">
+                           <div class="curs__item__name">Лекция 1. Java Blitz (Часть 1)</div>
+                           <div class="curs__item__lector">Эдуард Мацуков</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags"><span class="tag tag--yellow">Школа Мобильной Разработки</span></div>
-                        </div>
-                        <div class="curs__lection" data-tag="shmr" data-author="Дмитрий Складнов">
-                           <a class="curs__item__name">Лекция 2. Git & Workflow</a>
-                           <a class="curs__item__lector">Дмитрий Складнов</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        </a>
+                        <a class="curs__lection" data-tag="shmr" data-author="Дмитрий Складнов">
+                           <div class="curs__item__name">Лекция 2. Git & Workflow</div>
+                           <div class="curs__item__lector">Дмитрий Складнов</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags"><span class="tag tag--yellow">Школа Мобильной Разработки</span></div>
-                        </div>
+                        </a>
                         <div class="curs__item__date">19<span>окт</span></div>
                      </li>
                      <li class="curs__item" data-day="20">
                         
-                        <div class="curs__lection" data-tag="shri" data-author="Дмитрий Душкин">
-                           <a class="curs__item__name">Лекция 1. Адаптивная вёрстка</a>
-                           <a class="curs__item__lector">Дмитрий Душкин</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        <a class="curs__lection" data-tag="shri" data-author="Дмитрий Душкин">
+                           <div class="curs__item__name">Лекция 1. Адаптивная вёрстка</div>
+                           <div class="curs__item__lector">Дмитрий Душкин</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags"><span class="tag tag--red">Школа Разработки Интерфейсов</span></div>
-                        </div><div class="curs__item__date">20<span>окт</span></div>
+                        </a><div class="curs__item__date">20<span>окт</span></div>
                      </li>
                      <li class="curs__item" data-day="25">
                         
-                        <div class="curs__lection" data-tag="shmr" data-author="Эдуард Мацуков">
-                           <a class="curs__item__name">Лекция 3. Java Blitz (Часть 2)</a>
-                           <a class="curs__item__lector">Эдуард Мацуков</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        <a class="curs__lection" data-tag="shmr" data-author="Эдуард Мацуков">
+                           <div class="curs__item__name">Лекция 3. Java Blitz (Часть 2)</div>
+                           <div class="curs__item__lector">Эдуард Мацуков</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags"><span class="tag tag--yellow">Школа Мобильной Разработки</span></div>
-                        </div>
-                        <div class="curs__lection" data-tag="shmr" data-author="Роман Григорьев">
-                           <a class="curs__item__name">MyFirstApp (Часть 1)</a>
-                           <a class="curs__item__lector">Роман Григорьев</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        </a>
+                        <a class="curs__lection" data-tag="shmr" data-author="Роман Григорьев">
+                           <div class="curs__item__name">MyFirstApp (Часть 1)</div>
+                           <div class="curs__item__lector">Роман Григорьев</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags"><span class="tag tag--yellow">Школа Мобильной Разработки</span></div>
-                        </div>
-                        <div class="curs__lection" data-tag="shmd" data-author="Роман Григорьев">
-                           <a class="curs__item__name">Лекция 3. Особенности проектирования мобильных интерфейсов</a>
-                           <a class="curs__item__lector">Роман Григорьев</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        </a>
+                        <a class="curs__lection" data-tag="shmd" data-author="Роман Григорьев">
+                           <div class="curs__item__name">Лекция 3. Особенности проектирования мобильных интерфейсов</div>
+                           <div class="curs__item__lector">Роман Григорьев</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags"><span class="tag tag--violet">Школа Мобильного Дизайна</span></div>
-                        </div><div class="curs__item__date">25<span>окт</span></div>
+                        </a><div class="curs__item__date">25<span>окт</span></div>
                      </li>
                      <li class="curs__item" data-day="27">
                         
-                        <div class="curs__lection" data-tag="shri" data-author="Дмитрий Душкин">
-                           <a class="curs__item__name">Лекция 2. Работа с сенсорным пользовательским вводом</a>
-                           <a class="curs__item__lector">Дмитрий Душкин</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        <a class="curs__lection" data-tag="shri" data-author="Дмитрий Душкин">
+                           <div class="curs__item__name">Лекция 2. Работа с сенсорным пользовательским вводом</div>
+                           <div class="curs__item__lector">Дмитрий Душкин</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags"><span class="tag tag--red">Школа Разработки Интерфейсов</span></div>
-                        </div><div class="curs__item__date">27<span>окт</span></div>
+                        </a><div class="curs__item__date">27<span>окт</span></div>
                      </li>
                   </ul>
                </div>
@@ -129,190 +133,191 @@
                   <ul class="curs__list">
                      <li class="curs__item" data-day="1">
                         
-                        <div class="curs__lection" data-tag="shmd" data-author="Сергей Калабин">
-                           <a class="curs__item__name">Лекция 4. Продукт и платформа</a>
-                           <a class="curs__item__lector">Сергей Калабин</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        <a class="curs__lection" data-tag="shmd" data-author="Сергей Калабин">
+                           <div class="curs__item__name">Лекция 4. Продукт и платформа</div>
+                           <div class="curs__item__lector">Сергей Калабин</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags"><span class="tag tag--violet">Школа Мобильного Дизайна</span></div>
-                        </div>
-                        <div class="curs__lection" data-tag="shmd" data-author="Васюнин Николай">
-                           <a class="curs__item__name">Лекция 5. Природа операционных систем</a>
-                           <a class="curs__item__lector">Васюнин Николай</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        </a>
+                        <a class="curs__lection" data-tag="shmd" data-author="Васюнин Николай">
+                           <div class="curs__item__name">Лекция 5. Природа операционных систем</div>
+                           <div class="curs__item__lector">Васюнин Николай</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags"><span class="tag tag--violet">Школа Мобильного Дизайна</span></div>
-                        </div><div class="curs__item__date">1<span>ноя</span></div>
+                        </a><div class="curs__item__date">1<span>ноя</span></div>
                      </li>
                      <li class="curs__item" data-day="2">
                         
-                        <div class="curs__lection" data-tag="shmr" data-author="Роман Григорьев">
-                           <a class="curs__item__name">Лекция 5. MyFirstApp (Часть 2)</a>
-                           <a class="curs__item__lector">Роман Григорьев</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        <a class="curs__lection" data-tag="shmr" data-author="Роман Григорьев">
+                           <div class="curs__item__name">Лекция 5. MyFirstApp (Часть 2)</div>
+                           <div class="curs__item__lector">Роман Григорьев</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags"><span class="tag tag--yellow">Школа Мобильной Разработки</span></div>
-                        </div>
-                        <div class="curs__lection" data-tag="shmr" data-author="Алексей Щербинин">
-                           <a class="curs__item__name">Лекция 6. ViewGroup</a>
-                           <a class="curs__item__lector">Алексей Щербинин</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        </a>
+                        <a class="curs__lection" data-tag="shmr" data-author="Алексей Щербинин">
+                           <div class="curs__item__name">Лекция 6. ViewGroup</div>
+                           <div class="curs__item__lector">Алексей Щербинин</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags"><span class="tag tag--yellow">Школа Мобильной Разработки</span></div>
-                        </div><div class="curs__item__date">2<span>ноя</span></div>
+                        </a><div class="curs__item__date">2<span>ноя</span></div>
                      </li>
                      <li class="curs__item" data-day="3">
                         
-                        <div class="curs__lection" data-tag="shri" data-author="Максим Васильев">
-                           <a class="curs__item__name">Лекция 3. Мультимедиа: возможности браузера</a>
-                           <a class="curs__item__lector">Максим Васильев</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        <a class="curs__lection" data-tag="shri" data-author="Максим Васильев">
+                           <div class="curs__item__name">Лекция 3. Мультимедиа: возможности браузера</div>
+                           <div class="curs__item__lector">Максим Васильев</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags"><span class="tag tag--red">Школа Разработки Интерфейсов</span></div>
-                        </div><div class="curs__item__date">3<span>ноя</span></div>
+                        </a><div class="curs__item__date">3<span>ноя</span></div>
                      </li>
                      <li class="curs__item" data-day="8">
                         
-                        <div class="curs__lection" data-tag="shmd" data-author="Сергей Томилов, Дарья Старицына">
-                           <a class="curs__item__name">Лекция 6. Прототипирование как процесс</a>
-                           <a class="curs__item__lector">Сергей Томилов</a>
-                           <a class="curs__item__lector">Дарья Старицына</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        <a class="curs__lection" data-tag="shmd" data-author="Сергей Томилов, Дарья Старицына">
+                           <div class="curs__item__name">Лекция 6. Прототипирование как процесс</div>
+                           <div class="curs__item__lector">Сергей Томилов</div>
+                           <div class="curs__item__lector">Дарья Старицына</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags"><span class="tag tag--violet">Школа Мобильного Дизайна</span></div>
-                        </div>
-                        <div class="curs__lection" data-tag="shmd" data-author="Сергей Томилов, Дарья Старицына">
-                           <a class="curs__item__name">Лекция 7. Инструмент под задачи</a>
-                           <a class="curs__item__lector">Сергей Томилов</a>
-                           <a class="curs__item__lector">Дарья Старицына</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        </a>
+                        <a class="curs__lection" data-tag="shmd" data-author="Сергей Томилов, Дарья Старицына">
+                           <div class="curs__item__name">Лекция 7. Инструмент под задачи</div>
+                           <div class="curs__item__lector">Сергей Томилов</div>
+                           <div class="curs__item__lector">Дарья Старицына</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags"><span class="tag tag--violet">Школа Мобильного Дизайна</span></div>
-                        </div><div class="curs__item__date">8<span>ноя</span></div>
+                        </a><div class="curs__item__date">8<span>ноя</span></div>
                      </li>
                      <li class="curs__item" data-day="9">
                         
-                        <div class="curs__lection" data-tag="shmr" data-author="Алексей Макаров">
-                           <a class="curs__item__name">Лекция 7. Background</a>
-                           <a class="curs__item__lector">Алексей Макаров</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        <a class="curs__lection" data-tag="shmr" data-author="Алексей Макаров">
+                           <div class="curs__item__name">Лекция 7. Background</div>
+                           <div class="curs__item__lector">Алексей Макаров</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags"><span class="tag tag--yellow">Школа Мобильной Разработки</span></div>
-                        </div>
-                        <div class="curs__lection" data-tag="shmr" data-author="Владимир Тагаков">
-                           <a class="curs__item__name">Лекция 8. RecyclerView</a>
-                           <a class="curs__item__lector">Владимир Тагаков</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        </a>
+                        <a class="curs__lection" data-tag="shmr" data-author="Владимир Тагаков">
+                           <div class="curs__item__name">Лекция 8. RecyclerView</div>
+                           <div class="curs__item__lector">Владимир Тагаков</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags"><span class="tag tag--yellow">Школа Мобильной Разработки</span></div>
-                        </div><div class="curs__item__date">9<span>ноя</span></div>
+                        </a><div class="curs__item__date">9<span>ноя</span></div>
                      </li>
                      <li class="curs__item" data-day="10">
                         
-                        <div class="curs__lection" data-tag="shri" data-author="Сергей Бережной">
-                           <a class="curs__item__name">Лекция 4. Нативные приложения на веб-технологиях</a>
-                           <a class="curs__item__lector">Сергей Бережной</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        <a class="curs__lection" data-tag="shri" data-author="Сергей Бережной">
+                           <div class="curs__item__name">Лекция 4. Нативные приложения на веб-технологиях</div>
+                           <div class="curs__item__lector">Сергей Бережной</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags"><span class="tag tag--red">Школа Разработки Интерфейсов</span></div>
-                        </div><div class="curs__item__date">10<span>ноя</span></div>
+                        </a><div class="curs__item__date">10<span>ноя</span></div>
                      </li>
                      <li class="curs__item" data-day="15">
                         
-                        <div class="curs__lection" data-tag="shmd" data-author="Сергей Томилов, Дарья Старицына">
-                           <a class="curs__item__name">Лекция 8. Анимации</a>
-                           <a class="curs__item__lector">Сергей Томилов</a>
-                           <a class="curs__item__lector">Дарья Старицына</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        <a class="curs__lection" data-tag="shmd" data-author="Сергей Томилов, Дарья Старицына">
+                           <div class="curs__item__name">Лекция 8. Анимации</div>
+                           <div class="curs__item__lector">Сергей Томилов</div>
+                           <div class="curs__item__lector">Дарья Старицына</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags"><span class="tag tag--violet">Школа Мобильного Дизайна</span></div>
-                        </div>
-                        <div class="curs__lection" data-tag="shmd" data-author="Rijshouwer Krijn, Treub Jonas">
-                           <a class="curs__item__name">Дополнительная лекция. Design Everything</a>
-                           <a class="curs__item__lector">Rijshouwer Krijn</a>
-                           <a class="curs__item__lector">Treub Jonas</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        </a>
+                        <a class="curs__lection" data-tag="shmd" data-author="Rijshouwer Krijn, Treub Jonas">
+                           <div class="curs__item__name">Дополнительная лекция. Design Everything</div>
+                           <div class="curs__item__lector">Rijshouwer Krijn</div>
+                           <div class="curs__item__lector">Treub Jonas</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags"><span class="tag tag--violet">Школа Мобильного Дизайна</span></div>
-                        </div><div class="curs__item__date">15<span>ноя</span></div>
+                        </a><div class="curs__item__date">15<span>ноя</span></div>
                      </li>
                      <li class="curs__item" data-day="16">
                         
-                        <div class="curs__lection" data-tag="shmr" data-author="Алексей Макаров">
-                           <a class="curs__item__name">Лекция 9. Service & Broadcasts</a>
-                           <a class="curs__item__lector">Алексей Макаров</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        <a class="curs__lection" data-tag="shmr" data-author="Алексей Макаров">
+                           <div class="curs__item__name">Лекция 9. Service & Broadcasts</div>
+                           <div class="curs__item__lector">Алексей Макаров</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags"><span class="tag tag--yellow">Школа Мобильной Разработки</span></div>
-                        </div>
-                        <div class="curs__lection" data-tag="shmr" data-author="Алексей Щербинин">
-                           <a class="curs__item__name">Лекция 10. Drawing</a>
-                           <a class="curs__item__lector">Алексей Щербинин</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        </a>
+                        <a class="curs__lection" data-tag="shmr" data-author="Алексей Щербинин">
+                           <div class="curs__item__name">Лекция 10. Drawing</div>
+                           <div class="curs__item__lector">Алексей Щербинин</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags"><span class="tag tag--yellow">Школа Мобильной Разработки</span></div>
-                        </div><div class="curs__item__date">16<span>ноя</span></div>
+                        </a><div class="curs__item__date">16<span>ноя</span></div>
                      </li>
                      <li class="curs__item" data-day="17">
                         
-                        <div class="curs__lection" data-tag="shri" data-author="Андрей Морозов">
-                           <a class="curs__item__name">Лекция 5. Клиентская оптимизация: базовые знания и лучшие практики</a>
-                           <a class="curs__item__lector">Андрей Морозов</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        <a class="curs__lection" data-tag="shri" data-author="Андрей Морозов">
+                           <div class="curs__item__name">Лекция 5. Клиентская оптимизация: базовые знания и лучшие практики</div>
+                           <div class="curs__item__lector">Андрей Морозов</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags"><span class="tag tag--red">Школа Разработки Интерфейсов</span></div>
-                        </div><div class="curs__item__date">17<span>ноя</span></div>
+                        </a><div class="curs__item__date">17<span>ноя</span></div>
                      </li>
                      <li class="curs__item" data-day="22">
                         
-                        <div class="curs__lection" data-tag="shmd" data-author="Андрей Гевак">
-                           <a class="curs__item__name">Лекция 9. Развите продукта</a>
-                           <a class="curs__item__lector">Андрей Гевак</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        <a class="curs__lection" data-tag="shmd" data-author="Андрей Гевак">
+                           <div class="curs__item__name">Лекция 9. Развите продукта</div>
+                           <div class="curs__item__lector">Андрей Гевак</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags"><span class="tag tag--violet">Школа Мобильного Дизайна</span></div>
-                        </div><div class="curs__item__date">22<span>ноя</span></div>
+                        </a><div class="curs__item__date">22<span>ноя</span></div>
                      </li>
                      <li class="curs__item" data-day="23">
                         
-                        <div class="curs__lection" data-tag="shmr" data-author="Максим Хромцов">
-                           <a class="curs__item__name">Лекция 11. Content provider</a>
-                           <a class="curs__item__lector">Максим Хромцов</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        <a class="curs__lection" data-tag="shmr" data-author="Максим Хромцов">
+                           <div class="curs__item__name">Лекция 11. Content provider</div>
+                           <div class="curs__item__lector">Максим Хромцов</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags"><span class="tag tag--yellow">Школа Мобильной Разработки</span></div>
-                        </div>
-                        <div class="curs__lection" data-tag="shmr" data-author="Максим Хромцов">
-                           <a class="curs__item__name">Лекция 12. SQL&SQLite</a>
-                           <a class="curs__item__lector">Максим Хромцов</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        </a>
+                        <a class="curs__lection" data-tag="shmr" data-author="Максим Хромцов">
+                           <div class="curs__item__name">Лекция 12. SQL&SQLite</div>
+                           <div class="curs__item__lector">Максим Хромцов</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags"><span class="tag tag--yellow">Школа Мобильной Разработки</span></div>
-                        </div><div class="curs__item__date">23<span>ноя</span></div>
+                        </a><div class="curs__item__date">23<span>ноя</span></div>
                      </li>
                      <li class="curs__item" data-day="24">
-                        <div class="curs__lection" data-tag="shri" data-author="Иван Карев">
-                           <a class="curs__item__name">Лекция 6. Клиентская оптимизация: мобильные устройства и инструменты</a>
-                           <a class="curs__item__lector">Иван Карев</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        <a class="curs__lection" data-tag="shri" data-author="Иван Карев">
+                           <div class="curs__item__name">Лекция 6. Клиентская оптимизация: мобильные устройства и инструменты</div>
+                           <div class="curs__item__lector">Иван Карев</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags"><span class="tag tag--red">Школа Разработки Интерфейсов</span></div>
-                        </div><div class="curs__item__date">24<span>ноя</span></div>
+                        </a><div class="curs__item__date">24<span>ноя</span></div>
                      </li>
                      <li class="curs__item" data-day="25">
-                        <div class="curs__lection" data-tag="all" data-author="Илья Сергеев">
-                           <a class="curs__item__name">Общая лекция. Обмен опытом</a>
-                           <a class="curs__item__lector">Илья Сергеев</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        <a class="curs__lection" data-tag="all" data-author="Илья Сергеев">
+                           <div class="curs__item__name">Общая лекция. Обмен опытом</div>
+                           <div class="curs__item__lector">Илья Сергеев</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags">
+                              <span class="tag tag--blue">Общие</span>
                               <span class="tag tag--violet">Школа Мобильного Дизайна</span>
                               <span class="tag tag--red">Школа Разработки интерфейсов</span>
                            </div>
-                        </div><div class="curs__item__date">25<span>ноя</span></div>
+                        </a><div class="curs__item__date">25<span>ноя</span></div>
                      </li>
                      <li class="curs__item" data-day="29">
                         
-                        <div class="curs__lection" data-tag="shmd" data-author="Кондратьев Александр">
-                           <a class="curs__item__name">Лекция 10. Исследование интерфейсов</a>
-                           <a class="curs__item__lector">Кондратьев Александр</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        <a class="curs__lection" data-tag="shmd" data-author="Кондратьев Александр">
+                           <div class="curs__item__name">Лекция 10. Исследование интерфейсов</div>
+                           <div class="curs__item__lector">Кондратьев Александр</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags"><span class="tag tag--violet">Школа Мобильного Дизайна</span></div>
-                        </div><div class="curs__item__date">29<span>ноя</span></div>
+                        </a><div class="curs__item__date">29<span>ноя</span></div>
                      </li>
                      <li class="curs__item" data-day="30">
-                        <div class="curs__lection" data-tag="shmr" data-author="Денис Загаевский">
-                           <a class="curs__item__name">Лекция 13. Fragments (Часть 1)</a>
-                           <a class="curs__item__lector">Денис Загаевский</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        <a class="curs__lection" data-tag="shmr" data-author="Денис Загаевский">
+                           <div class="curs__item__name">Лекция 13. Fragments (Часть 1)</div>
+                           <div class="curs__item__lector">Денис Загаевский</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags"><span class="tag tag--yellow">Школа Мобильной Разработки</span></div>
-                        </div>
-                        <div class="curs__lection" data-tag="shmr" data-author="Денис Загаевский">
-                           <a class="curs__item__name">Лекция 14. Fragments (Часть 2)</a>
-                           <a class="curs__item__lector">Денис Загаевский</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        </a>
+                        <a class="curs__lection" data-tag="shmr" data-author="Денис Загаевский">
+                           <div class="curs__item__name">Лекция 14. Fragments (Часть 2)</div>
+                           <div class="curs__item__lector">Денис Загаевский</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags"><span class="tag tag--yellow">Школа Мобильной Разработки</span></div>
-                        </div><div class="curs__item__date">30<span>ноя</span></div>
+                        </a><div class="curs__item__date">30<span>ноя</span></div>
                      </li>
                   </ul>
                </div>
@@ -320,64 +325,66 @@
                   <span class="curs__month">Декабрь</span>
                   <ul class="curs__list">
                      <li class="curs__item" data-day="1">
-                        <div class="curs__lection" data-tag="all" data-author="Илья Сергеев">
-                           <a class="curs__item__name">Общая лекция. Встреча</a>
-                           <a class="curs__item__lector">Илья Сергеев</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
-                           <div class="tags"><span class="tag tag--yellow">Школа Мобильной Разработки</span>
+                        <a class="curs__lection" data-tag="all" data-author="Илья Сергеев">
+                           <div class="curs__item__name">Общая лекция. Встреча</div>
+                           <div class="curs__item__lector">Илья Сергеев</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
+                           <div class="tags">
+                              <span class="tag tag--blue">Общие</span>
+                              <span class="tag tag--yellow">Школа Мобильной Разработки</span>
                               <span class="tag tag--violet">Школа Мобильного Дизайна</span>
                               <span class="tag tag--red">Школа Разработки интерфейсов</span>
                            </div>
-                        </div>                        
-                        <div class="curs__lection" data-tag="shri" data-author="Прокопюк Андрей">
-                           <a class="curs__item__name">Лекция 7. Инфраструктура веб-проектов</a>
-                           <a class="curs__item__lector">Прокопюк Андрей</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        </a>                        
+                        <a class="curs__lection" data-tag="shri" data-author="Прокопюк Андрей">
+                           <div class="curs__item__name">Лекция 7. Инфраструктура веб-проектов</div>
+                           <div class="curs__item__lector">Прокопюк Андрей</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags"><span class="tag tag--red">Школа Разработки Интерфейсов</span></div>
-                        </div>
-                        <div class="curs__lection" data-tag="shri" data-author="Прокопюк Андрей">
-                           <a class="curs__item__name">Лекция 8. Инструменты разработки мобильного фронтенда</a>
-                           <a class="curs__item__lector">Прокопюк Андрей</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        </a>
+                        <a class="curs__lection" data-tag="shri" data-author="Прокопюк Андрей">
+                           <div class="curs__item__name">Лекция 8. Инструменты разработки мобильного фронтенда</div>
+                           <div class="curs__item__lector">Прокопюк Андрей</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags"><span class="tag tag--red">Школа Разработки Интерфейсов</span></div>
-                        </div><div class="curs__item__date">1<span>дек</span></div>
+                        </a><div class="curs__item__date">1<span>дек</span></div>
                      </li>
                      <li class="curs__item" data-day="6">
                         
-                        <div class="curs__lection" data-tag="shmd" data-author="Юрий Подорожный">
-                           <a class="curs__item__name">Лекция 11. Работа в команде</a>
-                           <a class="curs__item__lector">Юрий Подорожный</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        <a class="curs__lection" data-tag="shmd" data-author="Юрий Подорожный">
+                           <div class="curs__item__name">Лекция 11. Работа в команде</div>
+                           <div class="curs__item__lector">Юрий Подорожный</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags"><span class="tag tag--violet">Школа Мобильного Дизайна</span></div>
-                        </div><div class="curs__item__date">6<span>дек</span></div>
+                        </a><div class="curs__item__date">6<span>дек</span></div>
                      </li>
                      <li class="curs__item" data-day="7">
                         
-                        <div class="curs__lection" data-tag="shmr" data-author="Дмитрий Попов">
-                           <a class="curs__item__name">Лекция 15. MVP&Co</a>
-                           <a class="curs__item__lector">Дмитрий Попов</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        <a class="curs__lection" data-tag="shmr" data-author="Дмитрий Попов">
+                           <div class="curs__item__name">Лекция 15. MVP&Co</div>
+                           <div class="curs__item__lector">Дмитрий Попов</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags"><span class="tag tag--yellow">Школа Мобильной Разработки</span></div>
-                        </div><div class="curs__item__date">7<span>дек</span></div>
+                        </a><div class="curs__item__date">7<span>дек</span></div>
                      </li>
                      <li class="curs__item" data-day="13">
                         
-                        <div class="curs__lection" data-tag="shmd" data-author="Дмитрий Моруз, Ждан Филиппов">
-                           <a class="curs__item__name">Дополнительная лекция. Айдентика</a>
-                           <a class="curs__item__lector">Дмитрий Моруз</a>
-                           <a class="curs__item__lector">Ждан Филиппов</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        <a class="curs__lection" data-tag="shmd" data-author="Дмитрий Моруз, Ждан Филиппов">
+                           <div class="curs__item__name">Дополнительная лекция. Айдентика</div>
+                           <div class="curs__item__lector">Дмитрий Моруз</div>
+                           <div class="curs__item__lector">Ждан Филиппов</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags"><span class="tag tag--violet">Школа Мобильного Дизайна</span></div>
-                        </div><div class="curs__item__date">13<span>дек</span></div>
+                        </a><div class="curs__item__date">13<span>дек</span></div>
                      </li>
                      <li class="curs__item" data-day="14">
                         
-                        <div class="curs__lection" data-tag="shmr" data-author="Илья Сергеев">
-                           <a class="curs__item__name">Лекция 16. Debugging & Polishing</a>
-                           <a class="curs__item__lector">Илья Сергеев</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
+                        <a class="curs__lection" data-tag="shmr" data-author="Илья Сергеев">
+                           <div class="curs__item__name">Лекция 16. Debugging & Polishing</div>
+                           <div class="curs__item__lector">Илья Сергеев</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
                            <div class="tags"><span class="tag tag--yellow">Школа Мобильной Разработки</span></div>
-                        </div><div class="curs__item__date">14<span>дек</span></div>
+                        </a><div class="curs__item__date">14<span>дек</span></div>
                      </li>
                   </ul>
                </div>
@@ -386,27 +393,31 @@
                   <ul class="curs__list">
                      <li class="curs__item" data-day="1">
                         
-                        <div class="curs__lection" data-tag="all" data-author="Илья Сергеев">
-                           <a class="curs__item__name">Общая лекция. Защита проектов</a>
-                           <a class="curs__item__lector">Илья Сергеев</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
-                           <div class="tags"><span class="tag tag--yellow">Школа Мобильной Разработки</span>
+                        <a class="curs__lection" data-tag="all" data-author="Илья Сергеев">
+                           <div class="curs__item__name">Общая лекция. Защита проектов</div>
+                           <div class="curs__item__lector">Илья Сергеев</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
+                           <div class="tags">
+                              <span class="tag tag--blue">Общие</span>
+                              <span class="tag tag--yellow">Школа Мобильной Разработки</span>
                               <span class="tag tag--violet">Школа Мобильного Дизайна</span>
                               <span class="tag tag--red">Школа Разработки интерфейсов</span>
                            </div>
-                        </div><div class="curs__item__date">1<span>апр</span></div>
+                        </a><div class="curs__item__date">1<span>апр</span></div>
                      </li>
                      <li class="curs__item" data-day="29">
                         
-                        <div class="curs__lection" data-tag="all" data-author="Тим Рот">
-                           <a class="curs__item__name">Встреча после обучения</a>
-                           <a class="curs__item__lector">Тим Рот</a>
-                           <a class="curs__lection__address">Москва, ул. Льва Толстого, 16</a>
-                           <div class="tags"><span class="tag tag--yellow">Школа Мобильной Разработки</span>
+                        <a class="curs__lection" data-tag="all" data-author="Тим Рот">
+                           <div class="curs__item__name">Встреча после обучения</div>
+                           <div class="curs__item__lector">Тим Рот</div>
+                           <div class="curs__lection__address">Москва, ул. Льва Толстого, 16</div>
+                           <div class="tags">
+                              <span class="tag tag--blue">Общие</span>
+                              <span class="tag tag--yellow">Школа Мобильной Разработки</span>
                               <span class="tag tag--violet">Школа Мобильного Дизайна</span>
                               <span class="tag tag--red">Школа Разработки интерфейсов</span>
                            </div>
-                        </div><div class="curs__item__date">29<span>апр</span></div>
+                        </a><div class="curs__item__date">29<span>апр</span></div>
                      </li>
                   </ul>
                </div>
