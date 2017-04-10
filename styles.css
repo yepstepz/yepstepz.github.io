@@ -99,6 +99,7 @@ html {
   text-decoration: none;
   outline: 0;
   color: black;
+  display: block;
   padding: 10px 0px 10px 100px;
   border-left: 4px solid #fc0; }
   .curs__lection:hover {
@@ -201,34 +202,35 @@ html {
   height: 200px;
   display: block; }
 
-.curs__lection,
-.curs__section {
-  display: none; }
+/*.curs__lection,
+.curs__section{
+	display: none;
+}
 
-#curs_shri:checked ~ .curs .curs__lection[data-tag="shri"] {
-  display: block; }
-
-#curs_shmd:checked ~ .curs .curs__lection[data-tag="shmd"] {
-  display: block; }
-
-#curs_shmr:checked ~ .curs .curs__lection[data-tag="shmr"] {
-  display: block; }
-
-#curs_all:checked ~ .curs .curs__lection[data-tag="all"] {
-  display: block; }
-
-#month_10:checked ~ .curs .curs__section[data-month="10"] {
-  display: block; }
-
-#month_11:checked ~ .curs .curs__section[data-month="11"] {
-  display: block; }
-
-#month_12:checked ~ .curs .curs__section[data-month="12"] {
-  display: block; }
-
-#month_04:checked ~ .curs .curs__section[data-month="04"] {
-  display: block; }
-
+#curs_shri:checked ~ .curs .curs__lection[data-tag="shri"]{
+	display: block;
+}
+#curs_shmd:checked ~ .curs .curs__lection[data-tag="shmd"]{
+	display: block;
+}
+#curs_shmr:checked ~ .curs .curs__lection[data-tag="shmr"]{
+	display: block;
+}
+#curs_all:checked ~ .curs .curs__lection[data-tag="all"]{
+	display: block;
+}
+#month_10:checked ~ .curs .curs__section[data-month="10"]{
+	display: block;
+}
+#month_11:checked ~ .curs .curs__section[data-month="11"]{
+	display: block;
+}
+#month_12:checked ~ .curs .curs__section[data-month="12"]{
+	display: block;
+}
+#month_04:checked ~ .curs .curs__section[data-month="04"]{
+	display: block;
+}*/
 .sort {
   display: block;
   line-height: 1.2;

@@ -59,31 +59,31 @@ function separateAuthor(allPersons){
 * Облако тегов для фильтра
 *
 */
-function makeTags(names){
-    var i  = 0;
-    var parentElement = document.getElementsByClassName('content');
-    var curs = document.querySelector('.curs');
-    for ( name in names ) {
-        var labels = { element: "label", innerHTML: name };
-        var labelsAttr = { class: "tag author"+i, for: "author"+i, style: "background:"+getColor() };
-        var checkbox = { element: "input" };
-        var checkboxAttr = { type: "checkbox", id: "author" + i, checked: "checked"};
-        parentElement[0].insertBefore( makeElement( checkbox, checkboxAttr ), curs );
-        parentElement[0].insertBefore( makeElement( labels, labelsAttr ), curs );
-        i+=1;
-    }
-}
+// function makeTags(names){
+//     var i  = 0;
+//     var parentElement = document.getElementsByClassName('content');
+//     var curs = document.querySelector('.curs');
+//     for ( name in names ) {
+//         var labels = { element: "label", innerHTML: name };
+//         var labelsAttr = { class: "tag author"+i, for: "author"+i, style: "background:"+getColor() };
+//         var checkbox = { element: "input" };
+//         var checkboxAttr = { type: "checkbox", id: "author" + i, checked: "checked"};
+//         parentElement[0].insertBefore( makeElement( checkbox, checkboxAttr ), curs );
+//         parentElement[0].insertBefore( makeElement( labels, labelsAttr ), curs );
+//         i+=1;
+//     }
+// }
 function makeTags1(prefix, names, tags){
     var i  = 0;
-    var parentElement = document.getElementsByClassName('content');
-    var el = document.querySelector('.'+ prefix +'');
+    var parentElement = document.getElementsByClassName(prefix);
+    console.log(parentElement);
     for ( name in names ) {
         var labels = { element: "label", innerHTML: names[name] };
         var labelsAttr = { class: "tag "+ prefix + '_' + tags[i], for: prefix + '_' + tags[i] };
         var checkbox = { element: "input" };
         var checkboxAttr = { type: "checkbox", id: prefix + '_' + tags[i], checked: "checked"};
-        parentElement[0].insertBefore( makeElement( checkbox, checkboxAttr ), el );
-        parentElement[0].insertBefore( makeElement( labels, labelsAttr ), el );
+        parentElement[0].insertBefore( makeElement( checkbox, checkboxAttr ), null );
+        parentElement[0].insertBefore( makeElement( labels, labelsAttr ), null );
         i+=1;
     }
 }
@@ -155,9 +155,10 @@ function getColor(){
 * фильтров
 *
 */
-function filterLector ( index, names ) {
-    var nameOfLector = Object.keys(names);
-    var lections = document.querySelectorAll('[data-author="'+ nameOfLector[index] +'"]');
+function filter( prefix, index, names ) {
+    var name = Object.keys(names);
+    console.log(name);
+    var lections = document.querySelectorAll('[data-'+ prefix +'="'+ name[index] +'"]');
     for (var i = 0; i < lections.length; i++) {
 
            if ( lections[i].style.display == 'none' ) {
@@ -419,42 +420,54 @@ var hide = document.querySelectorAll(".hide-all");
 var lectors = document.querySelectorAll(".curs__item__lector");
 var checkbox = document.querySelectorAll("[type='checkbox']");
 var form = document.forms["getDate"];
+/*
+*
+* Динамичское создание тегов.
+* 
+*/
 var lectionsTag = {};
 var monthTag = {};
+var lectorTag = {};
+var numberNames = [];
+var numberSchools = [];
+var numberMonth = [];
 for (i = 0; i<lections.length; i++) {  
     lectionsTag[ lections[i].dataset.tag ] = lections[i].querySelector('.tag').innerText;
+    numberSchools[i] = i;
 }
 for (i = 0; i<cursSection.length; i++) {  
     monthTag[ cursSection[i].dataset.month ] = cursSection[i].querySelector('.curs__month').innerText;
+    numberMonth[i] = i;
 }  
-//lectionsTag = Object.keys(lectionsTag);
-console.log(monthTag);
-makeTags1('school', lectionsTag, Object.keys(lectionsTag));
-makeTags1('month', monthTag, Object.keys(monthTag));
+for (var i = 0; i < lections.length; i++) {
+    names[i] = lections[i].getAttribute('data-author');
+    numberNames[i] = i ;
+}
+names = getUnique(names);
+makeTags1('lector', names, numberNames);
+makeTags1('school', lectionsTag, numberSchools);
+makeTags1('month', monthTag, numberMonth);
 checkOldLections();
 /*
 *
-* Динамичское создание лекторов.
-* TODO: Сделать то же дял остального.
-* 
-*/
-for (var i = 0; i < lections.length; i++) {
-    names[i] = lections[i].getAttribute('data-author');
-}
-names = getUnique(names);
-makeTags(names);
-/*
-*
 * Вешаем на чекбоксы event listeners. 
-* Фильтруем лекторов.
+* Фильтруем теги.
 * TODO: Поиск по лекторам
 * 
 */
-checkbox.forEach(function(element){
+document.querySelectorAll("[type='checkbox']").forEach(function(element){
     element.onchange = function (el) {
-        if ( ~el.target.id.indexOf('author') ){
+        if ( ~el.target.id.indexOf('lector') ){
                 var index = el.target.id.match(/\d+/)[0];
-                filterLector( index, names );
+                filter( 'author', index, names );
+        }
+        if ( ~el.target.id.indexOf('school') ){
+                var index = el.target.id.match(/\d+/)[0];
+                filter( 'tag', index, lectionsTag );
+        }
+        if ( ~el.target.id.indexOf('month') ){
+                var index = el.target.id.match(/\d+/)[0];
+                filter( 'month', index, monthTag );
         }
         checkVisibility();
 

@@ -75,6 +75,7 @@
 	}
 	&__lection{
 		@include null_link;
+		display: block;
 		padding: 10px 0px 10px 100px;
 		border-left: 4px solid #fc0;
 		&:nth-child(1){

@@ -19,29 +19,25 @@
       </header>
       <main>
          <div class="content">
-            <div class="school"></div>
-            <div class="month"></div>
-            <div class="sort sort--title">Фильтр <span class="toggle-old off">Скрыть прошедшие лекции</span><span class="more-filter">Расширенный фильтр</span></div> 
-            <div class="sort">Дата <span class="show-date">Очистить дату</span></div>
-            <div class="sort-date">
-            <form id="getDate" action="" method="post">
-            	<p class="sort-date__input">от <input type="date" name="date_first" required /></p>
-            	<p class="sort-date__input">до <input type="date" name="date_last" required /></p>
-            	<p class="sort-date__input sort-date__button"><input class="sort-date__submit" type="submit" value="Искать" /></p>
-            </form>
+            
+            
+            <div class="sort sort--title">Фильтр <span class="toggle-old off">Скрыть прошедшие лекции</span><span class="more-filter">Расширенный фильтр</span></div>
+            <div class="all-filters">
+               <div class="sort">Дата <span class="show-date">Очистить дату</span></div>
+               <div class="sort-date">
+               <form id="getDate" action="" method="post">
+               	<p class="sort-date__input">от <input type="date" name="date_first" required /></p>
+               	<p class="sort-date__input">до <input type="date" name="date_last" required /></p>
+               	<p class="sort-date__input sort-date__button"><input class="sort-date__submit" type="submit" value="Искать" /></p>
+               </form>
+               </div>
+               <div class="sort">Курсы <span class="show-all">Выбрать всё</span><span class="hide-all">Скрыть всё</span></div>
+               <div class="school"></div>
+               <div class="sort">Месяц <span class="show-all">Выбрать всё</span><span class="hide-all">Скрыть всё</span></div>
+               <div class="month"></div>
+               <div class="sort">Лектор <span class="show-all">Выбрать всё</span><span class="hide-all">Скрыть всё</span></div>
+               <div class="lector"></div>
             </div>
-            <div class="sort">Курсы <span class="show-all">Выбрать всё</span><span class="hide-all">Скрыть всё</span></div>
-            <input id="curs_shri" type="checkbox" checked="checked"/><label class="tag tag--red" for="curs_shri">Школа Разработки Интерфейсов</label> 
-            <input id="curs_shmr" type="checkbox" checked="checked"/><label class="tag tag--yellow" for="curs_shmr">Школа Мобильной Разработки</label> 
-            <input id="curs_shmd" type="checkbox" checked="checked"/><label class="tag tag--violet" for="curs_shmd">Школа мобильного дизайна</label> 
-            <input id="curs_all" type="checkbox" checked="checked"/><label class="tag tag--blue" for="curs_all">Общие</label> 
-            <div class="sort">Месяц <span class="show-all">Выбрать всё</span><span class="hide-all">Скрыть всё</span></div>
-            <input id="month_10" type="checkbox" checked="checked"/><label class="tag tag--yellow" for="month_10">Октябрь</label> 
-            <input id="month_11" type="checkbox" checked="checked"/><label class="tag tag--violet" for="month_11">Ноябрь</label> 
-            <input id="month_12" type="checkbox" checked="checked"/><label class="tag tag--blue" for="month_12">Декабрь</label>
-            <input id="month_04" type="checkbox" checked="checked"/><label class="tag tag--red" for="month_04">Апрель</label> 
-            <div class="sort">Лектор <span class="show-all">Выбрать всё</span><span class="hide-all">Скрыть всё</span></div>
-
             <div class="curs">
                <div class="curs__section" data-year="2016" data-month="10" >
                   <span class="curs__month">Октябрь</span>
