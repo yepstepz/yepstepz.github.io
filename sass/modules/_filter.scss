@@ -1,32 +1,3 @@
-/*.curs__lection,
-.curs__section{
-	display: none;
-}
-
-#curs_shri:checked ~ .curs .curs__lection[data-tag="shri"]{
-	display: block;
-}
-#curs_shmd:checked ~ .curs .curs__lection[data-tag="shmd"]{
-	display: block;
-}
-#curs_shmr:checked ~ .curs .curs__lection[data-tag="shmr"]{
-	display: block;
-}
-#curs_all:checked ~ .curs .curs__lection[data-tag="all"]{
-	display: block;
-}
-#month_10:checked ~ .curs .curs__section[data-month="10"]{
-	display: block;
-}
-#month_11:checked ~ .curs .curs__section[data-month="11"]{
-	display: block;
-}
-#month_12:checked ~ .curs .curs__section[data-month="12"]{
-	display: block;
-}
-#month_04:checked ~ .curs .curs__section[data-month="04"]{
-	display: block;
-}*/
 .sort{
 	display: block;
 	line-height: 1.2;
@@ -61,18 +32,40 @@ input[type="checkbox"]:checked + label{
 	margin-left: 20px;	
 	@include link;
 	padding: 0;
+    line-height: 26px;
+    vertical-align: middle;
 }
 .sort-date{
 	vertical-align: middle;	
 	line-height: 30px;	
 	&__input{
+		font-size:12px;
+		background: #ffdb4d;
 		@include inline-block-pos;
+		span{
+			padding: 0 10px;
+			display: inline-block;	
+			position: relative;	
+			&:before {
+			    position: absolute;
+			    width: 0;
+			    height: 0;
+			    content: '';
+			    border-style: solid;
+			    border-color: rgba(255,219,76,0);
+			    border-left-color: #ffdb4d;
+			    -o-transform: rotate(360deg);
+			    top: 0px;
+			    right: -7px;
+			    border-width: 15px 0 15px 7px;
+			}
+		}
 		input[type="date"] {
 			height: 30px;	
 			line-height: 30px;	
 			@include inline-block-pos;
 			border: 2px solid #ffdb4d;
-			padding: 2px 0;
+			padding: 2px 0px 0 10px;
 		}
 	}
 }
@@ -103,15 +96,18 @@ input[type="checkbox"]:checked + label{
 	}
 #getDate{
 	padding: 10px;
+	font-size: 0;
 	&.error{
 		background: rgba(255, 0, 0, 0.1);
 		.errorForm{
 		 float: right;
+		 margin-right: 20px;	
+		 font-size: 14px;	
 		}
 	}
 }
 .old-lection{
-	opacity: 0.5;
+	opacity: 0.7;
 	&:hover{
 		opacity: 1;
 	}
@@ -128,4 +124,45 @@ input[type="checkbox"]:checked + label{
 			margin-left: 10px;
 		}
 	}
+}
+.all-filters,
+.school,
+.lector,
+.month,
+.sort-date{
+	overflow: hidden;	
+	max-height: 0;
+	transition: max-height 0.15s ease-out;
+	cursor: pointer;	
+	&.visible{
+		max-height: 10000px;
+		transition: max-height 0.25s ease-in;
+	}	
+}
+.all-filters{
+		div{
+			padding-left: 20px;	
+		}
+}
+.sort{
+	&:after{
+	content: '▼';
+	font-size: 10px;
+	margin-left: 10px;
+	line-height: 27px;	
+	vertical-align: middle;	
+	cursor: pointer;		
+
+	}
+
+	&.opened{
+		&:after{
+		content: '▲';
+		}
+	}
+}
+.attention-text {
+    font-size: 16px;
+    margin: 10px 0;
+    display: block;
 }

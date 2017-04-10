@@ -1,3 +1,8 @@
+/*
+*
+* TODO: Заменить add и remove на toggle
+*
+*/
 ymaps.ready(function () {
     var myMap = new ymaps.Map('map', {
             center: [55.734032,37.5861723],
@@ -59,27 +64,12 @@ function separateAuthor(allPersons){
 * Облако тегов для фильтра
 *
 */
-// function makeTags(names){
-//     var i  = 0;
-//     var parentElement = document.getElementsByClassName('content');
-//     var curs = document.querySelector('.curs');
-//     for ( name in names ) {
-//         var labels = { element: "label", innerHTML: name };
-//         var labelsAttr = { class: "tag author"+i, for: "author"+i, style: "background:"+getColor() };
-//         var checkbox = { element: "input" };
-//         var checkboxAttr = { type: "checkbox", id: "author" + i, checked: "checked"};
-//         parentElement[0].insertBefore( makeElement( checkbox, checkboxAttr ), curs );
-//         parentElement[0].insertBefore( makeElement( labels, labelsAttr ), curs );
-//         i+=1;
-//     }
-// }
-function makeTags1(prefix, names, tags){
+function makeTags(prefix, names, tags){
     var i  = 0;
     var parentElement = document.getElementsByClassName(prefix);
-    console.log(parentElement);
     for ( name in names ) {
         var labels = { element: "label", innerHTML: names[name] };
-        var labelsAttr = { class: "tag "+ prefix + '_' + tags[i], for: prefix + '_' + tags[i] };
+        var labelsAttr = { class: "tag "+ prefix + '_' + tags[i], for: prefix + '_' + tags[i], style: 'background: ' +getColor()  };
         var checkbox = { element: "input" };
         var checkboxAttr = { type: "checkbox", id: prefix + '_' + tags[i], checked: "checked"};
         parentElement[0].insertBefore( makeElement( checkbox, checkboxAttr ), null );
@@ -106,8 +96,6 @@ function makeElement( DOMelement, DOMAttr ){
 /*
 *
 * Создание модального окна
-* TODO: Создание закрывающей кнопки и 
-* контентной области в этой функции
 *
 */
 function makemodal( info ){
@@ -139,6 +127,8 @@ function makeText( text, name ){
 /*
 *
 * Рандомный цвет для облака тегов.
+* Присваиваем для тегов в расписании
+* аналогичный цвет, как для облака тегов.
 *
 */
 function getColor(){
@@ -148,16 +138,27 @@ function getColor(){
     var rgba = "rgba("+r+', '+g+', '+b+", 0.5)";
     return rgba;
 }
+function colorSheduleTag(){
+    var school = document.querySelector('.school');
+    var schoolItems = school.querySelectorAll('.tag');
+    var schoolTags = {};
+    for (var i = 0; i < schoolItems.length; i++) {
+        schoolTags[schoolItems[i].innerHTML] = schoolItems[i].style.background;
+    }
+    for (var i = 0; i < lections.length; i++) {
+        var cursTag = lections[i].querySelectorAll('.tag');
+        for (var j = 0; j < cursTag.length; j++) {
+            cursTag[j].style.background = schoolTags[ cursTag[j].innerText ];
+        }
+    }
+}
 /*
 *
 * Фильтр для лекторов. 
-* TODO: сделать функции для остальных
-* фильтров
 *
 */
 function filter( prefix, index, names ) {
     var name = Object.keys(names);
-    console.log(name);
     var lections = document.querySelectorAll('[data-'+ prefix +'="'+ name[index] +'"]');
     for (var i = 0; i < lections.length; i++) {
 
@@ -380,7 +381,7 @@ function sortSchools( schools ){
             count = count + 1;
         }
     }
-    return school;
+    return selectOLdLections( school );
 }
 function selectOLdLections( sortedSchool ){
     var oldSchool = [];
@@ -396,7 +397,7 @@ function selectOLdLections( sortedSchool ){
     return { oldSchool, index };
 }
 function addLinkToOld( old ){
-    var oldLections = old;
+    var oldLections = sortSchools(old);
     var list = JSON.parse( loadInfo() )
     for (var i = 0; i < oldLections.oldSchool.length; i++) {
     var school  = oldLections.oldSchool[i].dataset.tag;
@@ -418,7 +419,6 @@ var cursItem = curs.querySelectorAll('.curs__item');
 var show = document.querySelectorAll(".show-all");
 var hide = document.querySelectorAll(".hide-all");
 var lectors = document.querySelectorAll(".curs__item__lector");
-var checkbox = document.querySelectorAll("[type='checkbox']");
 var form = document.forms["getDate"];
 /*
 *
@@ -444,9 +444,10 @@ for (var i = 0; i < lections.length; i++) {
     numberNames[i] = i ;
 }
 names = getUnique(names);
-makeTags1('lector', names, numberNames);
-makeTags1('school', lectionsTag, numberSchools);
-makeTags1('month', monthTag, numberMonth);
+makeTags('lector', names, numberNames);
+makeTags('school', lectionsTag, numberSchools);
+makeTags('month', monthTag, numberMonth);
+colorSheduleTag();
 checkOldLections();
 /*
 *
@@ -481,15 +482,15 @@ document.querySelectorAll("[type='checkbox']").forEach(function(element){
 */
 show.forEach( function( el ){
     el.onclick = function(event){
-        var typeOfCheckbox = event.target.parentNode.nextElementSibling.id.substring(0, 3);
-        showShedule( typeOfCheckbox, checkbox );
+        var typeOfCheckbox = event.target.parentNode.nextElementSibling.className.substring(0, 3);
+        showShedule( typeOfCheckbox, document.querySelectorAll("[type='checkbox']") );
     }
 
 });
 hide.forEach( function( el ){
     el.onclick = function(event){
-        var typeOfCheckbox = event.target.parentNode.nextElementSibling.id.substring(0, 3);
-        hideShedule( typeOfCheckbox, checkbox );
+        var typeOfCheckbox = event.target.parentNode.nextElementSibling.className.substring(0, 3);
+        hideShedule( typeOfCheckbox, document.querySelectorAll("[type='checkbox']") );
     }
 
 });
@@ -569,8 +570,21 @@ document.querySelector('.sort-date__submit').onclick = function( el ) {
 * находим среди них старые школы и добавляем атрибут href
 *
 */
-
-var oldShri = addLinkToOld( selectOLdLections( sortSchools("shri") ) );
-var oldShmd = addLinkToOld( selectOLdLections( sortSchools("shmd") ) );
-var oldShmr = addLinkToOld( selectOLdLections( sortSchools("shmr") ) );
-var oldAll = addLinkToOld( selectOLdLections( sortSchools("all") ) );
+for (var i = 0; i < Object.keys(lectionsTag).length; i++) {
+    addLinkToOld( Object.keys(lectionsTag)[i] );
+}
+/*
+*
+* Разворачивание фильтра по клику
+*
+*/
+document.querySelector('.more-filter').onclick = function(el){
+    el.target.classList.toggle('opened');
+    document.querySelector('.all-filters').classList.toggle('visible');
+}
+document.querySelectorAll('.sort').forEach(function( element ){
+    element.onclick = function(el){
+        el.target.classList.toggle('opened');
+        el.target.nextElementSibling.classList.toggle('visible');
+    }
+});

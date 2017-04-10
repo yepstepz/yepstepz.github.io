@@ -142,8 +142,7 @@ gulp.task('prefix', function () {
   return gulp.src(paths.src.css)
     .pipe(autoprefixer({
       browsers: [
-        'last 3 versions',
-        '> 1%'
+        'last 3 versions'
       ],
       cascade: false
     }))
