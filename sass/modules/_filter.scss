@@ -62,7 +62,6 @@ input[type="checkbox"]:checked + label{
 		}
 		input[type="date"] {
 			height: 30px;	
-			line-height: 30px;	
 			@include inline-block-pos;
 			border: 2px solid #ffdb4d;
 			padding: 2px 0px 0 10px;

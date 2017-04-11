@@ -272,7 +272,6 @@ input[type="checkbox"]:checked + label {
         border-width: 15px 0 15px 7px; }
     .sort-date__input input[type="date"] {
       height: 30px;
-      line-height: 30px;
       display: inline-block;
       vertical-align: top;
       border: 2px solid #ffdb4d;
