@@ -1,8 +1,3 @@
-/*
-*
-* TODO: Заменить add и remove на toggle
-*
-*/
 ymaps.ready(function () {
     var myMap = new ymaps.Map('map', {
             center: [55.734032,37.5861723],
@@ -177,13 +172,14 @@ function filter( prefix, index, names ) {
 *
 */
 function showShedule( typeOfCheckbox, checkbox ){
-    checkbox.forEach(function(element){
-        if( ~element.id.indexOf( typeOfCheckbox ) ){
-            if ( element.checked == "" ) {
-                element.click();
+    for (var i = 0; i < checkbox.length; i++) {
+        if( ~checkbox[i].id.indexOf( typeOfCheckbox ) ){
+            if ( checkbox[i].checked == "" ) {
+                checkbox[i].click();
             }
         }
-    });
+    }
+    return true;
 
 }
 /*
@@ -192,13 +188,13 @@ function showShedule( typeOfCheckbox, checkbox ){
 *
 */
 function hideShedule( typeOfCheckbox, checkbox ){
-    checkbox.forEach(function(element){
-        if( ~element.id.indexOf( typeOfCheckbox ) ){
-            if ( element.checked != "" ) {
-                element.click();
+    for (var i = 0; i < checkbox.length; i++) {
+        if( ~checkbox[i].id.indexOf( typeOfCheckbox ) ){
+            if ( checkbox[i].checked != "" ) {
+                checkbox[i].click();
             }
         }
-    });    
+    }  
 }
 /*
 *
@@ -309,14 +305,17 @@ function checkOldLections(){
             var scheduleDate = makeDate( cursSection[ i ], item[ j ] );
             var currentDate = new Date();
             if ( +scheduleDate < +currentDate ) {
-                item[j].querySelectorAll('.curs__lection').forEach(function(el){
-                    el.classList.add('old-lection');
-                });
+                    hideLection( item[j] );
             }
         }
     }
     return true;
-
+}
+function hideLection( section ){
+        lection = section.querySelectorAll('.curs__lection');
+        for (var i = 0; i < lection.length; i++) {
+            lection[i].classList.add('old-lection')
+        }
 }
 /*
 *
@@ -348,7 +347,9 @@ function loadInfo() {
 function getLectorLinks( lector ){
     var list = JSON.parse( loadInfo() );
     var link = list.lectors[lector];
-    return { link, lector};
+    return {
+        link : link, 
+        lector : lector };
 }
 function addmodalInfo( info ){
     lectorInfo = info;
@@ -359,7 +360,7 @@ function addmodalInfo( info ){
            if ( i > 0) {
                 inner = inner + ' и ';
            }
-           inner = inner + "<a href='"+ lectorInfo.link[link] +"'>" + 
+           inner = inner + "<a href='"+ lectorInfo.link[i] +"'>" + 
            name[i] + "</a>";
            i +=1;
     }
@@ -394,15 +395,15 @@ function selectOLdLections( sortedSchool ){
             count +=1;
         }
     }
-    return { oldSchool, index };
+    return [ oldSchool, index ];
 }
 function addLinkToOld( old ){
     var oldLections = sortSchools(old);
     var list = JSON.parse( loadInfo() )
-    for (var i = 0; i < oldLections.oldSchool.length; i++) {
-    var school  = oldLections.oldSchool[i].dataset.tag;
-    var index = oldLections.index[i];
-        oldLections.oldSchool[i].setAttribute("href", list.lections[school][index]);;
+    for (var i = 0; i < oldLections[0].length; i++) {
+    var school  = oldLections[0][i].dataset.tag;
+    var index = oldLections[1][i];
+        oldLections[0][i].setAttribute("href", list.lections[school][index]);;
     }
     return true;
 }
@@ -411,18 +412,15 @@ function addLinkToOld( old ){
 * Для удобства объявляю необходимые переменные, которые используются далее по коду.
 * 
 */
-var lections = document.getElementsByClassName('curs__lection');
-var names = [];
 var curs = document.querySelector('.curs');
 var cursSection = curs.querySelectorAll('.curs__section');
+var lections = document.getElementsByClassName('curs__lection');
 var cursItem = curs.querySelectorAll('.curs__item');
-var show = document.querySelectorAll(".show-all");
-var hide = document.querySelectorAll(".hide-all");
 var lectors = document.querySelectorAll(".curs__item__lector");
 var form = document.forms["getDate"];
 /*
 *
-* Динамичское создание тегов.
+* Динамическое создание тегов.
 * 
 */
 var lectionsTag = {};
@@ -439,6 +437,7 @@ for (i = 0; i<cursSection.length; i++) {
     monthTag[ cursSection[i].dataset.month ] = cursSection[i].querySelector('.curs__month').innerText;
     numberMonth[i] = i;
 }  
+var names = [];
 for (var i = 0; i < lections.length; i++) {
     names[i] = lections[i].getAttribute('data-author');
     numberNames[i] = i ;
@@ -456,8 +455,9 @@ checkOldLections();
 * TODO: Поиск по лекторам
 * 
 */
-document.querySelectorAll("[type='checkbox']").forEach(function(element){
-    element.onchange = function (el) {
+var checkbox = document.querySelectorAll("[type='checkbox']");
+for (var i = 0; i < checkbox.length; i++) {
+    checkbox[i].onchange = function (el) {
         if ( ~el.target.id.indexOf('lector') ){
                 var index = el.target.id.match(/\d+/)[0];
                 filter( 'author', index, names );
@@ -473,27 +473,29 @@ document.querySelectorAll("[type='checkbox']").forEach(function(element){
         checkVisibility();
 
     }
-});
+}
 /*
 *
 * Показать все и скрыть все по клику.
 * Вешаем событие.
 * 
 */
-show.forEach( function( el ){
-    el.onclick = function(event){
+var show = document.querySelectorAll(".show-all");
+for (var i = 0; i < show.length; i++) {
+    show[i].onclick = function(event){
+        event.preventDefault();
         var typeOfCheckbox = event.target.parentNode.nextElementSibling.className.substring(0, 3);
         showShedule( typeOfCheckbox, document.querySelectorAll("[type='checkbox']") );
     }
-
-});
-hide.forEach( function( el ){
-    el.onclick = function(event){
+}
+var hide = document.querySelectorAll(".hide-all");
+for (var i = 0; i < hide.length; i++) {
+    hide[i].onclick = function(event){
+        event.preventDefault();
         var typeOfCheckbox = event.target.parentNode.nextElementSibling.className.substring(0, 3);
         hideShedule( typeOfCheckbox, document.querySelectorAll("[type='checkbox']") );
     }
-
-});
+}
 document.querySelector('.show-date').onclick = function(){
     for (var i = 0; i < cursItem.length; i++) {
         cursItem[i].style.display = "block";
@@ -528,14 +530,14 @@ document.querySelector('.toggle-old').onclick = function( el ){
 * Добавляем возможность закрыть окно.
 * 
 */
-lectors.forEach( function( el ){
-    el.onclick = function(event){
+for (var i = 0; i < lectors.length; i++) {
+    lectors[i].onclick = function(event){
         event.preventDefault();
         var shadow = { element: "div" };
         var shadowAttr = { class: "modal-shadow"};
         var shadow = document.body.insertBefore( makeElement( shadow, shadowAttr ), document.body[0] );
         var modal = document.body.insertBefore( makemodal( lectors ), document.body[0] );   
-        document.querySelector(".modalWindow").innerHTML = addmodalInfo( getLectorLinks( el.parentNode.dataset.author ) );
+        document.querySelector(".modalWindow").innerHTML = addmodalInfo( getLectorLinks( event.target.parentNode.dataset.author ) );
         var close = { element: "span", innerHTML: "×" };
         var closeAttr = { class: "close"}; 
         document.querySelector(".modalWindow").insertBefore( makeElement( close, closeAttr ), modal[0] );
@@ -546,7 +548,7 @@ lectors.forEach( function( el ){
             removemodal();
         }
     }
-});
+}
 /*
 *
 *Фильтр по датам
@@ -582,9 +584,12 @@ document.querySelector('.more-filter').onclick = function(el){
     el.target.classList.toggle('opened');
     document.querySelector('.all-filters').classList.toggle('visible');
 }
-document.querySelectorAll('.sort').forEach(function( element ){
-    element.onclick = function(el){
-        el.target.classList.toggle('opened');
-        el.target.nextElementSibling.classList.toggle('visible');
-    }
-});
+var sort = document.querySelectorAll('.sort');
+for (var i = 0; i < sort.length; i++) {
+        sort[i].onclick = function(el){
+            if ( el.target.nextElementSibling ) {
+                el.target.classList.toggle('opened');
+                el.target.nextElementSibling.classList.toggle('visible');
+            }
+        }
+}
