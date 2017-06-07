@@ -63,31 +63,22 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 9);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var style = __webpack_require__(2);
 var template = __webpack_require__(1);
-/* harmony default export */ __webpack_exports__["default"] = (html = template('./index.js'));
+let html = template('./index.js');
 
 /***/ }),
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var pug = __webpack_require__(5);
-
-function template(locals) {
-  var pug_html = "",
-      pug_mixins = {},
-      pug_interp;pug_html = pug_html + "\u003Cdiv class=\"container\"\u003E\u003Ch1\u003EJunior Front End Developer\u003C\u002Fh1\u003E\u003Cp\u003EHello,\u003C\u002Fp\u003E\u003Cp\u003EMy name is Tatiana Leontieva.I'm working with single-page application and high-loaded websites\nusing HTML5, CSS3 (SASS\u002FLESS), Js.\u003C\u002Fp\u003E\u003Cp\u003EI'm also developing my own projects with React\u002FRedux, ECMAScript 6.Webpack and npm packages help me to improve and optimize my developing process.\u003C\u002Fp\u003E\u003Cp\u003EI enjoy maths and algorithms.\u003C\u002Fp\u003E\u003Ch2\u003EMy skills\u003C\u002Fh2\u003E\u003Cul\u003E\u003Cli\u003EJS, ECMAScript 6, React, jQuery\u003C\u002Fli\u003E\u003Cli\u003ESass\u002FLess, CSS3\u003C\u002Fli\u003E\u003Cli\u003EWebpack, Gulp\u003C\u002Fli\u003E\u003Cli\u003EPHPStorm, GIT\u003C\u002Fli\u003E\u003C\u002Ful\u003E\u003Ch2\u003EWork Experience\u003C\u002Fh2\u003E\u003Ch3\u003EDeveloper | Demis, Voronezh\u003C\u002Fh3\u003E\u003Cp\u003EJanuary 2016 - Present\u003C\u002Fp\u003E\u003Cp\u003EWas promoted from junior to middle developer;\nSuccesfully passed inner tests and certified\nwith Bitrix certificates.\u003C\u002Fp\u003E\u003Cul\u003E\u003Cli\u003EWorking with popular CMS,\u003C\u002Fli\u003E\u003Cli\u003EHTML-coding,\u003C\u002Fli\u003E\u003Cli\u003Eadding functionality with js (jQuery),\u003C\u002Fli\u003E\u003Cli\u003Eadding adaptivity and responsibility,\u003C\u002Fli\u003E\u003Cli\u003Ementoring interns,\u003C\u002Fli\u003E\u003Cli\u003Edoing educational materials for interns.\u003C\u002Fli\u003E\u003C\u002Ful\u003E\u003Ch3\u003EWebmaster | Viled, St. Petersburg\u003C\u002Fh3\u003E\u003Cp\u003EAugust 2015 - December 2015\u003C\u002Fp\u003E\u003Cp\u003EGot important webmaster skills;\nStarted managing and planning own time;\nUnderstood important UX-patterns.\u003C\u002Fp\u003E\u003Cul\u003E\u003Cli\u003EUsing jQuery and css3 for adding functionality on site,\u003C\u002Fli\u003E\u003Cli\u003EAnalysing user behaviors with Google analytics,\u003C\u002Fli\u003E\u003Cli\u003ETrying and testing UX-practices to engage and involve the target audience,\u003C\u002Fli\u003E\u003Cli\u003EA\u002FB testing,\u003C\u002Fli\u003E\u003Cli\u003Emaking technical tasks,\u003C\u002Fli\u003E\u003Cli\u003Ecommunicating with freelancers.\u003C\u002Fli\u003E\u003C\u002Ful\u003E\u003Ch3\u003EContent-manager | Promotion Group, Moscow\u003C\u002Fh3\u003E\u003Cp\u003EAugust 2014 - March 2015\u003C\u002Fp\u003E\u003Cp\u003EGot html skills and learned\nhow to make SEO-content.\u003C\u002Fp\u003E\u003Cul\u003E\u003Cli\u003Ewriting and editing SEO-content,\u003C\u002Fli\u003E\u003Cli\u003Ehtml-coding\u003C\u002Fli\u003E\u003C\u002Ful\u003E\u003Ch2\u003EEducation\u003C\u002Fh2\u003E\u003Ch3\u003EBachelor of Engineering (B.Eng.) | National Research University of Electronic Technology (MIET)\u003C\u002Fh3\u003E\u003Cp\u003E2010 - 2014\u003C\u002Fp\u003E\u003Cp\u003EFaculty of Computer Science and Telecommunications\u003C\u002Fp\u003E\u003Ch2\u003EContact me:\u003C\u002Fh2\u003E\u003Cul\u003E\u003Cli class=\"github\"\u003E\u003Ca href=\"https:\u002F\u002Fgithub.com\u002Fyepstepz\"\u003EGithub\u003C\u002Fa\u003E\u003C\u002Fli\u003E\u003Cli class=\"fb\"\u003E\u003Ca href=\"https:\u002F\u002Ffacebook.com\u002Fyepstepz\"\u003EFacebook\u003C\u002Fa\u003E\u003C\u002Fli\u003E\u003Cli class=\"mail\"\u003E\u003Ca href=\"mailto:tatiana.leontieva94@gmail.com\"\u003EMail\u003C\u002Fa\u003E\u003C\u002Fli\u003E\u003C\u002Ful\u003E\u003C\u002Fdiv\u003E";;return pug_html;
-};
-module.exports = template;
+module.exports = __webpack_require__.p + "./index.html";
 
 /***/ }),
 /* 2 */
@@ -104,7 +95,7 @@ var transform;
 var options = {};
 options.transform = transform;
 // add the styles to the DOM
-var update = __webpack_require__(6)(content, options);
+var update = __webpack_require__(5)(content, options);
 if (content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if (false) {
@@ -222,267 +213,6 @@ function toComment(sourceMap) {
 /* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-
-
-var pug_has_own_property = Object.prototype.hasOwnProperty;
-
-/**
- * Merge two attribute objects giving precedence
- * to values in object `b`. Classes are special-cased
- * allowing for arrays and merging/joining appropriately
- * resulting in a string.
- *
- * @param {Object} a
- * @param {Object} b
- * @return {Object} a
- * @api private
- */
-
-exports.merge = pug_merge;
-function pug_merge(a, b) {
-  if (arguments.length === 1) {
-    var attrs = a[0];
-    for (var i = 1; i < a.length; i++) {
-      attrs = pug_merge(attrs, a[i]);
-    }
-    return attrs;
-  }
-
-  for (var key in b) {
-    if (key === 'class') {
-      var valA = a[key] || [];
-      a[key] = (Array.isArray(valA) ? valA : [valA]).concat(b[key] || []);
-    } else if (key === 'style') {
-      var valA = pug_style(a[key]);
-      var valB = pug_style(b[key]);
-      a[key] = valA + valB;
-    } else {
-      a[key] = b[key];
-    }
-  }
-
-  return a;
-};
-
-/**
- * Process array, object, or string as a string of classes delimited by a space.
- *
- * If `val` is an array, all members of it and its subarrays are counted as
- * classes. If `escaping` is an array, then whether or not the item in `val` is
- * escaped depends on the corresponding item in `escaping`. If `escaping` is
- * not an array, no escaping is done.
- *
- * If `val` is an object, all the keys whose value is truthy are counted as
- * classes. No escaping is done.
- *
- * If `val` is a string, it is counted as a class. No escaping is done.
- *
- * @param {(Array.<string>|Object.<string, boolean>|string)} val
- * @param {?Array.<string>} escaping
- * @return {String}
- */
-exports.classes = pug_classes;
-function pug_classes_array(val, escaping) {
-  var classString = '', className, padding = '', escapeEnabled = Array.isArray(escaping);
-  for (var i = 0; i < val.length; i++) {
-    className = pug_classes(val[i]);
-    if (!className) continue;
-    escapeEnabled && escaping[i] && (className = pug_escape(className));
-    classString = classString + padding + className;
-    padding = ' ';
-  }
-  return classString;
-}
-function pug_classes_object(val) {
-  var classString = '', padding = '';
-  for (var key in val) {
-    if (key && val[key] && pug_has_own_property.call(val, key)) {
-      classString = classString + padding + key;
-      padding = ' ';
-    }
-  }
-  return classString;
-}
-function pug_classes(val, escaping) {
-  if (Array.isArray(val)) {
-    return pug_classes_array(val, escaping);
-  } else if (val && typeof val === 'object') {
-    return pug_classes_object(val);
-  } else {
-    return val || '';
-  }
-}
-
-/**
- * Convert object or string to a string of CSS styles delimited by a semicolon.
- *
- * @param {(Object.<string, string>|string)} val
- * @return {String}
- */
-
-exports.style = pug_style;
-function pug_style(val) {
-  if (!val) return '';
-  if (typeof val === 'object') {
-    var out = '';
-    for (var style in val) {
-      /* istanbul ignore else */
-      if (pug_has_own_property.call(val, style)) {
-        out = out + style + ':' + val[style] + ';';
-      }
-    }
-    return out;
-  } else {
-    val += '';
-    if (val[val.length - 1] !== ';') 
-      return val + ';';
-    return val;
-  }
-};
-
-/**
- * Render the given attribute.
- *
- * @param {String} key
- * @param {String} val
- * @param {Boolean} escaped
- * @param {Boolean} terse
- * @return {String}
- */
-exports.attr = pug_attr;
-function pug_attr(key, val, escaped, terse) {
-  if (val === false || val == null || !val && (key === 'class' || key === 'style')) {
-    return '';
-  }
-  if (val === true) {
-    return ' ' + (terse ? key : key + '="' + key + '"');
-  }
-  if (typeof val.toJSON === 'function') {
-    val = val.toJSON();
-  }
-  if (typeof val !== 'string') {
-    val = JSON.stringify(val);
-    if (!escaped && val.indexOf('"') !== -1) {
-      return ' ' + key + '=\'' + val.replace(/'/g, '&#39;') + '\'';
-    }
-  }
-  if (escaped) val = pug_escape(val);
-  return ' ' + key + '="' + val + '"';
-};
-
-/**
- * Render the given attributes object.
- *
- * @param {Object} obj
- * @param {Object} terse whether to use HTML5 terse boolean attributes
- * @return {String}
- */
-exports.attrs = pug_attrs;
-function pug_attrs(obj, terse){
-  var attrs = '';
-
-  for (var key in obj) {
-    if (pug_has_own_property.call(obj, key)) {
-      var val = obj[key];
-
-      if ('class' === key) {
-        val = pug_classes(val);
-        attrs = pug_attr(key, val, false, terse) + attrs;
-        continue;
-      }
-      if ('style' === key) {
-        val = pug_style(val);
-      }
-      attrs += pug_attr(key, val, false, terse);
-    }
-  }
-
-  return attrs;
-};
-
-/**
- * Escape the given string of `html`.
- *
- * @param {String} html
- * @return {String}
- * @api private
- */
-
-var pug_match_html = /["&<>]/;
-exports.escape = pug_escape;
-function pug_escape(_html){
-  var html = '' + _html;
-  var regexResult = pug_match_html.exec(html);
-  if (!regexResult) return _html;
-
-  var result = '';
-  var i, lastIndex, escape;
-  for (i = regexResult.index, lastIndex = 0; i < html.length; i++) {
-    switch (html.charCodeAt(i)) {
-      case 34: escape = '&quot;'; break;
-      case 38: escape = '&amp;'; break;
-      case 60: escape = '&lt;'; break;
-      case 62: escape = '&gt;'; break;
-      default: continue;
-    }
-    if (lastIndex !== i) result += html.substring(lastIndex, i);
-    lastIndex = i + 1;
-    result += escape;
-  }
-  if (lastIndex !== i) return result + html.substring(lastIndex, i);
-  else return result;
-};
-
-/**
- * Re-throw the given `err` in context to the
- * the pug in `filename` at the given `lineno`.
- *
- * @param {Error} err
- * @param {String} filename
- * @param {String} lineno
- * @param {String} str original source
- * @api private
- */
-
-exports.rethrow = pug_rethrow;
-function pug_rethrow(err, filename, lineno, str){
-  if (!(err instanceof Error)) throw err;
-  if ((typeof window != 'undefined' || !filename) && !str) {
-    err.message += ' on line ' + lineno;
-    throw err;
-  }
-  try {
-    str = str || __webpack_require__(8).readFileSync(filename, 'utf8')
-  } catch (ex) {
-    pug_rethrow(err, null, lineno)
-  }
-  var context = 3
-    , lines = str.split('\n')
-    , start = Math.max(lineno - context, 0)
-    , end = Math.min(lines.length, lineno + context);
-
-  // Error context
-  var context = lines.slice(start, end).map(function(line, i){
-    var curr = i + start + 1;
-    return (curr == lineno ? '  > ' : '    ')
-      + curr
-      + '| '
-      + line;
-  }).join('\n');
-
-  // Alter exception message
-  err.path = filename;
-  err.message = (filename || 'Pug') + ':' + lineno
-    + '\n' + context + '\n\n' + err.message;
-  throw err;
-};
-
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
 /*
 	MIT License http://www.opensource.org/licenses/mit-license.php
 	Author Tobias Koppers @sokra
@@ -517,7 +247,7 @@ var stylesInDom = {},
 	singletonElement = null,
 	singletonCounter = 0,
 	styleElementsInsertedAtTop = [],
-	fixUrls = __webpack_require__(7);
+	fixUrls = __webpack_require__(6);
 
 module.exports = function(list, options) {
 	if(typeof DEBUG !== "undefined" && DEBUG) {
@@ -793,7 +523,7 @@ function updateLink(linkElement, options, obj) {
 
 
 /***/ }),
-/* 7 */
+/* 6 */
 /***/ (function(module, exports) {
 
 
@@ -888,13 +618,7 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 8 */
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-/* 9 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(0);

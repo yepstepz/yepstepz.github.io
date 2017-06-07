@@ -23,7 +23,10 @@ module.exports = {
                 test: /\.scss$/,
                 loaders: [ 'style-loader', 'css-loader', 'sass-loader' ]
             },
-            {test: /\.(pug|jade)$/, loader: 'pug-loader'}
+            {
+                test: /\.pug$/,
+                loaders: ['file-loader?name=./index.html', 'pug-html-loader?pretty&exports=false']
+            }
         ],
     },
     plugins: [
