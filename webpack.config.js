@@ -27,7 +27,7 @@ module.exports = {
         ],
     },
     plugins: [
-    //     new ExtractTextPlugin("styles.css"),
+        // new ExtractTextPlugin("index.html"),
     ],
     resolve: {
         extensions: ['.js', '.jsx', '.css', '.jade', '.pug']
