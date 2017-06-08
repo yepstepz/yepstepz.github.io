@@ -1,3 +1,5 @@
-var style = require('./src/sass/cv.scss');
-var template = require('./src/pug/index.pug');
-let html = template('./index.js');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Layout from './src/templates/layout.js';
+ReactDOM.render(<Layout />, document.getElementById("root"));
+//https://rajdee.gitbooks.io/redux-in-russian/content/

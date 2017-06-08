@@ -23,17 +23,14 @@ module.exports = {
                 test: /\.scss$/,
                 loaders: [ 'style-loader', 'css-loader', 'sass-loader' ]
             },
-            {
-                test: /\.pug$/,
-                loaders: ['file-loader?name=./index.html', 'pug-html-loader?pretty&exports=false']
-            }
+            {test: /\.(pug|jade)$/, loader: 'pug-loader'}
         ],
     },
-    plugins: [
-        // new ExtractTextPlugin("index.html"),
-    ],
+    // plugins: [
+    //     new ExtractTextPlugin("styles.css"),
+    // ],
     resolve: {
-        extensions: ['.js', '.jsx', '.css', '.jade', '.pug']
+        extensions: ['.js', '.jsx', '.css']
     },
     devServer: { inline: true }
 };
