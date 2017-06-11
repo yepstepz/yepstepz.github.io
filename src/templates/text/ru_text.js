@@ -1,6 +1,5 @@
 import React from 'react';
-const text = pug`div.container
-    h1 Junior Front End Developer
+const text = pug`
     p Привет,
     p Меня зовут Татьяна Леонтьева. 
       | Я работаю с одностраничными приложениями 
