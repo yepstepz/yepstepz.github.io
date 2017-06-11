@@ -1,11 +1,12 @@
-div.container
+import React from 'react';
+const text = pug`div.container
     h1 Junior Front End Developer
     p Hello,
-    p My name is Tatiana Leontieva.
-      | I'm working with single-page application and high-loaded websites
+    p My name is Tatiana Leontieva. 
+      | I'm working with single-page application and high-loaded websites 
       | using HTML5, CSS3 (SASS/LESS), Js.
-    p I'm also developing my own projects with React/Redux, ECMAScript 6.
-      | Webpack helps me to improve and optimize my developing process.
+    p I'm also developing my own projects with React/Redux, ECMAScript 6. 
+      | Webpack and Gulp helps me to improve and optimize my developing process.
     p I enjoy maths and algorithms.
 
     h2 My skills
@@ -14,6 +15,7 @@ div.container
         li Sass/Less, CSS3
         li Webpack, Gulp
         li PHPStorm, GIT
+        li Mocha/Chai Tests (TDD)
     h2 Work Experience
     h3 Developer | Demis, Voronezh
     p January 2016 - Present
@@ -60,4 +62,6 @@ div.container
       li.fb
         a(href='https://facebook.com/yepstepz') Facebook
       li.mail
-        a(href="mailto:tatiana.leontieva94@gmail.com") Mail
+        a(href="mailto:tatiana.leontieva94@gmail.com") Mail`;
+
+export default text;

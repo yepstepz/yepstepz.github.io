@@ -1,18 +1,18 @@
-import React from 'react';
-import { createStore } from 'redux';
-
-let langSwitcher = (state = 'RU', action) => {
-    let newState;
+import {Languages, SELECT_LANGUAGE, Text} from '../actions/index';
+import { combineReducers } from 'redux';
+const initialState = {
+    lang: Languages.ENG,
+    text: Text.ENG
+}
+function changeLanguage(state=initialState.text, action){
     switch (action.type){
-        case 'RU':
-            newState = 'RU'
-            return newState;
-        case 'ENG':
-            newState = 'ENG'
-            return newState;
+        case SELECT_LANGUAGE:
+            return action.text
         default:
             return state;
     }
 }
-let store = createStore(langSwitcher);
-export default store;
+const cvApp = combineReducers({
+    changeLanguage
+})
+export default cvApp;
