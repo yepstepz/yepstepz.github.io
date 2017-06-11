@@ -1,25 +1,18 @@
 import React, {PropTypes} from 'react';
 import {render} from 'react-dom';
 import {connect} from 'react-redux';
+import TextContent from './text';
+import Header from './header';
+import Footer from './footer';
+import Switcher from './switchLang';
 import {selectLanguage, Languages, Text} from '../../actions/index';
 
 const Content = ({text, onClick}) => {
     return (
         <div>
-            <div onClick={e => {
-                e.preventDefault();
-                onClick(Languages.RU, Text.RU);
-            }}
-            >{Languages.RU}</div>
-            <div onClick={e => {
-                e.preventDefault();
-                onClick(Languages.ENG, Text.ENG);
-            }}
-            >{Languages.ENG}</div>
-            <div class="container">
-                {text}
-
-            </div>
+            <Header/>
+            <TextContent text={text} />
+            <Footer/>
         </div>
     )
 
@@ -30,15 +23,8 @@ function mapStateToProps(state) {
         text: state.changeLanguage
     }
 }
-const mapDispatchToProps = (dispatch) => {
-    return {
-        onClick: (lang, text) => {
-            dispatch(selectLanguage(lang, text))
-        }
-    }
-}
 let changeContent = connect(
     mapStateToProps,
-    mapDispatchToProps
+    null
 )(Content)
 export default changeContent;
