@@ -5,12 +5,8 @@ const EngText = () => {
             <div className="description">
                 <h1>Junior Front End Developer</h1>
                 <p>Hello,</p>
-                <p>
-                    My name is Tatiana Leontieva. I'm working with single-page application and high-loaded websites using HTML5, CSS3 (SASS/LESS), Js.
-                </p>
-                <p>
-                    I'm also developing my own projects with React/Redux, ECMAScript 6. Webpack and Gulp helps me to improve and optimize my developing process.
-                </p>
+                <p>My name is Tatiana Leontieva. I'm working with single-page application and high-loaded websites using HTML5, CSS3 (SASS/LESS), Js.</p>
+                <p>I'm also developing my own projects with React/Redux, ECMAScript 6. Webpack and Gulp helps me to improve and optimize my developing process.</p>
                 <p>I enjoy maths and algorithms.</p>
             </div>
             <div className="skills">
