@@ -7,11 +7,11 @@ import Footer from './footer';
 import Switcher from './switchLang';
 import {selectLanguage, Languages, Text} from '../../actions/index';
 
-const Content = ({text, onClick}) => {
+const Content = ({text}) => {
     return (
         <div>
             <Header/>
-            <TextContent text={text} />
+            <TextContent text={text}/>
             <Footer/>
         </div>
     )
