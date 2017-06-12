@@ -36,6 +36,7 @@ iterateCollection(skills)( (node) => {
 })
 iterateCollection(responsibilityBtn)( (node) => {
     node.onclick = (e) => {
+        e.target.classList.toggle('opened');
         e.target.nextSibling.classList.toggle('showed');
     }
 })
