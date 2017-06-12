@@ -6,13 +6,10 @@ const EngText = () => {
                 <h1>Junior Front End Developer</h1>
                 <p>Hello,</p>
                 <p>
-                    My name is Tatiana Leontieva.
-                    I'm working with single-page application and high-loaded websites
-                    using HTML5, CSS3 (SASS/LESS), Js.
+                    My name is Tatiana Leontieva. I'm working with single-page application and high-loaded websites using HTML5, CSS3 (SASS/LESS), Js.
                 </p>
                 <p>
-                    I'm also developing my own projects with React/Redux, ECMAScript 6.
-                    Webpack and Gulp helps me to improve and optimize my developing process.
+                    I'm also developing my own projects with React/Redux, ECMAScript 6. Webpack and Gulp helps me to improve and optimize my developing process.
                 </p>
                 <p>I enjoy maths and algorithms.</p>
             </div>
@@ -41,9 +38,7 @@ const EngText = () => {
                         <div className="experience__advantages__time"></div>
                     </div>
                     <p className="experience__item__description">
-                        Was promoted from junior to middle developer;
-                        Succesfully passed inner tests and certified
-                        with Bitrix certificates.
+                        Was promoted from junior to middle developer; Succesfully passed inner tests and certified with Bitrix certificates.
                     </p>
                     <p className="experience__item__listBtn">Responsibilities</p>
                     <ul className="experience__item__responsibilities">
@@ -59,9 +54,7 @@ const EngText = () => {
                     <h3 className="experience__item__title">Developer Webmaster | Viled, St. Petersburg</h3>
                     <p className="experience__item__year">August 2015 - December 2015</p>
                     <p className="experience__item__description">
-                        Got important webmaster skills;
-                        Started managing and planning own time;
-                        Understood important UX-patterns.
+                        Got important webmaster skills; Started managing and planning own time; Understood important UX-patterns.
                     </p>
                     <p className="experience__item__listBtn">Responsibilities</p>
                     <ul className="experience__item__responsibilities">
@@ -77,8 +70,7 @@ const EngText = () => {
                     <h3 className="experience__item__title">Content-manager | Promotion Group, Moscow</h3>
                     <p className="experience__item__year">August 2014 - March 2015</p>
                     <p className="experience__item__description">
-                        Got html skills and learned
-                        how to make SEO-content.
+                        Got html skills and learned how to make SEO-content.
                     </p>
                     <p className="experience__item__listBtn">Responsibilities</p>
                     <ul className="experience__item__responsibilities">
