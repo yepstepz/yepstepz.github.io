@@ -794,7 +794,7 @@ module.exports = ExecutionEnvironment;
 
 var _prodInvariant = __webpack_require__(17);
 
-var ReactCurrentOwner = __webpack_require__(11);
+var ReactCurrentOwner = __webpack_require__(12);
 
 var invariant = __webpack_require__(1);
 var warning = __webpack_require__(2);
@@ -1193,6 +1193,16 @@ module.exports = { debugTool: debugTool };
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+
+
+module.exports = __webpack_require__(20);
+
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -1446,7 +1456,7 @@ module.exports = ReactUpdates;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1480,16 +1490,6 @@ var ReactCurrentOwner = {
 };
 
 module.exports = ReactCurrentOwner;
-
-/***/ }),
-/* 12 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = __webpack_require__(20);
-
 
 /***/ }),
 /* 13 */
@@ -2118,7 +2118,7 @@ module.exports = PooledClass;
 
 var _assign = __webpack_require__(4);
 
-var ReactCurrentOwner = __webpack_require__(11);
+var ReactCurrentOwner = __webpack_require__(12);
 
 var warning = __webpack_require__(2);
 var canDefineProperty = __webpack_require__(32);
@@ -4641,6 +4641,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Text = exports.selectLanguage = exports.Languages = exports.SELECT_LANGUAGE = undefined;
 
+var _react = __webpack_require__(10);
+
+var _react2 = _interopRequireDefault(_react);
+
 var _ru_text = __webpack_require__(107);
 
 var _ru_text2 = _interopRequireDefault(_ru_text);
@@ -4657,8 +4661,8 @@ var Languages = {
     ENG: 'ENG'
 };
 var Text = {
-    RU: _ru_text2.default,
-    ENG: _eng_text2.default
+    RU: _react2.default.createElement(_ru_text2.default, null),
+    ENG: _react2.default.createElement(_eng_text2.default, null)
 };
 function selectLanguage(lang, text) {
     return {
@@ -5687,10 +5691,10 @@ module.exports = ReactErrorUtils;
 
 var _prodInvariant = __webpack_require__(3);
 
-var ReactCurrentOwner = __webpack_require__(11);
+var ReactCurrentOwner = __webpack_require__(12);
 var ReactInstanceMap = __webpack_require__(24);
 var ReactInstrumentation = __webpack_require__(9);
-var ReactUpdates = __webpack_require__(10);
+var ReactUpdates = __webpack_require__(11);
 
 var invariant = __webpack_require__(1);
 var warning = __webpack_require__(2);
@@ -6906,7 +6910,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _react = __webpack_require__(12);
+var _react = __webpack_require__(10);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -8298,7 +8302,7 @@ var _assign = __webpack_require__(4);
 
 var LinkedValueUtils = __webpack_require__(41);
 var ReactDOMComponentTree = __webpack_require__(5);
-var ReactUpdates = __webpack_require__(10);
+var ReactUpdates = __webpack_require__(11);
 
 var warning = __webpack_require__(2);
 
@@ -8771,7 +8775,7 @@ var DOMLazyTree = __webpack_require__(18);
 var DOMProperty = __webpack_require__(14);
 var React = __webpack_require__(20);
 var ReactBrowserEventEmitter = __webpack_require__(27);
-var ReactCurrentOwner = __webpack_require__(11);
+var ReactCurrentOwner = __webpack_require__(12);
 var ReactDOMComponentTree = __webpack_require__(5);
 var ReactDOMContainerInfo = __webpack_require__(151);
 var ReactDOMFeatureFlags = __webpack_require__(153);
@@ -8781,7 +8785,7 @@ var ReactInstrumentation = __webpack_require__(9);
 var ReactMarkupChecksum = __webpack_require__(173);
 var ReactReconciler = __webpack_require__(19);
 var ReactUpdateQueue = __webpack_require__(44);
-var ReactUpdates = __webpack_require__(10);
+var ReactUpdates = __webpack_require__(11);
 
 var emptyObject = __webpack_require__(21);
 var instantiateReactComponent = __webpack_require__(83);
@@ -9832,7 +9836,7 @@ module.exports = setTextContent;
 
 var _prodInvariant = __webpack_require__(3);
 
-var ReactCurrentOwner = __webpack_require__(11);
+var ReactCurrentOwner = __webpack_require__(12);
 var REACT_ELEMENT_TYPE = __webpack_require__(167);
 
 var getIteratorFn = __webpack_require__(201);
@@ -10005,7 +10009,7 @@ module.exports = traverseAllChildren;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_hoist_non_react_statics___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_hoist_non_react_statics__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_Subscription__ = __webpack_require__(213);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_PropTypes__ = __webpack_require__(89);
@@ -10451,7 +10455,7 @@ module.exports = REACT_ELEMENT_TYPE;
 
 
 
-var ReactCurrentOwner = __webpack_require__(11);
+var ReactCurrentOwner = __webpack_require__(12);
 var ReactComponentTreeHook = __webpack_require__(7);
 var ReactElement = __webpack_require__(16);
 
@@ -11125,7 +11129,7 @@ module.exports = g;
 "use strict";
 
 
-var _react = __webpack_require__(12);
+var _react = __webpack_require__(10);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -11149,11 +11153,37 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var store = (0, _redux.createStore)(_index2.default);
 
+function getColor() {
+    var r = Math.floor(Math.random() * 256);
+    var g = Math.floor(Math.random() * 256);
+    var b = Math.floor(Math.random() * 256);
+    var rgba = "rgba(" + r + ', ' + g + ', ' + b + ", 0.5)";
+    return rgba;
+}
+function iterateCollection(collection) {
+    return function (f) {
+        for (var i = 0; collection[i]; i++) {
+            f(collection[i], i);
+        }
+    };
+}
+
 (0, _reactDom.render)(_react2.default.createElement(
     _reactRedux.Provider,
     { store: store },
     _react2.default.createElement(_content2.default, null)
 ), document.getElementById('root'));
+
+var skills = document.getElementsByClassName('skills__List__item');
+var responsibilityBtn = document.getElementsByClassName('experience__item__listBtn');
+iterateCollection(skills)(function (node) {
+    node.style.background = getColor();
+});
+iterateCollection(responsibilityBtn)(function (node) {
+    node.onclick = function (e) {
+        e.target.nextSibling.classList.toggle('showed');
+    };
+});
 
 /***/ }),
 /* 100 */
@@ -11237,7 +11267,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _react = __webpack_require__(12);
+var _react = __webpack_require__(10);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -11266,8 +11296,7 @@ var _index = __webpack_require__(33);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Content = function Content(_ref) {
-    var text = _ref.text,
-        onClick = _ref.onClick;
+    var text = _ref.text;
 
     return _react2.default.createElement(
         'div',
@@ -11296,7 +11325,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _react = __webpack_require__(12);
+var _react = __webpack_require__(10);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -11322,7 +11351,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _react = __webpack_require__(12);
+var _react = __webpack_require__(10);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -11352,21 +11381,27 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _react = __webpack_require__(12);
+var _react = __webpack_require__(10);
 
 var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Text = function Text(_ref) {
+var TextContent = function TextContent(_ref) {
     var text = _ref.text;
+
     return _react2.default.createElement(
         "div",
         { className: "container" },
+        _react2.default.createElement(
+            "div",
+            { className: "profile__image" },
+            _react2.default.createElement("img", { src: "/src/templates/img/photo.jpg", alt: "" })
+        ),
         text
     );
 };
-exports.default = Text;
+exports.default = TextContent;
 
 /***/ }),
 /* 106 */
@@ -11376,290 +11411,344 @@ exports.default = Text;
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 
-var _react = __webpack_require__(12);
+var _react = __webpack_require__(10);
 
 var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var text = _react2.default.createElement(
-  'div',
-  {
-    className: 'container'
-  },
-  _react2.default.createElement(
-    'h1',
-    null,
-    'Junior Front End Developer'
-  ),
-  _react2.default.createElement(
-    'p',
-    null,
-    'Hello,'
-  ),
-  _react2.default.createElement(
-    'p',
-    null,
-    'My name is Tatiana Leontieva. ',
-    'I\'m working with single-page application and high-loaded websites ',
-    'using HTML5, CSS3 (SASS/LESS), Js.'
-  ),
-  _react2.default.createElement(
-    'p',
-    null,
-    'I\'m also developing my own projects with React/Redux, ECMAScript 6. ',
-    'Webpack and Gulp helps me to improve and optimize my developing process.'
-  ),
-  _react2.default.createElement(
-    'p',
-    null,
-    'I enjoy maths and algorithms.'
-  ),
-  _react2.default.createElement(
-    'h2',
-    null,
-    'My skills'
-  ),
-  _react2.default.createElement(
-    'ul',
-    null,
-    _react2.default.createElement(
-      'li',
-      null,
-      'JS, ECMAScript 6, React, jQuery'
-    ),
-    _react2.default.createElement(
-      'li',
-      null,
-      'Sass/Less, CSS3'
-    ),
-    _react2.default.createElement(
-      'li',
-      null,
-      'Webpack, Gulp'
-    ),
-    _react2.default.createElement(
-      'li',
-      null,
-      'PHPStorm, GIT'
-    ),
-    _react2.default.createElement(
-      'li',
-      null,
-      'Mocha/Chai Tests (TDD)'
-    )
-  ),
-  _react2.default.createElement(
-    'h2',
-    null,
-    'Work Experience'
-  ),
-  _react2.default.createElement(
-    'h3',
-    null,
-    'Developer | Demis, Voronezh'
-  ),
-  _react2.default.createElement(
-    'p',
-    null,
-    'January 2016 - Present'
-  ),
-  _react2.default.createElement(
-    'p',
-    null,
-    'Was promoted from junior to middle developer;',
-    'Succesfully passed inner tests and certified',
-    'with Bitrix certificates.'
-  ),
-  _react2.default.createElement(
-    'ul',
-    null,
-    _react2.default.createElement(
-      'li',
-      null,
-      'Working with popular CMS,'
-    ),
-    _react2.default.createElement(
-      'li',
-      null,
-      'HTML-coding,'
-    ),
-    _react2.default.createElement(
-      'li',
-      null,
-      'adding functionality with js (jQuery),'
-    ),
-    _react2.default.createElement(
-      'li',
-      null,
-      'adding adaptivity and responsibility,'
-    ),
-    _react2.default.createElement(
-      'li',
-      null,
-      'mentoring interns,'
-    ),
-    _react2.default.createElement(
-      'li',
-      null,
-      'doing educational materials for interns.'
-    )
-  ),
-  _react2.default.createElement(
-    'h3',
-    null,
-    'Webmaster | Viled, St. Petersburg'
-  ),
-  _react2.default.createElement(
-    'p',
-    null,
-    'August 2015 - December 2015'
-  ),
-  _react2.default.createElement(
-    'p',
-    null,
-    'Got important webmaster skills;',
-    'Started managing and planning own time;',
-    'Understood important UX-patterns.'
-  ),
-  _react2.default.createElement(
-    'ul',
-    null,
-    _react2.default.createElement(
-      'li',
-      null,
-      'Using jQuery and css3 for adding functionality on site,'
-    ),
-    _react2.default.createElement(
-      'li',
-      null,
-      'Analysing user behaviors with Google analytics,'
-    ),
-    _react2.default.createElement(
-      'li',
-      null,
-      'Trying and testing UX-practices to engage and involve the target audience,'
-    ),
-    _react2.default.createElement(
-      'li',
-      null,
-      'A/B testing,'
-    ),
-    _react2.default.createElement(
-      'li',
-      null,
-      'making technical tasks,'
-    ),
-    _react2.default.createElement(
-      'li',
-      null,
-      'communicating with freelancers.'
-    )
-  ),
-  _react2.default.createElement(
-    'h3',
-    null,
-    'Content-manager | Promotion Group, Moscow'
-  ),
-  _react2.default.createElement(
-    'p',
-    null,
-    'August 2014 - March 2015'
-  ),
-  _react2.default.createElement(
-    'p',
-    null,
-    'Got html skills and learned',
-    'how to make SEO-content.'
-  ),
-  _react2.default.createElement(
-    'ul',
-    null,
-    _react2.default.createElement(
-      'li',
-      null,
-      'writing and editing SEO-content,'
-    ),
-    _react2.default.createElement(
-      'li',
-      null,
-      'html-coding'
-    )
-  ),
-  _react2.default.createElement(
-    'h2',
-    null,
-    'Education'
-  ),
-  _react2.default.createElement(
-    'h3',
-    null,
-    'Bachelor of Engineering (B.Eng.) | National Research University of Electronic Technology (MIET)'
-  ),
-  _react2.default.createElement(
-    'p',
-    null,
-    '2010 - 2014'
-  ),
-  _react2.default.createElement(
-    'p',
-    null,
-    'Department of Computer Science and Telecommunications'
-  ),
-  _react2.default.createElement(
-    'h2',
-    null,
-    'Contact me:'
-  ),
-  _react2.default.createElement(
-    'ul',
-    null,
-    _react2.default.createElement(
-      'li',
-      {
-        className: 'github'
-      },
-      _react2.default.createElement(
-        'a',
-        {
-          href: 'https://github.com/yepstepz'
-        },
-        'Github'
-      )
-    ),
-    _react2.default.createElement(
-      'li',
-      {
-        className: 'fb'
-      },
-      _react2.default.createElement(
-        'a',
-        {
-          href: 'https://facebook.com/yepstepz'
-        },
-        'Facebook'
-      )
-    ),
-    _react2.default.createElement(
-      'li',
-      {
-        className: 'mail'
-      },
-      _react2.default.createElement(
-        'a',
-        {
-          href: "mailto:tatiana.leontieva94@gmail.com"
-        },
-        'Mail'
-      )
-    )
-  )
-);
+var EngText = function EngText() {
+    return _react2.default.createElement(
+        "div",
+        { className: "container" },
+        _react2.default.createElement(
+            "div",
+            { className: "description" },
+            _react2.default.createElement(
+                "h1",
+                null,
+                "Junior Front End Developer"
+            ),
+            _react2.default.createElement(
+                "p",
+                null,
+                "Hello,"
+            ),
+            _react2.default.createElement(
+                "p",
+                null,
+                "My name is Tatiana Leontieva. I'm working with single-page application and high-loaded websites using HTML5, CSS3 (SASS/LESS), Js."
+            ),
+            _react2.default.createElement(
+                "p",
+                null,
+                "I'm also developing my own projects with React/Redux, ECMAScript 6. Webpack and Gulp helps me to improve and optimize my developing process."
+            ),
+            _react2.default.createElement(
+                "p",
+                null,
+                "I enjoy maths and algorithms."
+            )
+        ),
+        _react2.default.createElement(
+            "div",
+            { className: "skills" },
+            _react2.default.createElement(
+                "h2",
+                null,
+                "My skills"
+            ),
+            _react2.default.createElement(
+                "ul",
+                { className: "skills__List" },
+                _react2.default.createElement(
+                    "li",
+                    { className: "skills__List__item" },
+                    "JS, ECMAScript 6 "
+                ),
+                _react2.default.createElement(
+                    "li",
+                    { className: "skills__List__item" },
+                    "React "
+                ),
+                _react2.default.createElement(
+                    "li",
+                    { className: "skills__List__item" },
+                    "jQuery"
+                ),
+                _react2.default.createElement(
+                    "li",
+                    { className: "skills__List__item" },
+                    "CSS3"
+                ),
+                _react2.default.createElement(
+                    "li",
+                    { className: "skills__List__item" },
+                    "Sass/Less "
+                ),
+                _react2.default.createElement(
+                    "li",
+                    { className: "skills__List__item" },
+                    "Webpack"
+                ),
+                _react2.default.createElement(
+                    "li",
+                    { className: "skills__List__item" },
+                    "Gulp"
+                ),
+                _react2.default.createElement(
+                    "li",
+                    { className: "skills__List__item" },
+                    "PHPStorm"
+                ),
+                _react2.default.createElement(
+                    "li",
+                    { className: "skills__List__item" },
+                    "GIT"
+                ),
+                _react2.default.createElement(
+                    "li",
+                    { className: "skills__List__item" },
+                    "Mocha/Chai Tests (TDD)"
+                )
+            )
+        ),
+        _react2.default.createElement(
+            "div",
+            { className: "experience" },
+            _react2.default.createElement(
+                "h2",
+                null,
+                "Work Experience"
+            ),
+            _react2.default.createElement(
+                "div",
+                { className: "experience__item" },
+                _react2.default.createElement(
+                    "h3",
+                    { className: "experience__item__title" },
+                    "Developer | Demis, Voronezh"
+                ),
+                _react2.default.createElement(
+                    "p",
+                    { className: "experience__item__year" },
+                    "January 2016 - Present"
+                ),
+                _react2.default.createElement(
+                    "div",
+                    { className: "experience__advantages" },
+                    _react2.default.createElement("div", { className: "experience__advantages__time" }),
+                    _react2.default.createElement("div", { className: "experience__advantages__time" })
+                ),
+                _react2.default.createElement(
+                    "p",
+                    { className: "experience__item__description" },
+                    "Was promoted from junior to middle developer; Succesfully passed inner tests and certified with Bitrix certificates."
+                ),
+                _react2.default.createElement(
+                    "p",
+                    { className: "experience__item__listBtn" },
+                    "Responsibilities"
+                ),
+                _react2.default.createElement(
+                    "ul",
+                    { className: "experience__item__responsibilities" },
+                    _react2.default.createElement(
+                        "li",
+                        null,
+                        "Working with popular CMS,"
+                    ),
+                    _react2.default.createElement(
+                        "li",
+                        null,
+                        "HTML-coding,"
+                    ),
+                    _react2.default.createElement(
+                        "li",
+                        null,
+                        "adding functionality with js (jQuery),"
+                    ),
+                    _react2.default.createElement(
+                        "li",
+                        null,
+                        "adding adaptivity and responsibility,"
+                    ),
+                    _react2.default.createElement(
+                        "li",
+                        null,
+                        "mentoring interns,"
+                    ),
+                    _react2.default.createElement(
+                        "li",
+                        null,
+                        "doing educational materials for interns."
+                    )
+                )
+            ),
+            _react2.default.createElement(
+                "div",
+                { className: "experience__item" },
+                _react2.default.createElement(
+                    "h3",
+                    { className: "experience__item__title" },
+                    "Developer Webmaster | Viled, St. Petersburg"
+                ),
+                _react2.default.createElement(
+                    "p",
+                    { className: "experience__item__year" },
+                    "August 2015 - December 2015"
+                ),
+                _react2.default.createElement(
+                    "p",
+                    { className: "experience__item__description" },
+                    "Got important webmaster skills; Started managing and planning own time; Understood important UX-patterns."
+                ),
+                _react2.default.createElement(
+                    "p",
+                    { className: "experience__item__listBtn" },
+                    "Responsibilities"
+                ),
+                _react2.default.createElement(
+                    "ul",
+                    { className: "experience__item__responsibilities" },
+                    _react2.default.createElement(
+                        "li",
+                        null,
+                        "Using jQuery and css3 for adding functionality on site,"
+                    ),
+                    _react2.default.createElement(
+                        "li",
+                        null,
+                        "Analysing user behaviors with Google analytics,"
+                    ),
+                    _react2.default.createElement(
+                        "li",
+                        null,
+                        "Trying and testing UX-practices to engage and involve the target audience,"
+                    ),
+                    _react2.default.createElement(
+                        "li",
+                        null,
+                        "A/B testing,"
+                    ),
+                    _react2.default.createElement(
+                        "li",
+                        null,
+                        "making technical tasks,"
+                    ),
+                    _react2.default.createElement(
+                        "li",
+                        null,
+                        "communicating with freelancers."
+                    )
+                )
+            ),
+            _react2.default.createElement(
+                "div",
+                { className: "experience__item" },
+                _react2.default.createElement(
+                    "h3",
+                    { className: "experience__item__title" },
+                    "Content-manager | Promotion Group, Moscow"
+                ),
+                _react2.default.createElement(
+                    "p",
+                    { className: "experience__item__year" },
+                    "August 2014 - March 2015"
+                ),
+                _react2.default.createElement(
+                    "p",
+                    { className: "experience__item__description" },
+                    "Got html skills and learned how to make SEO-content."
+                ),
+                _react2.default.createElement(
+                    "p",
+                    { className: "experience__item__listBtn" },
+                    "Responsibilities"
+                ),
+                _react2.default.createElement(
+                    "ul",
+                    { className: "experience__item__responsibilities" },
+                    _react2.default.createElement(
+                        "li",
+                        null,
+                        "writing and editing SEO-content,"
+                    ),
+                    _react2.default.createElement(
+                        "li",
+                        null,
+                        "html-coding"
+                    )
+                )
+            )
+        ),
+        _react2.default.createElement(
+            "h2",
+            null,
+            "Education"
+        ),
+        _react2.default.createElement(
+            "div",
+            { className: "education" },
+            _react2.default.createElement(
+                "h3",
+                null,
+                "Bachelor of Engineering (B.Eng.) | National Research University of Electronic Technology (MIET)"
+            ),
+            _react2.default.createElement(
+                "p",
+                null,
+                "2010 - 2014"
+            ),
+            _react2.default.createElement(
+                "p",
+                null,
+                "Department of Computer Science and Telecommunications"
+            )
+        ),
+        _react2.default.createElement(
+            "h2",
+            null,
+            "Contact me:"
+        ),
+        _react2.default.createElement(
+            "ul",
+            null,
+            _react2.default.createElement(
+                "li",
+                { className: "github" },
+                _react2.default.createElement(
+                    "a",
+                    { href: "https://github.com/yepstepz" },
+                    "Github"
+                )
+            ),
+            _react2.default.createElement(
+                "li",
+                { className: "fb" },
+                _react2.default.createElement(
+                    "a",
+                    { href: "https://facebook.com/yepstepz" },
+                    "Facebook"
+                )
+            ),
+            _react2.default.createElement(
+                "li",
+                { className: "mail" },
+                _react2.default.createElement(
+                    "a",
+                    { href: "mailto:tatiana.leontieva94@gmail.com" },
+                    "Mail"
+                )
+            )
+        )
+    );
+};
 
-exports.default = text;
+exports.default = EngText;
 
 /***/ }),
 /* 107 */
@@ -11669,313 +11758,285 @@ exports.default = text;
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 
-var _react = __webpack_require__(12);
+var _react = __webpack_require__(10);
 
 var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var text = _react2.default.createElement(
-  'div',
-  {
-    className: 'container'
-  },
-  _react2.default.createElement(
-    'h1',
-    null,
-    'Junior Front End Developer'
-  ),
-  _react2.default.createElement(
-    'p',
-    null,
-    '\u041F\u0440\u0438\u0432\u0435\u0442,'
-  ),
-  _react2.default.createElement(
-    'p',
-    null,
-    '\u041C\u0435\u043D\u044F \u0437\u043E\u0432\u0443\u0442 \u0422\u0430\u0442\u044C\u044F\u043D\u0430 \u041B\u0435\u043E\u043D\u0442\u044C\u0435\u0432\u0430. ',
-    '\u042F \u0440\u0430\u0431\u043E\u0442\u0430\u044E \u0441 \u043E\u0434\u043D\u043E\u0441\u0442\u0440\u0430\u043D\u0438\u0447\u043D\u044B\u043C\u0438 \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u044F\u043C\u0438 ',
-    '\u0438 \u0432\u044B\u0441\u043E\u043A\u043E\u043D\u0430\u0433\u0440\u0443\u0436\u0435\u043D\u043D\u044B\u043C\u0438 \u0441\u0430\u0439\u0442\u0430\u043C\u0438, ',
-    '\u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u044F HTML5, CSS3 (SASS/LESS), Js.'
-  ),
-  _react2.default.createElement(
-    'p',
-    null,
-    '\u0422\u0430\u043A\u0436\u0435 \u044F \u0440\u0430\u0437\u0440\u0430\u0431\u0430\u0442\u044B\u0432\u0430\u044E \u0441\u043E\u0431\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0435 \u043F\u0440\u043E\u0435\u043A\u0442\u044B \u0441 \u043F\u043E\u043C\u043E\u0449\u044C\u044E React/Redux, ECMAScript 6. ',
-    '\u0414\u043B\u044F \u0441\u0431\u043E\u0440\u043A\u0438 \u043F\u0440\u043E\u0435\u043A\u0442\u0430 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u044E Webpack \u0438\u043B\u0438 Gulp. '
-  ),
-  _react2.default.createElement(
-    'p',
-    null,
-    '\u041C\u043D\u0435 \u043D\u0440\u0430\u0432\u0438\u0442\u0441\u044F \u0438\u0437\u0443\u0447\u0430\u0442\u044C \u0430\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u044B \u0438 \u043C\u0430\u0442\u0435\u043C\u0430\u0442\u0438\u043A\u0443.'
-  ),
-  _react2.default.createElement(
-    'h2',
-    null,
-    '\u041D\u0430\u0432\u044B\u043A\u0438:'
-  ),
-  _react2.default.createElement(
-    'ul',
-    null,
-    _react2.default.createElement(
-      'li',
-      null,
-      'JS, ECMAScript 6, React, jQuery'
-    ),
-    _react2.default.createElement(
-      'li',
-      null,
-      'Sass/Less, CSS3'
-    ),
-    _react2.default.createElement(
-      'li',
-      null,
-      'Webpack, Gulp'
-    ),
-    _react2.default.createElement(
-      'li',
-      null,
-      'PHPStorm, GIT'
-    ),
-    _react2.default.createElement(
-      'li',
-      null,
-      '\u0422\u0435\u0441\u0442\u044B \u0441 Mocha/Chai (TDD)'
-    )
-  ),
-  _react2.default.createElement(
-    'h2',
-    null,
-    '\u041E\u043F\u044B\u0442 \u0440\u0430\u0431\u043E\u0442\u044B'
-  ),
-  _react2.default.createElement(
-    'h3',
-    null,
-    '\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0441\u0442 | Demis, \u0412\u043E\u0440\u043E\u043D\u0435\u0436'
-  ),
-  _react2.default.createElement(
-    'p',
-    null,
-    '\u042F\u043D\u0432\u0430\u0440\u044C 2016 - \u041D\u0430\u0441\u0442\u043E\u044F\u0449\u0435\u0435 \u0432\u0440\u0435\u043C\u044F'
-  ),
-  _react2.default.createElement(
-    'p',
-    null,
-    '\u041F\u043E\u043B\u0443\u0447\u0438\u043B\u0430 \u043F\u043E\u0432\u044B\u0448\u0435\u043D\u0438\u0435 \u0434\u043E \u0441\u0442\u0430\u0440\u0448\u0435\u0433\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0441\u0442\u0430. ',
-    '\u0410\u043A\u0442\u0438\u0432\u043D\u043E \u0443\u0447\u0430\u0441\u0442\u0432\u043E\u0432\u0430\u043B\u0430 \u0432 \u043E\u0431\u0443\u0447\u0435\u043D\u0438\u0438 \u043D\u043E\u0432\u044B\u0445 \u0441\u043E\u0442\u0440\u0443\u0434\u043D\u0438\u043A\u043E\u0432. ',
-    '\u0421\u0430\u043C\u043E\u0441\u0442\u043E\u044F\u0442\u0435\u043B\u044C\u043D\u043E \u0438\u0437\u0443\u0447\u0438\u043B\u0430 \u0432\u0435\u0431-\u0438\u043D\u0441\u0442\u0440\u0443\u043C\u0435\u043D\u0442\u044B \u0434\u043B\u044F \u043F\u043E\u0432\u044B\u0448\u0435\u043D\u0438\u044F ',
-    '\u0441\u043A\u043E\u0440\u043E\u0441\u0442\u0438 \u0438 \u043A\u0430\u0447\u0435\u0441\u0442\u0432\u0430 \u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0438.'
-  ),
-  _react2.default.createElement(
-    'p',
-    null,
-    '\u041E\u0431\u044F\u0437\u0430\u043D\u043D\u043E\u0441\u0442\u0438:'
-  ),
-  _react2.default.createElement(
-    'ul',
-    null,
-    _react2.default.createElement(
-      'li',
-      null,
-      '\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 \u043F\u043E\u043F\u0443\u043B\u044F\u0440\u043D\u044B\u043C\u0438 CMS,'
-    ),
-    _react2.default.createElement(
-      'li',
-      null,
-      'HTML-\u0432\u0451\u0440\u0441\u0442\u043A\u0430,'
-    ),
-    _react2.default.createElement(
-      'li',
-      null,
-      '\u0434\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u0444\u0443\u043D\u043A\u0446\u0438\u043E\u043D\u0430\u043B\u0430 \u0441 \u043F\u043E\u043C\u043E\u0449\u044C\u044E js (jQuery) \u0438 php,'
-    ),
-    _react2.default.createElement(
-      'li',
-      null,
-      '\u0434\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u0430\u0434\u0430\u043F\u0442\u0438\u0432\u043D\u043E\u0441\u0442\u0438 \u0438 \xAB\u0440\u0435\u0437\u0438\u043D\u044B\xBB,'
-    ),
-    _react2.default.createElement(
-      'li',
-      null,
-      '\u043E\u0431\u0443\u0447\u0435\u043D\u0438\u0435 \u0441\u0442\u0430\u0436\u0451\u0440\u043E\u0432,'
-    ),
-    _react2.default.createElement(
-      'li',
-      null,
-      '\u0441\u043E\u0441\u0442\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u043E\u0431\u0443\u0447\u0430\u044E\u0449\u0438\u0445 \u043C\u0430\u0442\u0435\u0440\u0438\u0430\u043B\u043E\u0432 \u0434\u043B\u044F \u0441\u0442\u0430\u0436\u0435\u0440\u043E\u0432.'
-    )
-  ),
-  _react2.default.createElement(
-    'h3',
-    null,
-    '\u0412\u0435\u0431-\u043C\u0430\u0441\u0442\u0435\u0440 | Viled, \u0421\u0430\u043D\u043A\u0442-\u041F\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433'
-  ),
-  _react2.default.createElement(
-    'p',
-    null,
-    '\u0410\u0432\u0433\u0443\u0441\u0442 2015 - \u0414\u0435\u043A\u0430\u0431\u0440\u044C 2015'
-  ),
-  _react2.default.createElement(
-    'p',
-    null,
-    '\u041F\u043E\u043B\u0443\u0447\u0438\u043B\u0430 \u0432\u0430\u0436\u043D\u044B\u0435 \u0441\u0435\u043E- \u0438 \u0432\u0435\u0431- \u043D\u0430\u0432\u044B\u043A\u0438; ',
-    '\u041D\u0430\u0443\u0447\u0438\u043B\u0430\u0441\u044C \u043F\u043B\u0430\u043D\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u0441\u0432\u043E\u0435 \u0432\u0440\u0435\u043C\u044F \u0438 ',
-    '\u0434\u0435\u043B\u0435\u0433\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u0437\u0430\u0434\u0430\u0447\u0438. ',
-    '\u0418\u0437\u0443\u0447\u0438\u043B\u0430 \u0432\u0430\u0436\u043D\u044B\u0435 UX-\u043F\u0430\u0442\u0442\u0435\u0440\u043D\u044B. '
-  ),
-  _react2.default.createElement(
-    'p',
-    null,
-    '\u041E\u0431\u044F\u0437\u0430\u043D\u043D\u043E\u0441\u0442\u0438:'
-  ),
-  _react2.default.createElement(
-    'ul',
-    null,
-    _react2.default.createElement(
-      'li',
-      null,
-      '\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u043D\u0430 \u0441\u0430\u0439\u0442 \u0444\u0443\u043D\u043A\u0446\u0438\u043E\u043D\u0430\u043B\u0430 \u0441 \u043F\u043E\u043C\u043E\u0449\u044C\u044E jQuery \u0438 css3, '
-    ),
-    _react2.default.createElement(
-      'li',
-      null,
-      '\u0410\u043D\u0430\u043B\u0438\u0437 \u043F\u043E\u0432\u0435\u0434\u0435\u043D\u0447\u0435\u0441\u043A\u0438\u0445 \u0444\u0430\u043A\u0442\u043E\u0440\u043E\u0432 \u0441 \u043F\u043E\u043C\u043E\u0449\u044C\u044E Google analytics, '
-    ),
-    _react2.default.createElement(
-      'li',
-      null,
-      '\u0422\u0435\u0441\u0442\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435 UX-\u043F\u0440\u0430\u043A\u0442\u0438\u043A \u0434\u043B\u044F \u043F\u0440\u0438\u0432\u043B\u0435\u0447\u0435\u043D\u0438\u044F \u0438 \u0432\u043E\u0432\u043B\u0435\u0447\u0435\u043D\u0438\u044F \u0446\u0435\u043B\u0435\u0432\u043E\u0439 \u0430\u0443\u0434\u0438\u0442\u043E\u0440\u0438\u0438, '
-    ),
-    _react2.default.createElement(
-      'li',
-      null,
-      'A/B \u0442\u0435\u0441\u0442\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435,'
-    ),
-    _react2.default.createElement(
-      'li',
-      null,
-      '\u0441\u043E\u0441\u0442\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u0442\u0435\u0445\u043D\u0438\u0447\u0435\u0441\u043A\u0438\u0445 \u0437\u0430\u0434\u0430\u043D\u0438\u0439,'
-    ),
-    _react2.default.createElement(
-      'li',
-      null,
-      '\u043E\u0431\u0449\u0435\u043D\u0438\u0435 \u0441 \u0444\u0440\u0438\u043B\u0430\u043D\u0441\u0435\u0440\u0430\u043C\u0438.'
-    )
-  ),
-  _react2.default.createElement(
-    'h3',
-    null,
-    '\u041A\u043E\u043D\u0442\u0435\u043D\u0442-\u043C\u0435\u043D\u0435\u0434\u0436\u0435\u0440 | Promotion Group, \u041C\u043E\u0441\u043A\u0432\u0430'
-  ),
-  _react2.default.createElement(
-    'p',
-    null,
-    '\u0410\u0432\u0433\u0443\u0441\u0442 2014 - \u041C\u0430\u0440\u0442 2015'
-  ),
-  _react2.default.createElement(
-    'p',
-    null,
-    '\u041F\u043E\u043B\u0443\u0447\u0438\u043B\u0430 \u043D\u0430\u0432\u044B\u043A\u0438 \u0432\u0451\u0440\u0441\u0442\u043A\u0438 \u0438 SEO, \u043D\u0430\u0443\u0447\u0438\u043B\u0430\u0441\u044C ',
-    '\u0441\u043E\u0437\u0434\u0430\u0432\u0430\u0442\u044C \u043E\u043F\u0442\u0438\u043C\u0438\u0437\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u0439 \u043A\u043E\u043D\u0442\u0435\u043D\u0442. '
-  ),
-  _react2.default.createElement(
-    'p',
-    null,
-    '\u041E\u0431\u044F\u0437\u0430\u043D\u043D\u043E\u0441\u0442\u0438:'
-  ),
-  _react2.default.createElement(
-    'ul',
-    null,
-    _react2.default.createElement(
-      'li',
-      null,
-      '\u043D\u0430\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0438 \u0440\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435 SEO-\u043A\u043E\u043D\u0442\u0435\u043D\u0442\u0430,'
-    ),
-    _react2.default.createElement(
-      'li',
-      null,
-      '\u0432\u0451\u0440\u0441\u0442\u043A\u0430'
-    )
-  ),
-  _react2.default.createElement(
-    'h2',
-    null,
-    '\u041E\u0431\u0440\u0430\u0437\u043E\u0432\u0430\u043D\u0438\u0435:'
-  ),
-  _react2.default.createElement(
-    'h3',
-    null,
-    '\u0411\u0430\u043A\u0430\u043B\u0430\u0432\u0440 \u0422\u0435\u0445\u043D\u0438\u043A\u0438 \u0438 \u0422\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0438\u0439 | \u041D\u0430\u0446\u0438\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u0439 \u0438\u0441\u0441\u043B\u0435\u0434\u043E\u0432\u0430\u0442\u0435\u043B\u044C\u0441\u043A\u0438\u0439 \u0443\u043D\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442 \xAB\u041C\u0418\u042D\u0422\xBB'
-  ),
-  _react2.default.createElement(
-    'p',
-    null,
-    '2010 - 2014'
-  ),
-  _react2.default.createElement(
-    'p',
-    null,
-    '\u0424\u0430\u043A\u0443\u043B\u044C\u0442\u0435\u0442 \u041C\u0438\u043A\u0440\u043E\u043F\u0440\u0438\u0431\u043E\u0440\u043E\u0432 \u0438 \u0422\u0435\u0445\u043D\u0438\u0447\u0435\u0441\u043A\u043E\u0439 \u041A\u0438\u0431\u0435\u0440\u043D\u0435\u0442\u0438\u043A\u0438.'
-  ),
-  _react2.default.createElement(
-    'p',
-    null,
-    '\u0421\u043F\u0435\u0446\u0438\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u044C \u0412\u044B\u0447\u0438\u0441\u043B\u0438\u0442\u0435\u043B\u044C\u043D\u0430\u044F \u0422\u0435\u0445\u043D\u0438\u043A\u0430.'
-  ),
-  _react2.default.createElement(
-    'h2',
-    null,
-    '\u0421\u0432\u044F\u0437\u0430\u0442\u044C\u0441\u044F \u0441\u043E \u043C\u043D\u043E\u0439:'
-  ),
-  _react2.default.createElement(
-    'ul',
-    null,
-    _react2.default.createElement(
-      'li',
-      {
-        className: 'github'
-      },
-      _react2.default.createElement(
-        'a',
-        {
-          href: 'https://github.com/yepstepz'
-        },
-        '\u0413\u0438\u0442\u0445\u0430\u0431 \u0441 \u043F\u0440\u0438\u043C\u0435\u0440\u0430\u043C\u0438 \u0440\u0430\u0431\u043E\u0442\u044B'
-      )
-    ),
-    _react2.default.createElement(
-      'li',
-      {
-        className: 'fb'
-      },
-      _react2.default.createElement(
-        'a',
-        {
-          href: 'https://facebook.com/yepstepz'
-        },
-        'Facebook'
-      )
-    ),
-    _react2.default.createElement(
-      'li',
-      {
-        className: 'mail'
-      },
-      _react2.default.createElement(
-        'a',
-        {
-          href: "mailto:tatiana.leontieva94@gmail.com"
-        },
-        '\u041F\u043E\u0447\u0442\u0430'
-      )
-    )
-  )
-);
+var RuText = function RuText() {
+    return _react2.default.createElement(
+        "div",
+        { className: "container" },
+        _react2.default.createElement(
+            "p",
+            null,
+            "\u041F\u0440\u0438\u0432\u0435\u0442,"
+        ),
+        _react2.default.createElement(
+            "p",
+            null,
+            "\u041C\u0435\u043D\u044F \u0437\u043E\u0432\u0443\u0442 \u0422\u0430\u0442\u044C\u044F\u043D\u0430 \u041B\u0435\u043E\u043D\u0442\u044C\u0435\u0432\u0430. \u042F \u0440\u0430\u0431\u043E\u0442\u0430\u044E \u0441 \u043E\u0434\u043D\u043E\u0441\u0442\u0440\u0430\u043D\u0438\u0447\u043D\u044B\u043C\u0438 \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u044F\u043C\u0438 \u0438 \u0432\u044B\u0441\u043E\u043A\u043E\u043D\u0430\u0433\u0440\u0443\u0436\u0435\u043D\u043D\u044B\u043C\u0438 \u0441\u0430\u0439\u0442\u0430\u043C\u0438, \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u044F HTML5, CSS3 (SASS/LESS), Js."
+        ),
+        _react2.default.createElement(
+            "p",
+            null,
+            "\u0422\u0430\u043A\u0436\u0435 \u044F \u0440\u0430\u0437\u0440\u0430\u0431\u0430\u0442\u044B\u0432\u0430\u044E \u0441\u043E\u0431\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0435 \u043F\u0440\u043E\u0435\u043A\u0442\u044B \u0441 \u043F\u043E\u043C\u043E\u0449\u044C\u044E React/Redux, ECMAScript 6. \u0414\u043B\u044F \u0441\u0431\u043E\u0440\u043A\u0438 \u043F\u0440\u043E\u0435\u043A\u0442\u0430 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u044E Webpack \u0438\u043B\u0438 Gulp."
+        ),
+        _react2.default.createElement(
+            "p",
+            null,
+            "\u041C\u043D\u0435 \u043D\u0440\u0430\u0432\u0438\u0442\u0441\u044F \u0438\u0437\u0443\u0447\u0430\u0442\u044C \u0430\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u044B \u0438 \u043C\u0430\u0442\u0435\u043C\u0430\u0442\u0438\u043A\u0443."
+        ),
+        _react2.default.createElement(
+            "h2",
+            null,
+            "\u041D\u0430\u0432\u044B\u043A\u0438:"
+        ),
+        _react2.default.createElement(
+            "ul",
+            null,
+            _react2.default.createElement(
+                "li",
+                null,
+                "JS, ECMAScript 6, React, jQuery"
+            ),
+            _react2.default.createElement(
+                "li",
+                null,
+                "Sass/Less, CSS3"
+            ),
+            _react2.default.createElement(
+                "li",
+                null,
+                "Webpack, Gulp"
+            ),
+            _react2.default.createElement(
+                "li",
+                null,
+                "PHPStorm, GIT"
+            ),
+            _react2.default.createElement(
+                "li",
+                null,
+                "\u0422\u0435\u0441\u0442\u044B \u0441 Mocha/Chai (TDD)"
+            )
+        ),
+        _react2.default.createElement(
+            "h2",
+            null,
+            "\u041E\u043F\u044B\u0442 \u0440\u0430\u0431\u043E\u0442\u044B"
+        ),
+        _react2.default.createElement(
+            "h3",
+            null,
+            "\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0441\u0442 | Demis, \u0412\u043E\u0440\u043E\u043D\u0435\u0436"
+        ),
+        _react2.default.createElement(
+            "p",
+            null,
+            "\u042F\u043D\u0432\u0430\u0440\u044C 2016 - \u041D\u0430\u0441\u0442\u043E\u044F\u0449\u0435\u0435 \u0432\u0440\u0435\u043C\u044F"
+        ),
+        _react2.default.createElement(
+            "p",
+            null,
+            "\u041F\u043E\u043B\u0443\u0447\u0438\u043B\u0430 \u043F\u043E\u0432\u044B\u0448\u0435\u043D\u0438\u0435 \u0434\u043E \u0441\u0442\u0430\u0440\u0448\u0435\u0433\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0441\u0442\u0430. \u0410\u043A\u0442\u0438\u0432\u043D\u043E \u0443\u0447\u0430\u0441\u0442\u0432\u043E\u0432\u0430\u043B\u0430 \u0432 \u043E\u0431\u0443\u0447\u0435\u043D\u0438\u0438 \u043D\u043E\u0432\u044B\u0445 \u0441\u043E\u0442\u0440\u0443\u0434\u043D\u0438\u043A\u043E\u0432. \u0421\u0430\u043C\u043E\u0441\u0442\u043E\u044F\u0442\u0435\u043B\u044C\u043D\u043E \u0438\u0437\u0443\u0447\u0438\u043B\u0430 \u0432\u0435\u0431-\u0438\u043D\u0441\u0442\u0440\u0443\u043C\u0435\u043D\u0442\u044B \u0434\u043B\u044F \u043F\u043E\u0432\u044B\u0448\u0435\u043D\u0438\u044F \u0441\u043A\u043E\u0440\u043E\u0441\u0442\u0438 \u0438 \u043A\u0430\u0447\u0435\u0441\u0442\u0432\u0430 \u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0438."
+        ),
+        _react2.default.createElement(
+            "p",
+            null,
+            "\u041E\u0431\u044F\u0437\u0430\u043D\u043D\u043E\u0441\u0442\u0438:"
+        ),
+        _react2.default.createElement(
+            "ul",
+            null,
+            _react2.default.createElement(
+                "li",
+                null,
+                "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 \u043F\u043E\u043F\u0443\u043B\u044F\u0440\u043D\u044B\u043C\u0438 CMS,"
+            ),
+            _react2.default.createElement(
+                "li",
+                null,
+                "HTML-\u0432\u0451\u0440\u0441\u0442\u043A\u0430,"
+            ),
+            _react2.default.createElement(
+                "li",
+                null,
+                "\u0434\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u0444\u0443\u043D\u043A\u0446\u0438\u043E\u043D\u0430\u043B\u0430 \u0441 \u043F\u043E\u043C\u043E\u0449\u044C\u044E js (jQuery) \u0438 php,"
+            ),
+            _react2.default.createElement(
+                "li",
+                null,
+                "\u0434\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u0430\u0434\u0430\u043F\u0442\u0438\u0432\u043D\u043E\u0441\u0442\u0438 \u0438 \xAB\u0440\u0435\u0437\u0438\u043D\u044B\xBB,"
+            ),
+            _react2.default.createElement(
+                "li",
+                null,
+                "\u043E\u0431\u0443\u0447\u0435\u043D\u0438\u0435 \u0441\u0442\u0430\u0436\u0451\u0440\u043E\u0432,"
+            ),
+            _react2.default.createElement(
+                "li",
+                null,
+                "\u0441\u043E\u0441\u0442\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u043E\u0431\u0443\u0447\u0430\u044E\u0449\u0438\u0445 \u043C\u0430\u0442\u0435\u0440\u0438\u0430\u043B\u043E\u0432 \u0434\u043B\u044F \u0441\u0442\u0430\u0436\u0435\u0440\u043E\u0432."
+            )
+        ),
+        _react2.default.createElement(
+            "h3",
+            null,
+            "\u0412\u0435\u0431-\u043C\u0430\u0441\u0442\u0435\u0440 | Viled, \u0421\u0430\u043D\u043A\u0442-\u041F\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433"
+        ),
+        _react2.default.createElement(
+            "p",
+            null,
+            "\u0410\u0432\u0433\u0443\u0441\u0442 2015 - \u0414\u0435\u043A\u0430\u0431\u0440\u044C 2015"
+        ),
+        _react2.default.createElement(
+            "p",
+            null,
+            "\u041F\u043E\u043B\u0443\u0447\u0438\u043B\u0430 \u0432\u0430\u0436\u043D\u044B\u0435 \u0441\u0435\u043E- \u0438 \u0432\u0435\u0431- \u043D\u0430\u0432\u044B\u043A\u0438; \u041D\u0430\u0443\u0447\u0438\u043B\u0430\u0441\u044C \u043F\u043B\u0430\u043D\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u0441\u0432\u043E\u0435 \u0432\u0440\u0435\u043C\u044F \u0438 \u0434\u0435\u043B\u0435\u0433\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u0437\u0430\u0434\u0430\u0447\u0438. \u0418\u0437\u0443\u0447\u0438\u043B\u0430 \u0432\u0430\u0436\u043D\u044B\u0435 UX-\u043F\u0430\u0442\u0442\u0435\u0440\u043D\u044B."
+        ),
+        _react2.default.createElement(
+            "p",
+            null,
+            "\u041E\u0431\u044F\u0437\u0430\u043D\u043D\u043E\u0441\u0442\u0438:"
+        ),
+        _react2.default.createElement(
+            "ul",
+            null,
+            _react2.default.createElement(
+                "li",
+                null,
+                "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u043D\u0430 \u0441\u0430\u0439\u0442 \u0444\u0443\u043D\u043A\u0446\u0438\u043E\u043D\u0430\u043B\u0430 \u0441 \u043F\u043E\u043C\u043E\u0449\u044C\u044E jQuery \u0438 css3, "
+            ),
+            _react2.default.createElement(
+                "li",
+                null,
+                "\u0410\u043D\u0430\u043B\u0438\u0437 \u043F\u043E\u0432\u0435\u0434\u0435\u043D\u0447\u0435\u0441\u043A\u0438\u0445 \u0444\u0430\u043A\u0442\u043E\u0440\u043E\u0432 \u0441 \u043F\u043E\u043C\u043E\u0449\u044C\u044E Google analytics, "
+            ),
+            _react2.default.createElement(
+                "li",
+                null,
+                "\u0422\u0435\u0441\u0442\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435 UX-\u043F\u0440\u0430\u043A\u0442\u0438\u043A \u0434\u043B\u044F \u043F\u0440\u0438\u0432\u043B\u0435\u0447\u0435\u043D\u0438\u044F \u0438 \u0432\u043E\u0432\u043B\u0435\u0447\u0435\u043D\u0438\u044F \u0446\u0435\u043B\u0435\u0432\u043E\u0439 \u0430\u0443\u0434\u0438\u0442\u043E\u0440\u0438\u0438, "
+            ),
+            _react2.default.createElement(
+                "li",
+                null,
+                "A/B \u0442\u0435\u0441\u0442\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435,"
+            ),
+            _react2.default.createElement(
+                "li",
+                null,
+                "\u0441\u043E\u0441\u0442\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u0442\u0435\u0445\u043D\u0438\u0447\u0435\u0441\u043A\u0438\u0445 \u0437\u0430\u0434\u0430\u043D\u0438\u0439,"
+            ),
+            _react2.default.createElement(
+                "li",
+                null,
+                "\u043E\u0431\u0449\u0435\u043D\u0438\u0435 \u0441 \u0444\u0440\u0438\u043B\u0430\u043D\u0441\u0435\u0440\u0430\u043C\u0438."
+            )
+        ),
+        _react2.default.createElement(
+            "h3",
+            null,
+            "\u041A\u043E\u043D\u0442\u0435\u043D\u0442-\u043C\u0435\u043D\u0435\u0434\u0436\u0435\u0440 | Promotion Group, \u041C\u043E\u0441\u043A\u0432\u0430"
+        ),
+        _react2.default.createElement(
+            "p",
+            null,
+            "\u0410\u0432\u0433\u0443\u0441\u0442 2014 - \u041C\u0430\u0440\u0442 2015"
+        ),
+        _react2.default.createElement(
+            "p",
+            null,
+            "\u041F\u043E\u043B\u0443\u0447\u0438\u043B\u0430 \u043D\u0430\u0432\u044B\u043A\u0438 \u0432\u0451\u0440\u0441\u0442\u043A\u0438 \u0438 SEO, \u043D\u0430\u0443\u0447\u0438\u043B\u0430\u0441\u044C \u0441\u043E\u0437\u0434\u0430\u0432\u0430\u0442\u044C \u043E\u043F\u0442\u0438\u043C\u0438\u0437\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u0439 \u043A\u043E\u043D\u0442\u0435\u043D\u0442."
+        ),
+        _react2.default.createElement(
+            "p",
+            null,
+            "\u041E\u0431\u044F\u0437\u0430\u043D\u043D\u043E\u0441\u0442\u0438:"
+        ),
+        _react2.default.createElement(
+            "ul",
+            null,
+            _react2.default.createElement(
+                "li",
+                null,
+                "\u043D\u0430\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0438 \u0440\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435 SEO-\u043A\u043E\u043D\u0442\u0435\u043D\u0442\u0430,"
+            ),
+            _react2.default.createElement(
+                "li",
+                null,
+                "\u0432\u0451\u0440\u0441\u0442\u043A\u0430"
+            )
+        ),
+        _react2.default.createElement(
+            "h2",
+            null,
+            "\u041E\u0431\u0440\u0430\u0437\u043E\u0432\u0430\u043D\u0438\u0435:"
+        ),
+        _react2.default.createElement(
+            "h3",
+            null,
+            "\u0411\u0430\u043A\u0430\u043B\u0430\u0432\u0440 \u0422\u0435\u0445\u043D\u0438\u043A\u0438 \u0438 \u0422\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0438\u0439 | \u041D\u0430\u0446\u0438\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u0439 \u0438\u0441\u0441\u043B\u0435\u0434\u043E\u0432\u0430\u0442\u0435\u043B\u044C\u0441\u043A\u0438\u0439 \u0443\u043D\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442 \xAB\u041C\u0418\u042D\u0422\xBB"
+        ),
+        _react2.default.createElement(
+            "p",
+            null,
+            "2010 - 2014"
+        ),
+        _react2.default.createElement(
+            "p",
+            null,
+            "\u0424\u0430\u043A\u0443\u043B\u044C\u0442\u0435\u0442 \u041C\u0438\u043A\u0440\u043E\u043F\u0440\u0438\u0431\u043E\u0440\u043E\u0432 \u0438 \u0422\u0435\u0445\u043D\u0438\u0447\u0435\u0441\u043A\u043E\u0439 \u041A\u0438\u0431\u0435\u0440\u043D\u0435\u0442\u0438\u043A\u0438."
+        ),
+        _react2.default.createElement(
+            "p",
+            null,
+            "\u0421\u043F\u0435\u0446\u0438\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u044C \u0412\u044B\u0447\u0438\u0441\u043B\u0438\u0442\u0435\u043B\u044C\u043D\u0430\u044F \u0422\u0435\u0445\u043D\u0438\u043A\u0430."
+        ),
+        _react2.default.createElement(
+            "h2",
+            null,
+            "\u0421\u0432\u044F\u0437\u0430\u0442\u044C\u0441\u044F \u0441\u043E \u043C\u043D\u043E\u0439:"
+        ),
+        _react2.default.createElement(
+            "ul",
+            null,
+            _react2.default.createElement(
+                "li",
+                { className: "github" },
+                _react2.default.createElement(
+                    "a",
+                    { href: "https://github.com/yepstepz" },
+                    "\u0413\u0438\u0442\u0445\u0430\u0431 \u0441 \u043F\u0440\u0438\u043C\u0435\u0440\u0430\u043C\u0438 \u0440\u0430\u0431\u043E\u0442\u044B"
+                )
+            ),
+            _react2.default.createElement(
+                "li",
+                { className: "fb" },
+                _react2.default.createElement(
+                    "a",
+                    { href: "https://facebook.com/yepstepz" },
+                    "Facebook"
+                )
+            ),
+            _react2.default.createElement(
+                "li",
+                { className: "mail" },
+                _react2.default.createElement(
+                    "a",
+                    { href: "mailto:tatiana.leontieva94@gmail.com" },
+                    "\u041F\u043E\u0447\u0442\u0430"
+                )
+            )
+        )
+    );
+};
 
-exports.default = text;
+exports.default = RuText;
 
 /***/ }),
 /* 108 */
@@ -11986,7 +12047,7 @@ exports = module.exports = __webpack_require__(109)(undefined);
 
 
 // module
-exports.push([module.i, "@charset \"UTF-8\";\n@font-face {\n  font-family: 'Open Sans';\n  /* Имя шрифта */\n  src: url(\"/src/fonts/OpenSans-Regular.ttf\");\n  /* Путь к файлу со шрифтом */ }\n\n@font-face {\n  font-family: 'Open Sans bold';\n  /* Имя шрифта */\n  src: url(\"/src/fonts/OpenSans-Bold.ttf\");\n  /* Путь к файлу со шрифтом */ }\n\n.container {\n  width: 960px;\n  margin: 0 auto; }\n\nh1, .h1 {\n  text-align: center;\n  font-family: \"Open Sans bold\", sans-serif; }\n\nbody {\n  font-family: \"Open Sans\", sans-serif; }\n", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n@font-face {\n  font-family: 'Open Sans';\n  /* Имя шрифта */\n  src: url(\"/src/fonts/OpenSans-Regular.ttf\");\n  /* Путь к файлу со шрифтом */ }\n\n@font-face {\n  font-family: 'Open Sans bold';\n  /* Имя шрифта */\n  src: url(\"/src/fonts/OpenSans-Bold.ttf\");\n  /* Путь к файлу со шрифтом */ }\n\n* {\n  margin: 0;\n  padding: 0; }\n\nbody {\n  color: #333; }\n\nul {\n  list-style-type: none; }\n\n.container {\n  width: 960px;\n  margin: 0 auto; }\n\nh1, .h1,\nh2, .h2,\nh3, .h3 {\n  font-family: \"Open Sans bold\", sans-serif; }\n\nh1, .h1 {\n  margin-bottom: 30px; }\n\nh2, .h2 {\n  margin-bottom: 15px; }\n\n.profile__image {\n  width: 250px;\n  height: 250px;\n  float: left; }\n  .profile__image img {\n    border-radius: 50%;\n    width: 100%; }\n\n.description {\n  width: 620px;\n  line-height: 1.6;\n  margin: 0px 0 15px 300px; }\n\n.skills {\n  margin: 0px 0 50px 300px; }\n  .skills__list__item {\n    display: inline-block;\n    vertical-align: top;\n    margin: 0px 5px 10px 0px;\n    padding: 5px 10px;\n    border-radius: 10px;\n    font-size: 14px; }\n    .skills__list__item:before {\n      content: ''; }\n\n.experience h2 {\n  text-align: center; }\n\n.experience__item__year {\n  font-style: italic;\n  font-size: 14px;\n  line-height: 2; }\n\n.experience__item {\n  background: #FAFAFA;\n  padding: 15px;\n  margin-bottom: 10px; }\n  .experience__item__responsibilities {\n    max-height: 0;\n    overflow: hidden;\n    font-size: 14px; }\n    .experience__item__responsibilities li {\n      padding: 5px; }\n    .experience__item__responsibilities li:before {\n      content: '\\25BA';\n      color: #3498db;\n      display: inline-block;\n      font-size: 12px;\n      margin: 0 10px 5px 0; }\n    .experience__item__responsibilities.showed {\n      max-height: 400px;\n      transition: max-height 0.25s ease-in; }\n  .experience__item__listBtn {\n    display: inline-block;\n    font-size: 14px;\n    margin: 10px 0 10px 0;\n    font-family: \"Open Sans bold\", sans-serif;\n    color: #3498db;\n    border-bottom: 1px dotted #3498db;\n    cursor: pointer; }\n    .experience__item__listBtn:after {\n      display: inline-block;\n      vertical-align: top;\n      content: '\\25BC';\n      font-size: 12px;\n      color: #3498db;\n      margin: 2px 0px 0 5px; }\n    .experience__item__listBtn:hover {\n      border: 0;\n      padding-bottom: 1px; }\n    .experience__item__listBtn.opened:after {\n      content: '\\25B2'; }\n\nbody {\n  font-family: \"Open Sans\", sans-serif; }\n", ""]);
 
 // exports
 
@@ -14019,7 +14080,7 @@ var EventPluginHub = __webpack_require__(22);
 var EventPropagators = __webpack_require__(23);
 var ExecutionEnvironment = __webpack_require__(6);
 var ReactDOMComponentTree = __webpack_require__(5);
-var ReactUpdates = __webpack_require__(10);
+var ReactUpdates = __webpack_require__(11);
 var SyntheticEvent = __webpack_require__(13);
 
 var getEventTarget = __webpack_require__(48);
@@ -15097,7 +15158,7 @@ var _prodInvariant = __webpack_require__(3),
 
 var React = __webpack_require__(20);
 var ReactComponentEnvironment = __webpack_require__(42);
-var ReactCurrentOwner = __webpack_require__(11);
+var ReactCurrentOwner = __webpack_require__(12);
 var ReactErrorUtils = __webpack_require__(43);
 var ReactInstanceMap = __webpack_require__(24);
 var ReactInstrumentation = __webpack_require__(9);
@@ -16006,7 +16067,7 @@ var ReactDOMComponentTree = __webpack_require__(5);
 var ReactDefaultInjection = __webpack_require__(166);
 var ReactMount = __webpack_require__(75);
 var ReactReconciler = __webpack_require__(19);
-var ReactUpdates = __webpack_require__(10);
+var ReactUpdates = __webpack_require__(11);
 var ReactVersion = __webpack_require__(181);
 
 var findDOMNode = __webpack_require__(198);
@@ -17297,7 +17358,7 @@ var _prodInvariant = __webpack_require__(3),
 var DOMPropertyOperations = __webpack_require__(68);
 var LinkedValueUtils = __webpack_require__(41);
 var ReactDOMComponentTree = __webpack_require__(5);
-var ReactUpdates = __webpack_require__(10);
+var ReactUpdates = __webpack_require__(11);
 
 var invariant = __webpack_require__(1);
 var warning = __webpack_require__(2);
@@ -18251,7 +18312,7 @@ var _prodInvariant = __webpack_require__(3),
 
 var LinkedValueUtils = __webpack_require__(41);
 var ReactDOMComponentTree = __webpack_require__(5);
-var ReactUpdates = __webpack_require__(10);
+var ReactUpdates = __webpack_require__(11);
 
 var invariant = __webpack_require__(1);
 var warning = __webpack_require__(2);
@@ -19039,7 +19100,7 @@ module.exports = ReactDebugTool;
 
 var _assign = __webpack_require__(4);
 
-var ReactUpdates = __webpack_require__(10);
+var ReactUpdates = __webpack_require__(11);
 var Transaction = __webpack_require__(29);
 
 var emptyFunction = __webpack_require__(8);
@@ -19270,7 +19331,7 @@ var EventListener = __webpack_require__(58);
 var ExecutionEnvironment = __webpack_require__(6);
 var PooledClass = __webpack_require__(15);
 var ReactDOMComponentTree = __webpack_require__(5);
-var ReactUpdates = __webpack_require__(10);
+var ReactUpdates = __webpack_require__(11);
 
 var getEventTarget = __webpack_require__(48);
 var getUnboundedScrollPosition = __webpack_require__(116);
@@ -19470,7 +19531,7 @@ var ReactComponentEnvironment = __webpack_require__(42);
 var ReactEmptyComponent = __webpack_require__(71);
 var ReactBrowserEventEmitter = __webpack_require__(27);
 var ReactHostComponent = __webpack_require__(73);
-var ReactUpdates = __webpack_require__(10);
+var ReactUpdates = __webpack_require__(11);
 
 var ReactInjection = {
   Component: ReactComponentEnvironment.injection,
@@ -19606,7 +19667,7 @@ var ReactComponentEnvironment = __webpack_require__(42);
 var ReactInstanceMap = __webpack_require__(24);
 var ReactInstrumentation = __webpack_require__(9);
 
-var ReactCurrentOwner = __webpack_require__(11);
+var ReactCurrentOwner = __webpack_require__(12);
 var ReactReconciler = __webpack_require__(19);
 var ReactChildReconciler = __webpack_require__(146);
 
@@ -22185,7 +22246,7 @@ module.exports = dangerousStyleValue;
 
 var _prodInvariant = __webpack_require__(3);
 
-var ReactCurrentOwner = __webpack_require__(11);
+var ReactCurrentOwner = __webpack_require__(12);
 var ReactDOMComponentTree = __webpack_require__(5);
 var ReactInstanceMap = __webpack_require__(24);
 
@@ -22710,7 +22771,7 @@ module.exports = ReactMount.renderSubtreeIntoContainer;
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/* harmony export (immutable) */ __webpack_exports__["b"] = createProvider;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
@@ -24865,7 +24926,7 @@ module.exports = onlyChild;
 
 var _prodInvariant = __webpack_require__(17);
 
-var ReactCurrentOwner = __webpack_require__(11);
+var ReactCurrentOwner = __webpack_require__(12);
 var REACT_ELEMENT_TYPE = __webpack_require__(91);
 
 var getIteratorFn = __webpack_require__(94);
