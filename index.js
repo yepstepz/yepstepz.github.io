@@ -13,7 +13,7 @@ function getColor(){
     var b=Math.floor(Math.random() * (256));
     var rgba = "rgba("+r+', '+g+', '+b+", 0.5)";
     return rgba;
-}
+} 
 function iterateCollection (collection) {
     return function(f) {
         for(var i = 0; collection[i]; i++) {
