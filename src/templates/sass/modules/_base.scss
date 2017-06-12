@@ -10,3 +10,7 @@ $os : 'Open Sans';
 $oss : 'Open Sans', sans-serif;
 $osb : 'Open Sans bold';
 $osbs : 'Open Sans bold', sans-serif;
+@mixin inline-block-pos($pos:top){
+  display: inline-block;
+  vertical-align: $pos;
+}
