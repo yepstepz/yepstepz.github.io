@@ -1,3 +1,13 @@
 body {
   font-family: $oss;
 }
+.switchLanguage{
+  padding: 10px;
+  &__item{
+    margin-right: 10px;
+    color:  #3498db;
+    @include inline-block-pos;
+    padding: 2px;
+    border-bottom: 1px dotted #3498db;
+  }
+}

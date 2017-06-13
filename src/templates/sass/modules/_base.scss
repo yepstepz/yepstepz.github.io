@@ -14,3 +14,14 @@ $osbs : 'Open Sans bold', sans-serif;
   display: inline-block;
   vertical-align: $pos;
 }
+@mixin icon($url, $width: 20px, $height: 20px, $mr: 10px){
+  &:before{
+    content: '';
+    @include inline-block-pos;
+    margin-right: $mr;
+    background: url($url) no-repeat;
+    width: $width;
+    height: $height;
+    background-size: cover;
+  }
+}

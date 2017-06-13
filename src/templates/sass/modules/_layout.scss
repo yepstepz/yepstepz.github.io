@@ -109,3 +109,22 @@ h2, .h2{
     }
   }
 }
+.education{
+  margin-bottom: 10px;
+  h2{
+    text-align: center;
+  }
+  &__item{
+    background: #FAFAFA;
+    padding: 15px;
+  }
+}
+.github{
+  @include icon('/src/templates/sass/svg/github.svg');
+}
+.mail{
+  @include icon('/src/templates/sass/svg/gmail.svg');
+}
+.fb{
+  @include icon('/src/templates/sass/svg/facebook.svg');
+}

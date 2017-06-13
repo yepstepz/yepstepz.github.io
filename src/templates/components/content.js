@@ -7,12 +7,12 @@ import Footer from './footer';
 import Switcher from './switchLang';
 import {selectLanguage, Languages, Text} from '../../actions/index';
 
-const Content = ({text}) => {
+const Content = ({content}) => {
     return (
         <div>
             <Header/>
-            <TextContent text={text}/>
-            <Footer/>
+            <TextContent text={content.text}/>
+            <Footer links={content.links}/>
         </div>
     )
 
@@ -20,7 +20,7 @@ const Content = ({text}) => {
 }
 function mapStateToProps(state) {
     return {
-        text: state.changeLanguage
+        content: state.changeLanguage
     }
 }
 let changeContent = connect(

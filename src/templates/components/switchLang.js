@@ -4,12 +4,12 @@ import {selectLanguage, Languages, Text} from '../../actions/index';
 let switchLang = ({onClick}) => {
     return(
     <div className="switchLanguage">
-        <div onClick={e => {
+        <div className="switchLanguage__item" onClick={e => {
             e.preventDefault();
             onClick(Languages.RU, Text.RU);
         }}
         >{Languages.RU}</div>
-        <div onClick={e => {
+        <div className="switchLanguage__item" onClick={e => {
             e.preventDefault();
             onClick(Languages.ENG, Text.ENG);
         }}
@@ -24,8 +24,8 @@ function mapStateToProps(state) {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        onClick: (lang, text) => {
-            dispatch(selectLanguage(lang, text))
+        onClick: (lang, text, links) => {
+            dispatch(selectLanguage(lang, text, links))
         }
     }
 }

@@ -11686,27 +11686,31 @@ var EngText = function EngText() {
             )
         ),
         _react2.default.createElement(
-            "h2",
-            null,
-            "Education"
-        ),
-        _react2.default.createElement(
             "div",
             { className: "education" },
             _react2.default.createElement(
-                "h3",
+                "h2",
                 null,
-                "Bachelor of Engineering (B.Eng.) | National Research University of Electronic Technology (MIET)"
+                "Education"
             ),
             _react2.default.createElement(
-                "p",
-                null,
-                "2010 - 2014"
-            ),
-            _react2.default.createElement(
-                "p",
-                null,
-                "Department of Computer Science and Telecommunications"
+                "div",
+                { className: "education__item" },
+                _react2.default.createElement(
+                    "h3",
+                    null,
+                    "Bachelor of Engineering (B.Eng.) | National Research University of Electronic Technology (MIET)"
+                ),
+                _react2.default.createElement(
+                    "p",
+                    null,
+                    "2010 - 2014"
+                ),
+                _react2.default.createElement(
+                    "p",
+                    null,
+                    "Department of Computer Science and Telecommunications"
+                )
             )
         ),
         _react2.default.createElement(
@@ -12047,7 +12051,7 @@ exports = module.exports = __webpack_require__(109)(undefined);
 
 
 // module
-exports.push([module.i, "@charset \"UTF-8\";\n@font-face {\n  font-family: 'Open Sans';\n  /* Имя шрифта */\n  src: url(\"/src/fonts/OpenSans-Regular.ttf\");\n  /* Путь к файлу со шрифтом */ }\n\n@font-face {\n  font-family: 'Open Sans bold';\n  /* Имя шрифта */\n  src: url(\"/src/fonts/OpenSans-Bold.ttf\");\n  /* Путь к файлу со шрифтом */ }\n\n* {\n  margin: 0;\n  padding: 0; }\n\nbody {\n  color: #333; }\n\nul {\n  list-style-type: none; }\n\n.container {\n  width: 960px;\n  margin: 0 auto; }\n\nh1, .h1,\nh2, .h2,\nh3, .h3 {\n  font-family: \"Open Sans bold\", sans-serif; }\n\nh1, .h1 {\n  margin-bottom: 30px; }\n\nh2, .h2 {\n  margin-bottom: 15px; }\n\n.profile__image {\n  width: 250px;\n  height: 250px;\n  float: left; }\n  .profile__image img {\n    border-radius: 50%;\n    width: 100%; }\n\n.description {\n  width: 620px;\n  line-height: 1.6;\n  margin: 0px 0 15px 300px; }\n\n.skills {\n  margin: 0px 0 50px 300px; }\n  .skills__list__item {\n    display: inline-block;\n    vertical-align: top;\n    margin: 0px 5px 10px 0px;\n    padding: 5px 10px;\n    border-radius: 10px;\n    font-size: 14px; }\n    .skills__list__item:before {\n      content: ''; }\n\n.experience h2 {\n  text-align: center; }\n\n.experience__item__year {\n  font-style: italic;\n  font-size: 14px;\n  line-height: 2; }\n\n.experience__item {\n  background: #FAFAFA;\n  padding: 15px;\n  margin-bottom: 10px; }\n  .experience__item__responsibilities {\n    max-height: 0;\n    overflow: hidden;\n    font-size: 14px; }\n    .experience__item__responsibilities li {\n      padding: 5px; }\n    .experience__item__responsibilities li:before {\n      content: '\\25BA';\n      color: #3498db;\n      display: inline-block;\n      font-size: 12px;\n      margin: 0 10px 5px 0; }\n    .experience__item__responsibilities.showed {\n      max-height: 400px;\n      transition: max-height 0.25s ease-in; }\n  .experience__item__listBtn {\n    display: inline-block;\n    font-size: 14px;\n    margin: 10px 0 10px 0;\n    font-family: \"Open Sans bold\", sans-serif;\n    color: #3498db;\n    border-bottom: 1px dotted #3498db;\n    cursor: pointer; }\n    .experience__item__listBtn:after {\n      display: inline-block;\n      vertical-align: top;\n      content: '\\25BC';\n      font-size: 12px;\n      color: #3498db;\n      margin: 2px 0px 0 5px; }\n    .experience__item__listBtn:hover {\n      border: 0;\n      padding-bottom: 1px; }\n    .experience__item__listBtn.opened:after {\n      content: '\\25B2'; }\n\nbody {\n  font-family: \"Open Sans\", sans-serif; }\n", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n@font-face {\n  font-family: 'Open Sans';\n  /* Имя шрифта */\n  src: url(\"/src/fonts/OpenSans-Regular.ttf\");\n  /* Путь к файлу со шрифтом */ }\n\n@font-face {\n  font-family: 'Open Sans bold';\n  /* Имя шрифта */\n  src: url(\"/src/fonts/OpenSans-Bold.ttf\");\n  /* Путь к файлу со шрифтом */ }\n\n* {\n  margin: 0;\n  padding: 0; }\n\nbody {\n  color: #333; }\n\nul {\n  list-style-type: none; }\n\n.container {\n  width: 960px;\n  margin: 0 auto; }\n\nh1, .h1,\nh2, .h2,\nh3, .h3 {\n  font-family: \"Open Sans bold\", sans-serif; }\n\nh1, .h1 {\n  margin-bottom: 30px; }\n\nh2, .h2 {\n  margin-bottom: 15px; }\n\n.profile__image {\n  width: 250px;\n  height: 250px;\n  float: left; }\n  .profile__image img {\n    border-radius: 50%;\n    width: 100%; }\n\n.description {\n  width: 620px;\n  line-height: 1.6;\n  margin: 0px 0 15px 300px; }\n\n.skills {\n  margin: 0px 0 50px 300px; }\n  .skills__list__item {\n    display: inline-block;\n    vertical-align: top;\n    margin: 0px 5px 10px 0px;\n    padding: 5px 10px;\n    border-radius: 10px;\n    font-size: 14px; }\n    .skills__list__item:before {\n      content: ''; }\n\n.experience h2 {\n  text-align: center; }\n\n.experience__item__year {\n  font-style: italic;\n  font-size: 14px;\n  line-height: 2; }\n\n.experience__item {\n  background: #FAFAFA;\n  padding: 15px;\n  margin-bottom: 10px; }\n  .experience__item__responsibilities {\n    max-height: 0;\n    overflow: hidden;\n    font-size: 14px; }\n    .experience__item__responsibilities li {\n      padding: 5px; }\n    .experience__item__responsibilities li:before {\n      content: '\\25BA';\n      color: #3498db;\n      display: inline-block;\n      font-size: 12px;\n      margin: 0 10px 5px 0; }\n    .experience__item__responsibilities.showed {\n      max-height: 400px;\n      transition: max-height 0.25s ease-in; }\n  .experience__item__listBtn {\n    display: inline-block;\n    font-size: 14px;\n    margin: 10px 0 10px 0;\n    font-family: \"Open Sans bold\", sans-serif;\n    color: #3498db;\n    border-bottom: 1px dotted #3498db;\n    cursor: pointer; }\n    .experience__item__listBtn:after {\n      display: inline-block;\n      vertical-align: top;\n      content: '\\25BC';\n      font-size: 12px;\n      color: #3498db;\n      margin: 2px 0px 0 5px; }\n    .experience__item__listBtn:hover {\n      border: 0;\n      padding-bottom: 1px; }\n    .experience__item__listBtn.opened:after {\n      content: '\\25B2'; }\n\n.education h2 {\n  text-align: center; }\n\n.education__item {\n  background: #FAFAFA;\n  padding: 15px; }\n\n.github:before {\n  content: '';\n  display: inline-block;\n  vertical-align: top;\n  margin-right: 10px;\n  background: url(\"/src/templates/sass/svg/github.svg\") no-repeat;\n  width: 20px;\n  height: 20px; }\n\nbody {\n  font-family: \"Open Sans\", sans-serif; }\n", ""]);
 
 // exports
 

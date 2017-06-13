@@ -10,7 +10,9 @@ const EngText = () => {
                 <p>I enjoy maths and algorithms.</p>
             </div>
             <div className="skills">
-                <h2>My skills</h2>
+                <a name="skills">
+                    <h2>My skills</h2>
+                </a>
                 <ul className="skills__List">
                     <li className="skills__List__item">JS, ECMAScript 6 </li>
                     <li className="skills__List__item">React </li>
@@ -25,7 +27,9 @@ const EngText = () => {
                 </ul>
             </div>
             <div className="experience">
-                <h2>Work Experience</h2>
+                <a name="workExperience">
+                    <h2>Work Experience</h2>
+                </a>
                 <div className="experience__item">
                     <h3 className="experience__item__title">Developer | Demis, Voronezh</h3>
                     <p className="experience__item__year">January 2016 - Present</p>
@@ -34,7 +38,7 @@ const EngText = () => {
                         <div className="experience__advantages__time"></div>
                     </div>
                     <p className="experience__item__description">
-                        Was promoted from junior to middle developer; Succesfully passed inner tests and certified with Bitrix certificates.
+                        Was promoted from junior to mnamedle developer; Succesfully passed inner tests and certified with Bitrix certificates.
                     </p>
                     <p className="experience__item__listBtn">Responsibilities</p>
                     <ul className="experience__item__responsibilities">
@@ -75,18 +79,16 @@ const EngText = () => {
                     </ul>
                 </div>
             </div>
-            <h2>Education</h2>
             <div className="education">
-                <h3>Bachelor of Engineering (B.Eng.) | National Research University of Electronic Technology (MIET)</h3>
-                <p>2010 - 2014</p>
-                <p>Department of Computer Science and Telecommunications</p>
+                <a name="education">
+                    <h2>Education</h2>
+                </a>
+                <div className="education__item">
+                    <h3>Bachelor of Engineering (B.Eng.) | National Research University of Electronic Technology (MIET)</h3>
+                    <p>2010 - 2014</p>
+                    <p>Department of Computer Science and Telecommunications</p>
+                </div>
             </div>
-            <h2>Contact me:</h2>
-            <ul>
-                <li className="github"><a href="https://github.com/yepstepz">Github</a></li>
-                <li className="fb"><a href="https://facebook.com/yepstepz">Facebook</a></li>
-                <li className="mail"><a href="mailto:tatiana.leontieva94@gmail.com">Mail</a></li>
-            </ul>
         </div>
     )
 }

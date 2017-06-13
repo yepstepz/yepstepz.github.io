@@ -31,11 +31,18 @@ render (
 
 let skills = document.getElementsByClassName('skills__List__item');
 let responsibilityBtn = document.getElementsByClassName('experience__item__listBtn');
+let langBtn = document.getElementsByClassName('switchLanguage__item');
 iterateCollection(skills)( (node) => {
  node.style.background = getColor();
 })
 iterateCollection(responsibilityBtn)( (node) => {
     node.onclick = (e) => {
         e.target.nextSibling.classList.toggle('showed');
+    }
+})
+iterateCollection(langBtn)( (node) => {
+    console.log(node.classList);
+    node.onClick = () => {
+        node.classList.toggle('active');
     }
 })
