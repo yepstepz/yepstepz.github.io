@@ -4,6 +4,8 @@ import {connect} from 'react-redux';
 import TextContent from './text';
 import Header from './header';
 import Footer from './footer';
+import Profile from './profile';
+import Links from './links';
 import Switcher from './switchLang';
 import {selectLanguage, Languages, Text} from '../../actions/index';
 
@@ -11,8 +13,10 @@ const Content = ({content}) => {
     return (
         <div>
             <Header/>
+            <Profile/>
+            <Links link={content.links} />
             <TextContent text={content.text}/>
-            <Footer links={content.links}/>
+            <Footer/>
         </div>
     )
 

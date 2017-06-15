@@ -8,9 +8,10 @@ body{
 ul{
   list-style-type: none;
 }
-.container{
-  width: 960px;
-  margin: 0 auto;
+.root{
+  display: grid;
+  grid-columns: 1fr 1fr 1fr;
+  grid-rows: 1fr 1fr 1fr;
 }
 h1, .h1,
 h2, .h2,
@@ -26,19 +27,15 @@ h2, .h2{
 .profile__image{
   width: 250px;
   height: 250px;
-  float: left;
   img{
     border-radius: 50%;
     width: 100%;
   }
 }
 .description{
-  width: 620px;
   line-height: 1.6;
-  margin: 0px 0 15px 300px;
 }
 .skills{
-  margin: 0px 0 50px 300px;
   &__list__item{
     &:before{
       content: '';
