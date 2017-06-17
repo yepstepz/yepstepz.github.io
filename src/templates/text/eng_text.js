@@ -3,7 +3,6 @@ const EngText = () => {
     return (
         <div className="container">
             <div className="description">
-                <h1>Junior Front End Developer</h1>
                 <p>Hello,</p>
                 <p>My name is Tatiana Leontieva. I'm working with single-page application and high-loaded websites using HTML5, CSS3 (SASS/LESS), Js.</p>
                 <p>I'm also developing my own projects with React/Redux, ECMAScript 6. Webpack and Gulp helps me to improve and optimize my developing process.</p>
@@ -11,27 +10,27 @@ const EngText = () => {
             </div>
             <div className="skills">
                 <a name="skills">
-                    <h2>My skills</h2>
+                    <div className="skills__title">My skills</div>
                 </a>
-                <ul className="skills__List">
-                    <li className="skills__List__item">JS, ECMAScript 6 </li>
-                    <li className="skills__List__item">React </li>
-                    <li className="skills__List__item">jQuery</li>
-                    <li className="skills__List__item">CSS3</li>
-                    <li className="skills__List__item">Sass/Less </li>
-                    <li className="skills__List__item">Webpack</li>
-                    <li className="skills__List__item">Gulp</li>
-                    <li className="skills__List__item">PHPStorm</li>
-                    <li className="skills__List__item">GIT</li>
-                    <li className="skills__List__item">Mocha/Chai Tests (TDD)</li>
+                <ul className="skills__list">
+                    <li className="skills__list__item">JS, ECMAScript 6 </li>
+                    <li className="skills__list__item">React </li>
+                    <li className="skills__list__item">jQuery</li>
+                    <li className="skills__list__item">CSS3</li>
+                    <li className="skills__list__item">Sass/Less </li>
+                    <li className="skills__list__item">Webpack</li>
+                    <li className="skills__list__item">Gulp</li>
+                    <li className="skills__list__item">PHPStorm</li>
+                    <li className="skills__list__item">GIT</li>
+                    <li className="skills__list__item">Mocha/Chai Tests (TDD)</li>
                 </ul>
             </div>
             <div className="experience">
                 <a name="workExperience">
-                    <h2>Work Experience</h2>
+                    <div className="experience__title">Work Experience</div>
                 </a>
                 <div className="experience__item">
-                    <h3 className="experience__item__title">Developer | Demis, Voronezh</h3>
+                    <div className="experience__item__title">Developer | Demis, Voronezh</div>
                     <p className="experience__item__year">January 2016 - Present</p>
                     <div className="experience__advantages">
                         <div className="experience__advantages__time"></div>
@@ -51,7 +50,7 @@ const EngText = () => {
                     </ul>
                 </div>
                 <div className="experience__item">
-                    <h3 className="experience__item__title">Developer Webmaster | Viled, St. Petersburg</h3>
+                    <div className="experience__item__title">Developer Webmaster | Viled, St. Petersburg</div>
                     <p className="experience__item__year">August 2015 - December 2015</p>
                     <p className="experience__item__description">
                         Got important webmaster skills; Started managing and planning own time; Understood important UX-patterns.
@@ -67,7 +66,7 @@ const EngText = () => {
                     </ul>
                 </div>
                 <div className="experience__item">
-                    <h3 className="experience__item__title">Content-manager | Promotion Group, Moscow</h3>
+                    <div className="experience__item__title">Content-manager | Promotion Group, Moscow</div>
                     <p className="experience__item__year">August 2014 - March 2015</p>
                     <p className="experience__item__description">
                         Got html skills and learned how to make SEO-content.
@@ -81,11 +80,11 @@ const EngText = () => {
             </div>
             <div className="education">
                 <a name="education">
-                    <h2>Education</h2>
+                    <div className="education__title">Education</div>
                 </a>
                 <div className="education__item">
-                    <h3>Bachelor of Engineering (B.Eng.) | National Research University of Electronic Technology (MIET)</h3>
-                    <p>2010 - 2014</p>
+                    <div className="education__item__title">Bachelor of Engineering (B.Eng.) | National Research University of Electronic Technology (MIET)</div>
+                    <p className="education__item__year">2010 - 2014</p>
                     <p>Department of Computer Science and Telecommunications</p>
                 </div>
             </div>

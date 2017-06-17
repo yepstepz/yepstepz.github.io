@@ -12,16 +12,22 @@ const Text = {
         links: {
             skills: 'Навыки',
             experience: 'Опыт работы',
-            education: 'Образование'
-        }
+            education: 'Образование',
+            contacts: 'Контакты',
+            links: 'Ссылки'
+        },
+        name: 'Татьяна Леонтьева'
     },
     ENG: {
         text: <ENGtext/>,
         links: {
             skills: 'Skills',
             experience: 'Work Experience',
-            education: 'Education'
-        }
+            education: 'Education',
+            contacts: 'Contacts',
+            links: 'Links'
+        },
+        name: 'Tatiana Leontieva'
     }
 }
 function selectLanguage(lang,  text){

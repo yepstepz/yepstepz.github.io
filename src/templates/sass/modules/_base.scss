@@ -25,3 +25,25 @@ $osbs : 'Open Sans bold', sans-serif;
     background-size: cover;
   }
 }
+@mixin title($align: center){
+  line-height: 2;
+  font-size: 23px;
+  text-align: $align;
+  margin: 15px 0 20px;
+}
+@mixin block{
+  background: rgba(70, 95, 100, 0.7);
+  padding: 15px;
+  li{
+    margin-bottom: 5px;
+  }
+  &__title{
+    line-height: 1.6;
+    font-family: $osbs;
+  }
+  &__year{
+    font-style: italic;
+    font-size: 14px;
+    line-height: 2;
+  }
+}
