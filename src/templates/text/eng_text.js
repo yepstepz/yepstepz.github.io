@@ -37,7 +37,7 @@ const EngText = () => {
                         <div className="experience__advantages__time"></div>
                     </div>
                     <p className="experience__item__description">
-                        Was promoted from junior to mnamedle developer; Succesfully passed inner tests and certified with Bitrix certificates.
+                        Was promoted from junior to middle developer; Succesfully passed inner tests and was certified with Bitrix certificates.
                     </p>
                     <p className="experience__item__listBtn"
                        onClick={(e) => {

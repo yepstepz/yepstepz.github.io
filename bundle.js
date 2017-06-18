@@ -11100,6 +11100,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var store = (0, _redux.createStore)(_index2.default);
 
+function iterateCollection(collection) {
+    return function (f) {
+        for (var i = 0; collection[i]; i++) {
+            f(collection[i], i);
+        }
+    };
+}
+
 (0, _reactDom.render)(_react2.default.createElement(
     _reactRedux.Provider,
     { store: store },
@@ -11670,7 +11678,7 @@ var EngText = function EngText() {
                 _react2.default.createElement(
                     "p",
                     { className: "experience__item__description" },
-                    "Was promoted from junior to mnamedle developer; Succesfully passed inner tests and certified with Bitrix certificates."
+                    "Was promoted from junior to middle developer; Succesfully passed inner tests and was certified with Bitrix certificates."
                 ),
                 _react2.default.createElement(
                     "p",
