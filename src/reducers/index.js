@@ -2,7 +2,7 @@ import {Languages, SELECT_LANGUAGE, Text} from '../actions/index';
 import { combineReducers } from 'redux';
 const initialState = {
     lang: Languages.ENG,
-    text: Text.ENG
+    text: Text.ENG,
 }
 function changeLanguage(state=initialState.text, action){
     switch (action.type){

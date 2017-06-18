@@ -1,8 +1,11 @@
 import React, {PropTypes} from 'react';
 const Footer = () => {
     return(
-        <footer>
-            footer
+        <footer className="bottom">
+           <div className="container">
+
+
+           </div>
         </footer>
     )
 }

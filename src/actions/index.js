@@ -7,14 +7,34 @@ const Languages = {
     ENG: 'ENG'
 }
 const Text = {
-    RU: <RUtext/>,
-    ENG: <ENGtext/>
+    RU: {
+        text: <RUtext/>,
+        links: {
+            skills: 'Навыки',
+            experience: 'Опыт работы',
+            education: 'Образование',
+            contacts: 'Контакты',
+            links: 'Ссылки'
+        },
+        name: 'Татьяна Леонтьева'
+    },
+    ENG: {
+        text: <ENGtext/>,
+        links: {
+            skills: 'Skills',
+            experience: 'Work Experience',
+            education: 'Education',
+            contacts: 'Contacts',
+            links: 'Links'
+        },
+        name: 'Tatiana Leontieva'
+    }
 }
 function selectLanguage(lang,  text){
     return {
         type : SELECT_LANGUAGE,
         lang: lang,
-        text: text
+        text: text,
     }
 }
 export {SELECT_LANGUAGE, Languages, selectLanguage, Text}

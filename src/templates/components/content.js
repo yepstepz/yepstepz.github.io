@@ -1,18 +1,14 @@
 import React, {PropTypes} from 'react';
-import {render} from 'react-dom';
 import {connect} from 'react-redux';
 import TextContent from './text';
 import Header from './header';
 import Footer from './footer';
-import Switcher from './switchLang';
-import {selectLanguage, Languages, Text} from '../../actions/index';
 
-const Content = ({text}) => {
+const Content = ({content}) => {
     return (
-        <div>
+        <div className="rootComponent">
             <Header/>
-            <TextContent text={text}/>
-            <Footer/>
+            <TextContent content={content}/>
         </div>
     )
 
@@ -20,7 +16,7 @@ const Content = ({text}) => {
 }
 function mapStateToProps(state) {
     return {
-        text: state.changeLanguage
+        content: state.changeLanguage
     }
 }
 let changeContent = connect(

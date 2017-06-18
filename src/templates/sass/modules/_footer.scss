@@ -1,0 +1,22 @@
+.bottom{
+  margin-top: 20px;
+  background: #FAFAFA;
+  padding: 20px 0;
+  li{
+    @include inline-block-pos;
+  }
+  li:not(:last-child){
+    margin-right: 15px;
+  }
+  a{
+    text-decoration: none;
+    color: #3498db;
+    border-bottom: 1px dotted #3498db;
+  }
+  &__contacts{
+    @include inline-block-pos;
+  }
+  &__links{
+    @include inline-block-pos;
+  }
+}

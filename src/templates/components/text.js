@@ -1,12 +1,22 @@
 import React, { PropTypes } from 'react';
-const TextContent = ({text}) => {
+import Profile from './profile';
+import Links from './links';
+
+const TextContent = ({content}) => {
     return (
-            <div className="container">
-                <div className="profile__image">
-                    <img src="/src/templates/img/photo.jpg" alt=""/>
+            <main>
+                <Profile/>
+                <Links link={content.links} />
+                <div className="title">
+                    <div className="title__name">
+                        {content.name}
+                    </div>
+                    <div className="title__job">
+                        Junior Front End Developer
+                    </div>
                 </div>
-                {text}
-            </div>
+                {content.text}
+            </main>
         )
 
 }
