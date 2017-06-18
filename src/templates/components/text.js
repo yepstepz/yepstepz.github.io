@@ -12,7 +12,7 @@ const TextContent = ({content}) => {
                         {content.name}
                     </div>
                     <div className="title__job">
-                        Junior Front End Developer
+                        Front End Developer
                     </div>
                 </div>
                 {content.text}
