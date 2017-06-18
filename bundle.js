@@ -11516,7 +11516,7 @@ var TextContent = function TextContent(_ref) {
             _react2.default.createElement(
                 'div',
                 { className: 'title__job' },
-                'Junior Front End Developer'
+                'Front End Developer'
             )
         ),
         content.text
