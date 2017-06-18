@@ -16,7 +16,7 @@ const Text = {
             contacts: 'Контакты',
             links: 'Ссылки'
         },
-        name: 'Татьяна Леонтьева'
+        name: 'Татьяна Леонтьева',
     },
     ENG: {
         text: <ENGtext/>,
@@ -27,7 +27,7 @@ const Text = {
             contacts: 'Contacts',
             links: 'Links'
         },
-        name: 'Tatiana Leontieva'
+        name: 'Tatiana Leontieva',
     }
 }
 function selectLanguage(lang,  text){

@@ -21,19 +21,3 @@ render (
     </Provider>,
     document.getElementById('root')
 )
-
-let responsibilityBtn = document.getElementsByClassName('experience__item__listBtn');
-let langBtn = document.getElementsByClassName('switchLanguage__item');
-
-iterateCollection(responsibilityBtn)( (node) => {
-    node.onclick = (e) => {
-        e.target.classList.toggle('opened');
-        e.target.nextSibling.classList.toggle('showed');
-    }
-})
-
-iterateCollection(langBtn)( (node) => {
-    node.onClick = () => {
-        node.classList.toggle('active');
-    }
-})
