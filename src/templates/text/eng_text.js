@@ -39,7 +39,11 @@ const EngText = () => {
                     <p className="experience__item__description">
                         Was promoted from junior to mnamedle developer; Succesfully passed inner tests and certified with Bitrix certificates.
                     </p>
-                    <p className="experience__item__listBtn">Responsibilities</p>
+                    <p className="experience__item__listBtn"
+                       onClick={(e) => {
+                           e.target.nextSibling.classList.toggle('showed')
+                       }}
+                    >Responsibilities</p>
                     <ul className="experience__item__responsibilities">
                         <li>Working with popular CMS,</li>
                         <li>HTML-coding,</li>
@@ -55,7 +59,11 @@ const EngText = () => {
                     <p className="experience__item__description">
                         Got important webmaster skills; Started managing and planning own time; Understood important UX-patterns.
                     </p>
-                    <p className="experience__item__listBtn">Responsibilities</p>
+                    <p className="experience__item__listBtn"
+                       onClick={(e) => {
+                           e.target.nextSibling.classList.toggle('showed')
+                       }}
+                    >Responsibilities</p>
                     <ul className="experience__item__responsibilities">
                         <li>Using jQuery and css3 for adding functionality on site,</li>
                         <li>Analysing user behaviors with Google analytics,</li>
@@ -71,7 +79,11 @@ const EngText = () => {
                     <p className="experience__item__description">
                         Got html skills and learned how to make SEO-content.
                     </p>
-                    <p className="experience__item__listBtn">Responsibilities</p>
+                    <p className="experience__item__listBtn"
+                       onClick={(e) => {
+                           e.target.nextSibling.classList.toggle('showed')
+                       }}
+                    >Responsibilities</p>
                     <ul className="experience__item__responsibilities">
                         <li>writing and editing SEO-content,</li>
                         <li>html-coding</li>

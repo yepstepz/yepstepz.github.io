@@ -1,9 +1,9 @@
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 const path = require('path');
-const sassLoaders = [
-    'css-loader',
-    'sass-loader'
-]
+
+//top of file
+
+
 module.exports = {
     entry: [
         './index.js'
@@ -23,14 +23,21 @@ module.exports = {
                 test: /\.scss$/,
                 loaders: [ 'style-loader', 'css-loader', 'sass-loader' ]
             },
-            {test: /\.(pug|jade)$/, loader: 'pug-loader'}
+            // {
+            //     test: /\.scss$/,
+            //     loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader!sass-loader' })
+            // },
+            {
+                test: /\.css$/,
+                loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' })
+            },
         ],
     },
-    // plugins: [
-    //     new ExtractTextPlugin("styles.css"),
-    // ],
+    plugins: [
+        // new ExtractTextPlugin("styles.css")
+    ],
     resolve: {
         extensions: ['.js', '.jsx', '.css']
     },
-    devServer: { inline: true }
+    devServer: { inline: true },
 };
